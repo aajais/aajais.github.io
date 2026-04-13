@@ -2,7 +2,7 @@
 const themeToggle = document.getElementById('themeToggle');
 
 // Check for saved theme preference
-const savedTheme = localStorage.getItem('theme') || 'light';
+const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 themeToggle.checked = savedTheme === 'dark';  // Set initial toggle state
 
@@ -22,13 +22,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Here you would typically handle the form submission
-    // For example, sending the data to a server or email service
-    
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    this.reset();
-});

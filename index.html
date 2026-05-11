@@ -24,7 +24,7 @@
 </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;border-radius:0!important}
-:root{--black:#000;--bg:#000;--orange:#ff8800;--green:#3dff91;--border:#262626;--text:#d8d8d8;--text-dim:#8f8f8f;--white:#fff;--mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif}
+:root{--black:#000;--bg:#000;--orange:#ff8800;--green:#3dff91;--border:#262626;--text:#d8d8d8;--text-dim:#8f8f8f;--white:#fff;--mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;--fs-xs:12px;--fs-sm:14px;--fs-md:16px;--fs-lg:20px;--fs-xl:28px;--fs-2xl:40px;--fs-3xl:56px}
 html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--orange) #000}
 body{background:var(--black);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
 ::selection{background:var(--orange);color:#000}
@@ -36,12 +36,14 @@ a:hover{color:var(--green)}
 
 /* Nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--mono);font-weight:700;font-size:20px;color:var(--orange);letter-spacing:-1px}
-.nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#a8a8a8;transition:color .2s}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px}
+.nav-logo{font-family:var(--mono);font-weight:700;font-size:var(--fs-xl);color:var(--orange);letter-spacing:-1px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-family:var(--mono);font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:1.6px;color:#eaeaea;transition:color .2s}
 .nav-links a:hover{color:var(--orange)}
-.nav-status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:1px}
+.nav-socials{display:flex;align-items:center;justify-content:center;gap:16px}
+.nav-socials a{color:#fff;font-size:19px;transition:color .2s}
+.nav-socials a:hover{color:var(--orange)}
 .pulse-dot{width:8px;height:8px;background:var(--green);display:inline-block;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .nav-toggle{display:none;background:none;border:none;color:var(--orange);font-size:20px;cursor:pointer}
@@ -57,16 +59,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .hero-portrait img:hover{filter:grayscale(0%);border-color:var(--orange)}
 
 /* Hero */
-#hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:56px}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding-top:56px}
 #particle-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
-.hero-content{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
-.hero-eyebrow{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:16px;letter-spacing:1px}
-.hero-name{font-family:var(--mono);font-size:clamp(40px,8vw,80px);font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-2px}
-.hero-tagline{font-family:var(--mono);font-size:clamp(14px,2vw,18px);color:var(--text-dim);margin-bottom:40px}
+.hero-content{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;text-align:center;transform:translateY(4vh)}
+.hero-eyebrow{font-family:var(--mono);font-size:var(--fs-sm);color:var(--green);margin:18px 0 0;letter-spacing:1px;width:min(100%,980px);display:inline-block;white-space:nowrap;overflow:visible;min-height:1.4em}
+.hero-eyebrow.typing::after{content:'';display:inline-block;width:2px;height:1.05em;background:var(--green);margin-left:6px;vertical-align:-2px;animation:caret .9s step-end infinite}
+.hero-name{font-family:var(--mono);font-size:clamp(58px,9.2vw,112px);font-weight:700;color:var(--white);line-height:.95;margin:22px 0 24px;letter-spacing:-2px;text-align:center;width:min(100%,980px)}
+.hero-tagline{font-family:var(--mono);font-size:clamp(19px,2.3vw,27px);color:#b7b7b7;margin:0 auto 14px;max-width:56ch;line-height:1.45;width:min(100%,980px)}
+.hero-tagline .highlight-prod{color:#6fffb0;font-weight:600}
 .hero-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px;align-items:start}
 .hero-left{display:flex;flex-direction:column;gap:14px}
-.hero-right{display:flex;flex-direction:column}
+.hero-right{display:flex;flex-direction:column;min-width:0}
 .hero-intro{font-size:14px;color:#b8b8b8;max-width:46ch;line-height:1.65}
+.hero-cta{display:flex;gap:14px;margin-top:26px;justify-content:center;flex-wrap:wrap;width:min(100%,980px)}
+.hero-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:1.1px;padding:12px 20px;border:1px dashed #4c4c4c;color:#cfcfcf;background:transparent;box-shadow:none;transition:all .22s ease}
+.hero-btn:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px);background:rgba(61,255,145,.05)}
 
 /* Code bio */
 .code-window{border:1px solid var(--border);background:#0a0a0a;overflow:hidden}
@@ -84,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .code-body .num{color:#f78c6c}
 
 /* Social row */
-.hero-socials{display:flex;gap:16px;margin-top:24px}
+.hero-socials{display:none}
 .hero-socials a{color:var(--text-dim);font-size:18px;transition:color .2s}
 .hero-socials a:hover{color:var(--orange)}
 
@@ -99,10 +106,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .worked-caption{font-size:11px;color:#7e7e7e;margin-top:8px;line-height:1.45}
 
 /* Stats bar */
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:48px}
-.stat-item{background:var(--black);padding:24px;text-align:center}
-.stat-num{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--orange)}
-.stat-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--text-dim);letter-spacing:1px;margin-top:4px}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;background:transparent;border:none;margin-top:46px;width:min(100%,980px)}
+.stat-item{background:linear-gradient(180deg,#121212,#070707);padding:22px 16px;text-align:center;border:1px solid #2f2113;box-shadow:inset 0 0 0 1px rgba(255,136,0,.08);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.stat-item:hover{transform:translateY(-4px);border-color:#8a5a22;box-shadow:0 12px 34px rgba(255,136,0,.18)}
+.stat-num{font-family:var(--mono);font-size:clamp(30px,3.2vw,42px);font-weight:700;color:#ff9f1a;transition:transform .25s ease,color .25s ease;display:inline-block}
+.stat-item:hover .stat-num{transform:scale(1.12);color:#ffc06a}
+.stat-label{font-family:var(--mono);font-size:var(--fs-xs);text-transform:uppercase;color:#9e9e9e;letter-spacing:1.3px;margin-top:6px}
+@keyframes caret{50%{opacity:0}}
 
 /* Trusted By */
 .trusted-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
@@ -214,7 +224,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .case-row:last-child{border-bottom:none}
 .case-label{font-family:var(--mono);font-size:10px;letter-spacing:.9px;text-transform:uppercase;color:var(--orange)}
 .case-text{font-size:12px;color:#b5b5b5;line-height:1.5}
-.project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.project-tags{display:flex;flex-wrap:nowrap;gap:8px;margin-top:18px;overflow:hidden;padding-bottom:2px;width:100%}
+.project-tags.tech-marquee{width:max-content;animation:caseMarquee 18s linear infinite}
+.project-card:hover .project-tags.tech-marquee{animation-play-state:paused}
+.project-tags .tag{flex:0 0 auto}
+@keyframes caseMarquee{0%{transform:translateX(0)}50%{transform:translateX(-14%)}100%{transform:translateX(0)}}
 .project-link{font-family:var(--mono);font-size:12px;color:var(--orange);margin-top:12px;display:inline-flex;align-items:center;gap:6px}
 .project-link:hover{color:var(--green)}
 
@@ -281,12 +295,16 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 /* Responsive */
 @media(max-width:768px){
+  .nav-inner{display:flex;justify-content:space-between}
   .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:rgba(0,0,0,.97);flex-direction:column;padding:20px;border-bottom:1px solid var(--border)}
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
+  .nav-socials{display:none}
   .hero-grid{grid-template-columns:1fr}
   .hero-right{order:2}
   .hero-left{order:1}
+  .hero-content{transform:translateY(1.8vh)}
+  .hero-cta{flex-direction:column;align-items:center}
   .worked-grid{grid-template-columns:1fr 1fr}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
   .edu-grid{grid-template-columns:1fr}
@@ -306,6 +324,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 /* Project thumbnails */
 .project-thumb{width:100%;height:140px;object-fit:cover;border:1px solid var(--border);margin-bottom:16px;filter:grayscale(40%) brightness(0.7);transition:filter .3s}
 .project-card:hover .project-thumb{filter:grayscale(0%) brightness(0.85)}
+.project-thumb.placeholder{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);background:linear-gradient(135deg,#0a0a0a 0%,#0f0f0f 100%)}
 
 /* Education logos */
 .edu-logo{width:28px;height:28px;object-fit:contain;margin-bottom:10px;filter:grayscale(100%) contrast(120%) brightness(1.04);opacity:.9}
@@ -342,6 +361,12 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <nav>
 <div class="nav-inner">
   <a href="#hero" class="nav-logo">AJ_</a>
+  <div class="nav-socials">
+    <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://medium.com/@aajais" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
+  </div>
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><i class="fas fa-bars"></i></button>
   <div class="nav-links">
     <a href="#journey">Journey</a>
@@ -349,7 +374,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
     <a href="#projects">Projects</a>
     <a href="#papers">Papers</a>
     <a href="#contact">Contact</a>
-    <div class="nav-status"><span class="pulse-dot"></span> Available</div>
   </div>
 </div>
 </nav>
@@ -359,49 +383,19 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section id="hero">
 <canvas id="particle-canvas"></canvas>
 <div class="hero-content">
-  <div class="hero-eyebrow">// currently building at Weights & Biases (CoreWeave)</div>
   <h1 class="hero-name">AAYUSH JAISWAL</h1>
-  <p class="hero-tagline">AI Solutions Engineer · Researcher · Builder</p>
-
-  <div class="hero-grid">
-    <div class="hero-left">
-      <div class="hero-portrait">
-        <img src="images/profile.jpeg" alt="Aayush Jaiswal" width="140" height="140" loading="eager">
-      </div>
-      <p class="hero-intro">I build AI systems that ship: from 3D research prototypes to enterprise training and inference workflows in production.</p>
-      <div class="hero-socials">
-        <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://medium.com/@aajais" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
-      </div>
-    </div>
-    <aside class="hero-right">
-      <div class="code-window">
-        <div class="code-titlebar">
-          <span class="code-dot red"></span>
-          <span class="code-dot yellow"></span>
-          <span class="code-dot green"></span>
-          <span class="code-filename">aayush.py</span>
-        </div>
-        <div class="code-body"><pre><span class="kw">class</span> <span class="fn">Aayush</span>(Builder):
-    <span class="str">"""AI systems from research to production."""</span>
-
-    role = <span class="str">"AI Solutions Engineer, Post-Sales @ W&B (CoreWeave)"</span>
-    focus = [<span class="str">"distributed training"</span>, <span class="str">"inference optimization"</span>, <span class="str">"MLOps"</span>]
-    outcomes = {<span class="str">"users"</span>: <span class="str">"10M+"</span>, <span class="str">"citations"</span>: <span class="str">"847+"</span>, <span class="str">"mentored"</span>: <span class="str">"150+"</span>}
-
-    <span class="kw">def</span> <span class="fn">beyond_code</span>(self):
-        <span class="kw">return</span> [<span class="str">"photography"</span>, <span class="str">"guitar"</span>, <span class="str">"mentorship"</span>]</pre></div>
-      </div>
-    </aside>
-  </div>
+  <p class="hero-tagline">AI Solutions Engineer building <span class="highlight-prod">production-grade ML systems</span> that scale from research prototypes to enterprise training and inference. I turn complex model work into reliable outcomes for teams, products, and real users.</p>
+  <div class="hero-eyebrow">// currently building at Weights & Biases (CoreWeave)</div>
 
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Years</div></div>
     <div class="stat-item"><div class="stat-num">150+</div><div class="stat-label">Mentored</div></div>
     <div class="stat-item"><div class="stat-num">847+</div><div class="stat-label">Citations</div></div>
     <div class="stat-item"><div class="stat-num">10M+</div><div class="stat-label">Users</div></div>
+  </div>
+  <div class="hero-cta">
+    <a class="hero-btn" href="about.html">More About Me <i class="fas fa-arrow-up-right-from-square"></i></a>
+    <a class="hero-btn" href="#outcomes">Explore My Work <i class="fas fa-arrow-down"></i></a>
   </div>
 </div>
 </section>
@@ -410,7 +404,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="trusted" data-feature="trustedBy">
 <div class="section-label">00 // TRUSTED BY</div>
 <h2 class="section-title">Enterprise Partners</h2>
-<p class="section-subtitle">Supporting AI infrastructure for teams at leading companies.</p>
 <p class="trusted-note">Engagements through AI infrastructure support, technical advisory, and platform enablement at CoreWeave.</p>
 <div class="trusted-grid">
   <div class="trusted-item">Google</div>
@@ -432,7 +425,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="outcomes">
 <div class="section-label">00.5 // SELECTED OUTCOMES</div>
 <h2 class="section-title">What changed because of my work</h2>
-<p class="section-subtitle">A few measurable outcomes across production ML, infrastructure, and research systems.</p>
 <div class="outcomes-grid">
   <div class="outcome-card"><div class="outcome-kpi">45%</div><div class="outcome-title">Retention Lift</div><p class="outcome-copy">Shipped multilingual recommendation systems at Trell across 10M+ users in 5 languages.</p></div>
   <div class="outcome-card"><div class="outcome-kpi">30%</div><div class="outcome-title">Lower GPU Idle Time</div><p class="outcome-copy">Optimized distributed training pipelines at W&B across AWS/GCP and improved training efficiency.</p></div>
@@ -445,7 +437,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="journey">
 <div class="section-label">01 // JOURNEY</div>
 <h2 class="section-title">Professional Journey</h2>
-<p class="section-subtitle">Where I worked and studied, in order.</p>
 <div class="journey-strip" aria-label="Career timeline">
   <div class="journey-track">
     <article class="journey-item primary">
@@ -520,18 +511,14 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="projects">
 <div class="section-label">02 // PROJECTS</div>
 <h2 class="section-title">Selected Case Studies</h2>
-<p class="section-subtitle">A few builds broken down by problem, approach, and measurable outcome.</p>
 <div class="projects-grid">
 
   <div class="project-card">
+    <div class="project-thumb placeholder" aria-hidden="true">Project Snapshot</div>
     <h3>3D Conditional Diffusion Model</h3>
     <p>Research system for controllable 3D brain MRI synthesis in the DIPY lab.</p>
-    <div class="case-study">
-      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Generate high-fidelity 3D MRIs while keeping model size practical for research iteration on shared HPC resources.</div></div>
-      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Designed a 2-channel VQ-VAE + diffusion pipeline with custom loss balancing, rigorous experiment tracking, and repeatable training recipes.</div></div>
-      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Achieved SOTA SSIM/PSNR at ~60% of baseline model size, improving both image quality and experimental throughput.</div></div>
-    </div>
-    <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">HPC</span><span class="tag">W&B</span></div>
+    <p class="case-summary">Built a 2-channel VQ-VAE + diffusion pipeline for controllable 3D MRI synthesis, achieving SOTA SSIM/PSNR at ~60% of baseline model size and speeding up research iteration on shared HPC.</p>
+    <div class="project-tags tech-marquee"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">HPC</span><span class="tag">W&B</span></div>
     <a class="project-link" href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer">W&B Report <i class="fas fa-arrow-right"></i></a>
   </div>
 
@@ -539,12 +526,8 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
     <img src="images/tfrs.png" alt="Multi-Lingual Recommendation System" class="project-thumb" loading="lazy">
     <h3>Multi-Lingual Video Recommendation System</h3>
     <p>Recommendation platform work for a 10M+ user short-video product across 5 languages.</p>
-    <div class="case-study">
-      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Feed quality and retrieval speed were bottlenecking retention and personalization quality as traffic scaled.</div></div>
-      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Built a two-tower retrieval architecture with transfer learning, plus tighter MLOps loops for faster retraining and rollout.</div></div>
-      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Improved retention by 45% and reduced retrieval latency by 50%, materially lifting engagement at production scale.</div></div>
-    </div>
-    <div class="project-tags"><span class="tag">TensorFlow</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">GCP</span></div>
+    <p class="case-summary">Built a two-tower retrieval system with tighter MLOps loops, improving retention by 45% and cutting retrieval latency by 50% at 10M+ user scale.</p>
+    <div class="project-tags tech-marquee"><span class="tag">TensorFlow</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">GCP</span></div>
     <a class="project-link" href="https://medium.com/@aajais/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">Article <i class="fas fa-arrow-right"></i></a>
   </div>
 
@@ -552,22 +535,20 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
     <img src="images/rag.png" alt="RAG Code Assistant" class="project-thumb" loading="lazy">
     <h3>RAG Code Assistant (DIPY)</h3>
     <p>Developer-facing assistant for a fast-moving open-source scientific codebase.</p>
-    <div class="case-study">
-      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Contributors were losing time searching docs/issues/code context before they could implement or debug changes.</div></div>
-      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Built a RAG pipeline with semantic chunking, vector search, and response caching behind a low-latency FastAPI service.</div></div>
-      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Handled 10K+ dev queries/day with ~95% answer accuracy while reducing median response latency by ~60%.</div></div>
-    </div>
+    <p class="case-summary">Built a low-latency RAG assistant (semantic chunking, vector search, caching) that handled 10K+ developer queries/day at ~95% accuracy with ~60% faster median responses.</p>
     <div class="project-tags"><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span><span class="tag">FastAPI</span></div>
     <a class="project-link" href="https://github.com/aajais/dipy_code_assistant" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
   </div>
 
   <div class="project-card">
+    <div class="project-thumb placeholder" aria-hidden="true">Project Snapshot</div>
     <h3>Meal Planner AI Agent</h3>
     <p>An LLM-powered app that plans weekly meals around macros, dietary restrictions, and whatever's actually in your fridge. Built end-to-end with Flutter + FastAPI. The inference optimization was more fun than expected.</p>
     <div class="project-tags"><span class="tag">Flutter</span><span class="tag">FastAPI</span><span class="tag">Firebase</span><span class="tag">OpenAI</span></div>
   </div>
 
   <div class="project-card">
+    <div class="project-thumb placeholder" aria-hidden="true">Project Snapshot</div>
     <h3>Computer Vision Detection Model</h3>
     <p>Real-time YOLOv8 detection pipeline processing 50K+ images/month at 98.25% accuracy — reducing manual review overhead by 85%.</p>
     <div class="project-tags"><span class="tag">Python</span><span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span class="tag">AWS</span></div>
@@ -577,11 +558,12 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
     <img src="images/covid.png" alt="COVID-19 Detection" class="project-thumb" loading="lazy">
     <h3>Rapid SARS-CoV-2 Detection</h3>
     <p>96% accurate COVID-19 diagnosis from X-rays and CT scans using ensemble deep transfer learning. Published findings contributed to non-invasive diagnostic alternatives to RT-PCR during the pandemic.</p>
-    <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Flask</span><span class="tag">AWS EC2</span></div>
+    <div class="project-tags tech-marquee"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Flask</span><span class="tag">AWS EC2</span></div>
     <a class="project-link" href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
   </div>
 
   <div class="project-card">
+    <div class="project-thumb placeholder" aria-hidden="true">Project Snapshot</div>
     <h3>3D Brain Tumor Segmentation</h3>
     <p>3D CNN + Vision Transformer hybrid achieving 95% accuracy on tumor localization in brain MRIs. The attention mechanism was the difference between "promising" and "clinically useful".</p>
     <div class="project-tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">3D Conv</span></div>
@@ -592,14 +574,15 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
     <img src="images/prometheus.png" alt="Observability Stack" class="project-thumb" loading="lazy">
     <h3>Cloud-Native Observability Stack</h3>
     <p>Full Prometheus + Grafana observability stack on Kubernetes that improved system uptime by 30% through custom PromQL alerting and automated dashboards.</p>
-    <div class="project-tags"><span class="tag">AWS</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Kubernetes</span><span class="tag">PromQL</span></div>
+    <div class="project-tags tech-marquee"><span class="tag">AWS</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Kubernetes</span><span class="tag">PromQL</span></div>
     <a class="project-link" href="https://medium.com/@aajais/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer">Article <i class="fas fa-arrow-right"></i></a>
   </div>
 
   <div class="project-card">
+    <div class="project-thumb placeholder" aria-hidden="true">Project Snapshot</div>
     <h3>Real-Time Data Pipeline with DBT</h3>
     <p>GCP-native data pipelines using DBT and BigQuery that cut analytics access times by 15% and reduced data quality incidents through automated schema validation and incremental testing.</p>
-    <div class="project-tags"><span class="tag">DBT</span><span class="tag">BigQuery</span><span class="tag">GCP</span><span class="tag">SQL</span><span class="tag">Airflow</span></div>
+    <div class="project-tags tech-marquee"><span class="tag">DBT</span><span class="tag">BigQuery</span><span class="tag">GCP</span><span class="tag">SQL</span><span class="tag">Airflow</span></div>
   </div>
 
 </div>
@@ -609,7 +592,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="papers">
 <div class="section-label">03 // PAPERS</div>
 <h2 class="section-title">Research Publications</h2>
-<p class="section-subtitle">Peer-reviewed work with 847+ combined citations.</p>
 
 <div class="paper-card">
   <h3>3D Conditional Diffusion Model for Medical Image Synthesis</h3>
@@ -649,7 +631,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="skills">
 <div class="section-label">04 // SKILLS</div>
 <h2 class="section-title">Toolkit</h2>
-<p class="section-subtitle">My toolkit. I actually use all of these.</p>
 <div class="marquee-wrap">
 <div class="marquee-track">
   <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
@@ -712,7 +693,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="writing">
 <div class="section-label">06 // WRITING</div>
 <h2 class="section-title">Writing</h2>
-<p class="section-subtitle">Because sometimes 500 words beats 500 lines of code.</p>
 
 <a class="writing-card" href="https://medium.com/@aajais/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">
   <h3>Streamlining Recommendation Systems with TensorFlow Recommenders (TFRS)</h3>
@@ -733,7 +713,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="beyond">
 <div class="section-label">07 // BEYOND CODE</div>
 <h2 class="section-title">The Full Picture</h2>
-<p class="section-subtitle">The things that keep me human (and sane).</p>
 <div class="beyond-grid">
   <div class="beyond-card">
     <h3>🎸 Guitar</h3>
@@ -751,7 +730,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="resume">
 <div class="section-label">08 // RESUME</div>
 <h2 class="section-title">Resume</h2>
-<p class="section-subtitle">The condensed version of everything above.</p>
 <div class="resume-section">
   <div class="resume-file">$ ls -la <span class="fname">AAYUSH_JAISWAL_RESUME.pdf</span> <span class="fsize">117K Apr 2026</span></div>
   <a class="resume-btn" href="AAYUSH_JAISWAL_RESUME.pdf" download><i class="fas fa-download"></i> DOWNLOAD RESUME</a>
@@ -763,7 +741,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <section class="section" id="contact">
 <div class="section-label">09 // CONTACT</div>
 <h2 class="section-title">Let's Connect</h2>
-<p class="section-subtitle">Open to interesting conversations, collaborations, and new challenges.</p>
 <div class="contact-grid">
   <div class="contact-item">
     <i class="fas fa-envelope"></i>
@@ -836,6 +813,54 @@ document.querySelectorAll('[data-feature]').forEach((el) => {
   const key = el.getAttribute('data-feature');
   if (FEATURE_FLAGS[key] === false) el.style.display = 'none';
 });
+
+// Hero typing (natural cadence, no cutoff)
+(function initHeroEyebrowTyping(){
+  const el = document.querySelector('.hero-eyebrow');
+  if(!el) return;
+
+  const fullText = el.textContent.trim();
+  const minTypeDelay = 58;
+  const maxTypeDelay = 130;
+  const pauseAfterTyped = 1800;
+  const pauseAfterErase = 520;
+
+  let i = 0;
+  let deleting = false;
+
+  el.classList.add('typing');
+  el.textContent = '';
+
+  function rand(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+
+  function tick(){
+    if(!deleting){
+      i = Math.min(fullText.length, i + 1);
+      el.textContent = fullText.slice(0,i);
+
+      if(i >= fullText.length){
+        deleting = true;
+        return setTimeout(tick, pauseAfterTyped);
+      }
+
+      const ch = fullText[i-1] || '';
+      const punctuationPause = /[(),.]/.test(ch) ? rand(80,140) : 0;
+      return setTimeout(tick, rand(minTypeDelay,maxTypeDelay) + punctuationPause);
+    }
+
+    i = Math.max(0, i - 1);
+    el.textContent = fullText.slice(0,i);
+
+    if(i === 0){
+      deleting = false;
+      return setTimeout(tick, pauseAfterErase);
+    }
+
+    return setTimeout(tick, rand(22,48));
+  }
+
+  tick();
+})();
 
 // Scroll progress + back-to-top
 window.addEventListener('scroll',()=>{

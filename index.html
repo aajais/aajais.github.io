@@ -20,11 +20,11 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Aayush Jaiswal","jobTitle":"AI Solutions Engineer","worksFor":{"@type":"Organization","name":"CoreWeave"},"url":"https://aajais.github.io","email":"jaayush12@gmail.com","sameAs":["https://www.linkedin.com/in/jaiswal-aayush","https://github.com/aayush9400","https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en","https://medium.com/@jaayush12"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Indiana University Bloomington"},{"@type":"CollegeOrUniversity","name":"Manipal University Jaipur"}]}
+{"@context":"https://schema.org","@type":"Person","name":"Aayush Jaiswal","jobTitle":"AI Solutions Engineer","worksFor":{"@type":"Organization","name":"CoreWeave"},"url":"https://aajais.github.io","email":"jaayush12@gmail.com","sameAs":["https://www.linkedin.com/in/jaiswal-aayush","https://github.com/aajais","https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en","https://medium.com/@jaayush12"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Indiana University Bloomington"},{"@type":"CollegeOrUniversity","name":"Manipal University Jaipur"}]}
 </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;border-radius:0!important}
-:root{--black:#000;--bg:#000;--orange:#ff8800;--green:#3dff91;--border:#1a1a1a;--text:#ccc;--text-dim:#666;--white:#fff;--mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif}
+:root{--black:#000;--bg:#000;--orange:#ff8800;--green:#3dff91;--border:#262626;--text:#d8d8d8;--text-dim:#8f8f8f;--white:#fff;--mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif}
 html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--orange) #000}
 body{background:var(--black);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
 ::selection{background:var(--orange);color:#000}
@@ -39,7 +39,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:var(--mono);font-weight:700;font-size:20px;color:var(--orange);letter-spacing:-1px}
 .nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-dim);transition:color .2s}
+.nav-links a{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#a8a8a8;transition:color .2s}
 .nav-links a:hover{color:var(--orange)}
 .nav-status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:1px}
 .pulse-dot{width:8px;height:8px;background:var(--green);display:inline-block;animation:pulse 2s infinite}
@@ -94,6 +94,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .trusted-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
 .trusted-item{background:var(--black);padding:20px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--text-dim);transition:color .2s}
 .trusted-item:hover{color:var(--orange)}
+.trusted-note{margin-top:14px;font-family:var(--mono);font-size:12px;color:#9c9c9c}
+
+/* Outcomes */
+.outcomes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.outcome-card{background:var(--black);padding:20px}
+.outcome-kpi{font-family:var(--mono);font-size:26px;color:var(--green);margin-bottom:6px}
+.outcome-title{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--orange);margin-bottom:8px}
+.outcome-copy{font-size:13px;color:#b3b3b3;line-height:1.65}
 
 /* Tech Marquee */
 .marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;background:#050505}
@@ -220,7 +228,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 }
 /* Section heading */
 .section-title{font-family:var(--mono);font-size:clamp(24px,4vw,40px);font-weight:700;color:var(--white);margin-bottom:8px}
-.section-subtitle{font-size:14px;color:var(--text-dim);margin-bottom:48px;max-width:600px}
+.section-subtitle{font-size:15px;color:#b0b0b0;margin-bottom:48px;max-width:700px;line-height:1.75}
 
 /* Skip link */
 .skip-link{position:absolute;top:-40px;left:0;background:var(--orange);color:#000;padding:8px 16px;z-index:10000;font-family:var(--mono);font-size:13px;transition:top .2s}
@@ -231,7 +239,9 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 .project-card:hover .project-thumb{filter:grayscale(0%) brightness(0.85)}
 
 /* Education logos */
-.edu-logo{width:40px;height:40px;object-fit:contain;filter:brightness(0.6) invert(0.8);margin-bottom:12px}
+.edu-logo{width:44px;height:44px;object-fit:contain;margin-bottom:12px;filter:none}
+.edu-logo-iu{background:#990000;padding:4px;border:1px solid #7a0000}
+.edu-logo-manipal{background:#fff;padding:4px;border:1px solid #2a2a2a}
 
 /* Back to top */
 .back-to-top{position:fixed;bottom:90px;right:24px;width:40px;height:40px;background:#111;border:1px solid var(--border);color:var(--orange);font-family:var(--mono);font-size:18px;cursor:pointer;z-index:1999;display:none;align-items:center;justify-content:center;transition:all .2s}
@@ -310,7 +320,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       </div>
       <div class="hero-socials">
         <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/aayush9400" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
         <a href="https://medium.com/@jaayush12" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
       </div>
@@ -332,6 +342,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <div class="section-label">00 // TRUSTED BY</div>
 <h2 class="section-title">Enterprise Partners</h2>
 <p class="section-subtitle">Supporting AI infrastructure for teams at leading companies.</p>
+<p class="trusted-note">Engagements through AI infrastructure support, technical advisory, and platform enablement at CoreWeave.</p>
 <div class="trusted-grid">
   <div class="trusted-item">Google</div>
   <div class="trusted-item">Snap Inc</div>
@@ -348,13 +359,18 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 </section>
 
-<!-- Tech Marquee -->
-<div class="marquee-wrap">
-<div class="marquee-track">
-  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
-  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
+<!-- Outcomes -->
+<section class="section" id="outcomes">
+<div class="section-label">00.5 // SELECTED OUTCOMES</div>
+<h2 class="section-title">What changed because of my work</h2>
+<p class="section-subtitle">A few measurable outcomes across production ML, infrastructure, and research systems.</p>
+<div class="outcomes-grid">
+  <div class="outcome-card"><div class="outcome-kpi">45%</div><div class="outcome-title">Retention Lift</div><p class="outcome-copy">Shipped multilingual recommendation systems at Trell across 10M+ users in 5 languages.</p></div>
+  <div class="outcome-card"><div class="outcome-kpi">30%</div><div class="outcome-title">Lower GPU Idle Time</div><p class="outcome-copy">Optimized distributed training pipelines at W&B across AWS/GCP and improved training efficiency.</p></div>
+  <div class="outcome-card"><div class="outcome-kpi">847+</div><div class="outcome-title">Research Citations</div><p class="outcome-copy">Published COVID-19 medical imaging work adopted in academic and applied AI discussions.</p></div>
+  <div class="outcome-card"><div class="outcome-kpi">150+</div><div class="outcome-title">Engineers & Students Mentored</div><p class="outcome-copy">Mentored distributed computing and ML systems topics with hands-on production guidance.</p></div>
 </div>
-</div>
+</section>
 
 <!-- Tech Marquee -->
 <div class="marquee-wrap">
@@ -522,7 +538,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
   <div class="project-card">
     <img src="images/covid.png" alt="COVID-19 Detection" class="project-thumb" loading="lazy">
-    <h3>Rapid SARS-COV-2 Detection</h3>
+    <h3>Rapid SARS-CoV-2 Detection</h3>
     <p>96% accurate COVID-19 diagnosis from X-rays and CT scans using ensemble deep transfer learning. Published findings contributed to non-invasive diagnostic alternatives to RT-PCR during the pandemic.</p>
     <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Flask</span><span class="tag">AWS EC2</span></div>
     <a class="project-link" href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
@@ -565,7 +581,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <div class="paper-authors">Aayush Jaiswal, JongSung Park, Eleftherios Garyfallidis</div>
   <div class="paper-links">
     <a href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer">W&B Report ↗</a>
-    <a href="https://github.com/aayush9400" target="_blank" rel="noopener noreferrer">Code ↗</a>
+    <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer">Code ↗</a>
   </div>
 </div>
 
@@ -636,13 +652,13 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <h2 class="section-title">Education</h2>
 <div class="edu-grid">
   <div class="edu-card">
-    <img src="images/manipal.png" alt="Manipal University" class="edu-logo" loading="lazy">
+    <img src="images/manipal.png" alt="Manipal University" class="edu-logo edu-logo-manipal" loading="lazy">
     <div class="edu-degree">Bachelor of Technology in Computer Science</div>
     <div class="edu-school">Manipal University Jaipur</div>
     <div class="edu-meta"><span>2017 — 2021</span><span>GPA 3.70</span></div>
   </div>
   <div class="edu-card">
-    <img src="images/indiana-university-logo.png" alt="Indiana University" class="edu-logo" loading="lazy">
+    <img src="images/indiana-university-logo.png" alt="Indiana University" class="edu-logo edu-logo-iu" loading="lazy">
     <div class="edu-degree">Master of Science in Data Science</div>
     <div class="edu-school">Indiana University Bloomington</div>
     <div class="edu-meta"><span>2022 — 2024</span><span>GPA 3.60</span></div>
@@ -720,7 +736,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <div class="contact-item">
     <i class="fab fa-github"></i>
     <span>GitHub</span>
-    <a href="https://github.com/aayush9400" target="_blank" rel="noopener noreferrer">aayush9400</a>
+    <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer">aajais</a>
   </div>
   <div class="contact-item">
     <i class="fas fa-graduation-cap"></i>
@@ -861,7 +877,7 @@ function respond(q){
   else if(l.includes('wandb')||l.includes('weights'))
     a="At W&B (Oct 2024 - Feb 2026), Aayush optimized distributed training pipelines across AWS/GCP, cut GPU idle time by 30%, and helped dozens of teams go from prototype to production.";
   else if(l.includes('contact')||l.includes('email')||l.includes('reach'))
-    a="Email: jaayush12@gmail.com | LinkedIn: linkedin.com/in/jaiswal-aayush | GitHub: github.com/aayush9400";
+    a="Email: jaayush12@gmail.com | LinkedIn: linkedin.com/in/jaiswal-aayush | GitHub: github.com/aajais";
   else if(l.includes('trell')||l.includes('recommend'))
     a="At Trell (Sequoia-backed), Aayush shipped a multilingual recommendation system driving 45% retention gains across 10M+ users in 5 languages.";
   else

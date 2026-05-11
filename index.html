@@ -1,680 +1,979 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Applied Scientist & AI Solutions Engineer specializing in deep learning, computer vision, and scalable AI infrastructure.">
-    <title>Aayush Jaiswal</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animations.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Devicon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aayush Jaiswal — AI Solutions Engineer</title>
+<meta name="description" content="AI Solutions Engineer, Post-Sales at Weights & Biases (CoreWeave). From 800+ citation papers to 10M+ user systems. Deep learning, MLOps, and generative AI.">
+<link rel="canonical" href="https://aajais.github.io">
+<meta property="og:title" content="Aayush Jaiswal — AI Solutions Engineer">
+<meta property="og:description" content="From 800+ citation papers to 10M+ user systems. AI Solutions Engineer, Post-Sales at Weights & Biases (CoreWeave).">
+<meta property="og:image" content="https://aajais.github.io/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aayush Jaiswal — AI Solutions Engineer">
+<meta name="twitter:description" content="From 800+ citation papers to 10M+ user systems.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Aayush Jaiswal","jobTitle":"AI Solutions Engineer, Post-Sales","worksFor":{"@type":"Organization","name":"Weights & Biases (CoreWeave)"},"url":"https://aajais.github.io","email":"jaayush12@gmail.com","sameAs":["https://www.linkedin.com/in/jaiswal-aayush","https://github.com/aajais","https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en","https://medium.com/@jaayush12"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Indiana University Bloomington"},{"@type":"CollegeOrUniversity","name":"Manipal University Jaipur"}]}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;border-radius:0!important}
+:root{--black:#000;--bg:#000;--orange:#ff8800;--green:#3dff91;--border:#262626;--text:#d8d8d8;--text-dim:#8f8f8f;--white:#fff;--mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--orange) #000}
+body{background:var(--black);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--orange);color:#000}
+a{color:var(--orange);text-decoration:none;transition:color .2s}
+a:hover{color:var(--green)}
+
+/* Scroll Progress */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--green);z-index:9999;transition:width .1s linear;width:0}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--mono);font-weight:700;font-size:20px;color:var(--orange);letter-spacing:-1px}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#a8a8a8;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:1px}
+.pulse-dot{width:8px;height:8px;background:var(--green);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.nav-toggle{display:none;background:none;border:none;color:var(--orange);font-size:20px;cursor:pointer}
+
+/* Sections */
+.section{padding:100px 24px;max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--orange);margin-bottom:40px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Hero Portrait */
+.hero-portrait{margin-bottom:24px}
+.hero-portrait img{width:140px;height:140px;object-fit:cover;border:2px solid var(--border);filter:grayscale(30%);transition:filter .3s}
+.hero-portrait img:hover{filter:grayscale(0%);border-color:var(--orange)}
+
+/* Hero */
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:56px}
+#particle-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+.hero-content{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.hero-eyebrow{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:16px;letter-spacing:1px}
+.hero-name{font-family:var(--mono);font-size:clamp(40px,8vw,80px);font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-2px}
+.hero-tagline{font-family:var(--mono);font-size:clamp(14px,2vw,18px);color:var(--text-dim);margin-bottom:40px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px;align-items:start}
+.hero-left{display:flex;flex-direction:column;gap:14px}
+.hero-right{display:flex;flex-direction:column}
+.hero-intro{font-size:14px;color:#b8b8b8;max-width:46ch;line-height:1.65}
+
+/* Code bio */
+.code-window{border:1px solid var(--border);background:#0a0a0a;overflow:hidden}
+.code-titlebar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);background:#0d0d0d}
+.code-dot{width:10px;height:10px;display:inline-block}
+.code-dot.red{background:#ff5f57}
+.code-dot.yellow{background:#febc2e}
+.code-dot.green{background:#28c840}
+.code-filename{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-left:8px}
+.code-body{padding:20px;font-family:var(--mono);font-size:13px;line-height:1.7;color:var(--text);overflow-x:auto}
+.code-body .kw{color:var(--orange)}
+.code-body .str{color:var(--green)}
+.code-body .cm{color:var(--text-dim)}
+.code-body .fn{color:#82aaff}
+.code-body .num{color:#f78c6c}
+
+/* Social row */
+.hero-socials{display:flex;gap:16px;margin-top:24px}
+.hero-socials a{color:var(--text-dim);font-size:18px;transition:color .2s}
+.hero-socials a:hover{color:var(--orange)}
+
+/* Hero right rail */
+.hero-panel{border:1px solid var(--border);background:#060606;padding:18px}
+.hero-panel-title{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange);margin-bottom:10px}
+.hero-panel-list{display:flex;flex-direction:column;gap:8px}
+.hero-panel-item{font-size:13px;color:#b8b8b8;line-height:1.55}
+.worked-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.worked-logo{font-family:var(--mono);font-size:10px;letter-spacing:.4px;text-transform:uppercase;color:#c2c2c2;border:1px solid var(--border);padding:8px 7px;text-align:center;background:#0b0b0b}
+.worked-logo.primary{color:var(--orange);border-color:#3a2a16;background:#0d0803}
+.worked-caption{font-size:11px;color:#7e7e7e;margin-top:8px;line-height:1.45}
+
+/* Stats bar */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:48px}
+.stat-item{background:var(--black);padding:24px;text-align:center}
+.stat-num{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--orange)}
+.stat-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--text-dim);letter-spacing:1px;margin-top:4px}
+
+/* Trusted By */
+.trusted-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.trusted-item{background:var(--black);padding:20px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--text-dim);transition:color .2s}
+.trusted-item:hover{color:var(--orange)}
+.trusted-note{margin-top:14px;font-family:var(--mono);font-size:12px;color:#9c9c9c}
+
+/* Outcomes */
+.outcomes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.outcome-card{background:var(--black);padding:20px}
+.outcome-kpi{font-family:var(--mono);font-size:26px;color:var(--green);margin-bottom:6px}
+.outcome-title{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--orange);margin-bottom:8px}
+.outcome-copy{font-size:13px;color:#b3b3b3;line-height:1.65}
+
+/* Tech Marquee */
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;background:#050505}
+.marquee-track{display:flex;gap:48px;animation:marquee 30s linear infinite;width:max-content}
+.marquee-track span{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--text-dim);white-space:nowrap}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Education */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.edu-card{background:var(--black);padding:32px}
+.edu-degree{font-family:var(--mono);font-size:16px;color:var(--white);margin-bottom:4px}
+.edu-school{color:var(--orange);font-family:var(--mono);font-size:13px;margin-bottom:8px}
+.edu-meta{font-family:var(--mono);font-size:12px;color:var(--text-dim);display:flex;gap:16px}
+
+/* Timeline */
+.timeline{position:relative;padding-left:32px;border-left:1px solid var(--border)}
+.timeline-item{position:relative;margin-bottom:2px;border:1px solid var(--border);background:#050505;cursor:pointer;transition:border-color .2s}
+.timeline-item:hover,.timeline-item.active{border-color:var(--orange)}
+.timeline-item::before{content:'';position:absolute;left:-38px;top:24px;width:10px;height:10px;border:1px solid var(--orange);background:var(--black)}
+.timeline-item.active::before{background:var(--orange)}
+.timeline-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;flex-wrap:wrap;gap:8px}
+.timeline-role{font-family:var(--mono);font-size:14px;color:var(--white)}
+.timeline-role span{color:var(--orange)}
+.timeline-date{font-family:var(--mono);font-size:12px;color:var(--text-dim)}
+.timeline-expand{font-family:var(--mono);font-size:16px;color:var(--orange);margin-left:8px;transition:transform .2s}
+.timeline-item.active .timeline-expand{transform:rotate(45deg)}
+.timeline-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.timeline-body-inner{padding:0 24px 20px;color:var(--text);font-size:14px;line-height:1.7}
+.timeline-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-family:var(--mono);font-size:11px;padding:4px 10px;border:1px solid var(--border);color:var(--text-dim)}
+
+/* Journey connected snake timeline */
+.journey-strip{position:relative}
+.journey-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 22px;align-items:stretch}
+.journey-item{border:1px solid var(--border);background:#0a0a0a;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;min-height:110px}
+.journey-item.primary{border-color:#3a2a16;background:#0d0803}
+.journey-item.education{border-color:#24352a;background:#070b08}
+.journey-years{font-family:var(--mono);font-size:11px;color:var(--orange);letter-spacing:.6px}
+.journey-brand{display:flex;align-items:center;gap:10px}
+.journey-logo-img{height:24px;max-width:130px;object-fit:contain;object-position:left center;filter:grayscale(100%) contrast(120%) brightness(1.04)}
+.journey-logo-fallback{height:22px;min-width:34px;padding:0 8px;border:1px solid var(--border);display:grid;place-items:center;font:700 9px var(--mono);color:#cfcfcf;background:#0f0f0f}
+.journey-name{font:600 12px var(--mono);letter-spacing:.3px;color:#e6e6e6;text-transform:uppercase;line-height:1.3}
+.journey-role{font-size:12px;color:var(--text-dim);line-height:1.4}
+.journey-badge{font-family:var(--mono);font-size:10px;color:#79d89a;border:1px solid #2a4a33;padding:2px 7px;display:inline-block;width:max-content;letter-spacing:.7px;text-transform:uppercase}
+
+/* place cards in snake order */
+.journey-item:nth-child(1){grid-column:1;grid-row:1}
+.journey-item:nth-child(2){grid-column:2;grid-row:1}
+.journey-item:nth-child(3){grid-column:3;grid-row:1}
+.journey-item:nth-child(4){grid-column:3;grid-row:2}
+.journey-item:nth-child(5){grid-column:2;grid-row:2}
+.journey-item:nth-child(6){grid-column:1;grid-row:2}
+.journey-item:nth-child(7){grid-column:1;grid-row:3}
+
+/* connectors */
+.journey-item::after{content:'';position:absolute;background:#ff9f1a}
+.journey-item::before{content:'';position:absolute;width:6px;height:6px;border-radius:50%;background:#ff9f1a;box-shadow:0 0 0 2px rgba(255,136,0,.12)}
+.journey-item:nth-child(1)::after,.journey-item:nth-child(2)::after{height:1px;width:22px;right:-22px;top:50%;transform:translateY(-50%)}
+.journey-item:nth-child(3)::after,.journey-item:nth-child(6)::after{width:1px;height:14px;left:50%;bottom:-14px;transform:translateX(-50%)}
+.journey-item:nth-child(4)::after,.journey-item:nth-child(5)::after{height:1px;width:22px;left:-22px;top:50%;transform:translateY(-50%)}
+.journey-item:nth-child(7)::after{display:none}
+
+/* connector endpoint dots (placed at destination side to indicate chronology) */
+.journey-item:nth-child(2)::before,.journey-item:nth-child(3)::before{left:-25px;top:calc(50% - 3px)}
+.journey-item:nth-child(4)::before,.journey-item:nth-child(7)::before{left:calc(50% - 3px);top:-17px}
+.journey-item:nth-child(5)::before,.journey-item:nth-child(6)::before{right:-25px;top:calc(50% - 3px)}
+.journey-item:nth-child(1)::before{display:none}
+
+@media(max-width:980px){
+  .journey-track{grid-template-columns:1fr 1fr}
+  .journey-item:nth-child(n){grid-column:auto;grid-row:auto}
+  .journey-item::after,.journey-item::before{display:none}
+}
+@media(max-width:700px){.journey-track{grid-template-columns:1fr}}
+.edu-card.edu-focus{border:1px solid #2a4a33;box-shadow:inset 0 0 0 1px #152119}
+.edu-meta .edu-pill{font-family:var(--mono);font-size:10px;color:#79d89a;border:1px solid #2a4a33;padding:2px 7px;letter-spacing:.7px;text-transform:uppercase}
+
+/* Skills */
+.skills-category{margin-bottom:32px}
+.skills-category-title{font-family:var(--mono);font-size:13px;color:var(--orange);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.skills-list{display:flex;flex-wrap:wrap;gap:6px}
+.skill-pill{font-family:var(--mono);font-size:12px;padding:6px 14px;border:1px solid var(--border);color:var(--text);transition:all .2s}
+.skill-pill:hover{border-color:var(--orange);color:var(--orange)}
+.specialties-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
+.specialty-card{background:var(--black);padding:24px}
+.specialty-card h4{font-family:var(--mono);font-size:14px;color:var(--green);margin-bottom:6px}
+.specialty-card p{font-size:13px;color:var(--text-dim)}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.project-card{background:var(--black);padding:28px;display:flex;flex-direction:column}
+.project-card h3{font-family:var(--mono);font-size:15px;color:var(--white);margin-bottom:10px}
+.project-card p{font-size:13px;color:var(--text-dim);line-height:1.6;flex:1}
+.case-study{border:1px solid var(--border);padding:12px;margin-top:12px;background:#060606}
+.case-row{display:grid;grid-template-columns:78px 1fr;gap:10px;padding:6px 0;border-bottom:1px solid #171717}
+.case-row:last-child{border-bottom:none}
+.case-label{font-family:var(--mono);font-size:10px;letter-spacing:.9px;text-transform:uppercase;color:var(--orange)}
+.case-text{font-size:12px;color:#b5b5b5;line-height:1.5}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.project-link{font-family:var(--mono);font-size:12px;color:var(--orange);margin-top:12px;display:inline-flex;align-items:center;gap:6px}
+.project-link:hover{color:var(--green)}
+
+/* Papers */
+.paper-card{border:1px solid var(--border);padding:28px;margin-bottom:2px;background:#050505}
+.paper-card h3{font-family:var(--mono);font-size:15px;color:var(--white);margin-bottom:4px}
+.paper-venue{font-family:var(--mono);font-size:12px;color:var(--orange);margin-bottom:10px}
+.paper-card p{font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px}
+.paper-authors{font-size:12px;color:var(--text-dim);margin-bottom:10px}
+.paper-links{display:flex;gap:16px;flex-wrap:wrap}
+.paper-links a{font-family:var(--mono);font-size:12px;color:var(--orange)}
+
+/* Writing */
+.writing-card{border:1px solid var(--border);padding:28px;margin-bottom:2px;background:#050505;display:block;transition:border-color .2s}
+.writing-card:hover{border-color:var(--orange)}
+.writing-card h3{font-family:var(--mono);font-size:15px;color:var(--white);margin-bottom:4px}
+.writing-meta{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:10px}
+.writing-card p{font-size:13px;color:var(--text-dim);line-height:1.6;margin-bottom:10px}
+
+/* Beyond */
+.beyond-grid{display:grid;grid-template-columns:2fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.beyond-card{background:var(--black);padding:32px}
+.beyond-card h3{font-family:var(--mono);font-size:15px;color:var(--white);margin-bottom:4px}
+.beyond-card .note{font-family:var(--mono);font-size:12px;color:var(--green);margin-bottom:10px}
+.beyond-card p{font-size:13px;color:var(--text-dim);line-height:1.6}
+
+/* Resume */
+.resume-section{text-align:center;padding:60px 24px;border:1px solid var(--border);background:#050505}
+.resume-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;padding:14px 32px;border:1px solid var(--orange);color:var(--orange);text-transform:uppercase;letter-spacing:2px;transition:all .2s}
+.resume-btn:hover{background:var(--orange);color:#000}
+.resume-date{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:12px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.contact-item{background:var(--black);padding:24px;text-align:center;transition:background .2s}
+.contact-item:hover{background:#0a0a0a}
+.contact-item i{font-size:20px;color:var(--orange);margin-bottom:8px;display:block}
+.contact-item span{font-family:var(--mono);font-size:12px;color:var(--text-dim);display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+.contact-item a{font-family:var(--mono);font-size:13px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center}
+footer p{font-family:var(--mono);font-size:12px;color:var(--text-dim)}
+footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;margin-top:8px}
+
+/* Chat Widget */
+.chat-toggle{position:fixed;bottom:24px;right:24px;width:52px;height:52px;background:var(--orange);border:none;color:#000;font-size:20px;cursor:pointer;z-index:2000;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.chat-toggle:hover{background:var(--green)}
+.chat-panel{position:fixed;bottom:88px;right:24px;width:360px;max-height:480px;background:#0a0a0a;border:1px solid var(--border);z-index:2000;display:none;flex-direction:column}
+.chat-panel.open{display:flex}
+.chat-header{padding:16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.chat-header h4{font-family:var(--mono);font-size:14px;color:var(--white);display:flex;align-items:center;gap:8px}
+.chat-header .online-dot{width:8px;height:8px;background:var(--green);display:inline-block;animation:pulse 2s infinite}
+.chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:200px}
+.chat-msg{max-width:85%;padding:10px 14px;font-size:13px;line-height:1.5}
+.chat-msg.bot{background:#111;color:var(--text);align-self:flex-start;border:1px solid var(--border)}
+.chat-msg.user{background:var(--orange);color:#000;align-self:flex-end}
+.chat-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px}
+.chat-chip{font-family:var(--mono);font-size:11px;padding:6px 12px;border:1px solid var(--border);color:var(--text-dim);background:none;cursor:pointer;transition:all .2s}
+.chat-chip:hover{border-color:var(--orange);color:var(--orange)}
+.chat-input-wrap{display:flex;border-top:1px solid var(--border)}
+.chat-input-wrap input{flex:1;background:transparent;border:none;padding:14px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none}
+.chat-input-wrap button{background:var(--orange);border:none;padding:0 16px;color:#000;font-size:16px;cursor:pointer}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:rgba(0,0,0,.97);flex-direction:column;padding:20px;border-bottom:1px solid var(--border)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-right{order:2}
+  .hero-left{order:1}
+  .worked-grid{grid-template-columns:1fr 1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .edu-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .specialties-grid{grid-template-columns:1fr}
+  .beyond-grid{grid-template-columns:1fr}
+  .chat-panel{right:8px;left:8px;width:auto}
+}
+/* Section heading */
+.section-title{font-family:var(--mono);font-size:clamp(24px,4vw,40px);font-weight:700;color:var(--white);margin-bottom:8px}
+.section-subtitle{font-size:15px;color:#b0b0b0;margin-bottom:48px;max-width:700px;line-height:1.75}
+
+/* Skip link */
+.skip-link{position:absolute;top:-40px;left:0;background:var(--orange);color:#000;padding:8px 16px;z-index:10000;font-family:var(--mono);font-size:13px;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* Project thumbnails */
+.project-thumb{width:100%;height:140px;object-fit:cover;border:1px solid var(--border);margin-bottom:16px;filter:grayscale(40%) brightness(0.7);transition:filter .3s}
+.project-card:hover .project-thumb{filter:grayscale(0%) brightness(0.85)}
+
+/* Education logos */
+.edu-logo{width:28px;height:28px;object-fit:contain;margin-bottom:10px;filter:grayscale(100%) contrast(120%) brightness(1.04);opacity:.9}
+.edu-logo-iu,.edu-logo-manipal{background:transparent;padding:0;border:none}
+
+/* Back to top */
+.back-to-top{position:fixed;bottom:90px;right:24px;width:40px;height:40px;background:#111;border:1px solid var(--border);color:var(--orange);font-family:var(--mono);font-size:18px;cursor:pointer;z-index:1999;display:none;align-items:center;justify-content:center;transition:all .2s}
+.back-to-top.visible{display:flex}
+.back-to-top:hover{background:var(--orange);color:#000;border-color:var(--orange)}
+
+/* Resume enhanced */
+.resume-file{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:16px;background:#0a0a0a;display:inline-block;padding:8px 16px;border:1px solid var(--border)}
+.resume-file .fname{color:var(--green)}
+.resume-file .fsize{color:var(--text-dim)}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  #particle-canvas{display:none}
+  .marquee-track{animation:none}
+  .pulse-dot{animation:none}
+  *{transition-duration:0.01ms!important}
+}
+</style>
 </head>
 <body>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen" aria-hidden="true">
-        <div class="loader-inner">
-            <span class="loader-logo">AJ</span>
-            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-        </div>
+<!-- Skip to content -->
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Nav -->
+<nav>
+<div class="nav-inner">
+  <a href="#hero" class="nav-logo">AJ_</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  <div class="nav-links">
+    <a href="#journey">Journey</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#papers">Papers</a>
+    <a href="#contact">Contact</a>
+    <div class="nav-status"><span class="pulse-dot"></span> Available</div>
+  </div>
+</div>
+</nav>
+
+<!-- Hero -->
+<main id="main-content">
+<section id="hero">
+<canvas id="particle-canvas"></canvas>
+<div class="hero-content">
+  <div class="hero-eyebrow">// currently building at Weights & Biases (CoreWeave)</div>
+  <h1 class="hero-name">AAYUSH JAISWAL</h1>
+  <p class="hero-tagline">AI Solutions Engineer · Researcher · Builder</p>
+
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-portrait">
+        <img src="images/profile.jpeg" alt="Aayush Jaiswal" width="140" height="140" loading="eager">
+      </div>
+      <p class="hero-intro">I build AI systems that ship: from 3D research prototypes to enterprise training and inference workflows in production.</p>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://medium.com/@jaayush12" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
+      </div>
     </div>
-
-    <!-- Custom Cursor (desktop only) -->
-    <div id="cursor-dot" aria-hidden="true"></div>
-    <div id="cursor-ring" aria-hidden="true"></div>
-
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1><a href="#home" aria-label="Home">AJ</a></h1>
-                <nav aria-label="Main navigation">
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#timeline">Journey</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#papers">Papers</a></li>
-                        <li><a href="#writing">Writing</a></li>
-                        <li><a href="#beyond-code">Beyond</a></li>
-                        <li><a href="#resume">Resume</a></li>
-                        <li>
-                            <label class="theme-switch" for="themeToggle">
-                                <input type="checkbox" id="themeToggle" aria-label="Toggle theme">
-                                <span class="slider round"></span>
-                            </label>
-                        </li>
-                    </ul>
-                    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                        <span class="hamburger"></span>
-                    </button>
-                </nav>
-            </div>
+    <aside class="hero-right">
+      <div class="code-window">
+        <div class="code-titlebar">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">aayush.py</span>
         </div>
-    </header>
+        <div class="code-body"><pre><span class="kw">class</span> <span class="fn">Aayush</span>(Builder):
+    <span class="str">"""AI systems from research to production."""</span>
 
-    <main id="home">
-        <section id="about" class="about-section">
-            <!-- WebGL Neural Network Canvas -->
-            <canvas id="neural-canvas" aria-hidden="true"></canvas>
-            <!-- Aurora Background Layers -->
-            <div class="aurora-layer aurora-1" aria-hidden="true"></div>
-            <div class="aurora-layer aurora-2" aria-hidden="true"></div>
-            <div class="aurora-layer aurora-3" aria-hidden="true"></div>
-            <!-- Spotlight -->
-            <div class="spotlight" aria-hidden="true"></div>
+    role = <span class="str">"AI Solutions Engineer, Post-Sales @ W&B (CoreWeave)"</span>
+    focus = [<span class="str">"distributed training"</span>, <span class="str">"inference optimization"</span>, <span class="str">"MLOps"</span>]
+    outcomes = {<span class="str">"users"</span>: <span class="str">"10M+"</span>, <span class="str">"citations"</span>: <span class="str">"847+"</span>, <span class="str">"mentored"</span>: <span class="str">"150+"</span>}
 
-            <div class="container">
-                <div class="about-grid">
-                    <!-- Left Column: Profile Picture and Social Links -->
-                    <div class="profile-section">
-                        <div class="profile-picture">
-                            <div class="profile-frame">
-                                <img src="images/profile.jpeg" alt="Portrait of Aayush Jaiswal" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/jaiswal-aayush" class="social-link" rel="noopener">
-                                <img src="images/linkedin-icon.png" alt="LinkedIn">
-                            </a>
-                            <a href="https://github.com/aayush9400" class="social-link" rel="noopener">
-                                <img src="images/github-icon.png" alt="GitHub">
-                            </a>
-                            <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" class="social-link" title="Google Scholar">
-                                <img src="images/google-scholar-icon.png" alt="Google Scholar">
-                            </a>
-                            <a href="https://medium.com/@jaayush12" class="social-link" title="Medium">
-                                <img src="images/medium-icon.png" alt="Medium">
-                            </a>
-                        </div>
-                    </div>
+    <span class="kw">def</span> <span class="fn">beyond_code</span>(self):
+        <span class="kw">return</span> [<span class="str">"photography"</span>, <span class="str">"guitar"</span>, <span class="str">"mentorship"</span>]</pre></div>
+      </div>
+    </aside>
+  </div>
 
-                    <!-- Right Column: Bio, Education, and Tags -->
-                    <div class="about-content">
-                        <div class="about-header">
-                            <h2 class="gradient-name">Aayush Jaiswal</h2>
-                            <span class="title-badge" id="typing-badge">AI Solutions Engineer @ CoreWeave</span>
-                        </div>
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Years</div></div>
+    <div class="stat-item"><div class="stat-num">150+</div><div class="stat-label">Mentored</div></div>
+    <div class="stat-item"><div class="stat-num">847+</div><div class="stat-label">Citations</div></div>
+    <div class="stat-item"><div class="stat-num">10M+</div><div class="stat-label">Users</div></div>
+  </div>
+</div>
+</section>
 
-                        <div class="about-description">
-                            <p class="lead">From publishing COVID detection papers with 800+ citations as an undergrad, to scaling ML for 10M+ users at a Sequoia-backed startup, to now helping the most ambitious AI teams run on GPU clouds at CoreWeave — I build things that actually ship.</p>
-                            <p>Specializing in 3D medical imaging, LLM infrastructure, and production MLOps. Equal parts researcher and engineer — I like the work that lives at the edge of what's been proven.</p>
-                        </div>
+<!-- Trusted By -->
+<section class="section" id="trusted" data-feature="trustedBy">
+<div class="section-label">00 // TRUSTED BY</div>
+<h2 class="section-title">Enterprise Partners</h2>
+<p class="section-subtitle">Supporting AI infrastructure for teams at leading companies.</p>
+<p class="trusted-note">Engagements through AI infrastructure support, technical advisory, and platform enablement at CoreWeave.</p>
+<div class="trusted-grid">
+  <div class="trusted-item">Google</div>
+  <div class="trusted-item">Snap Inc</div>
+  <div class="trusted-item">Riot Games</div>
+  <div class="trusted-item">Tower Research</div>
+  <div class="trusted-item">Recursion</div>
+  <div class="trusted-item">Reflection AI</div>
+  <div class="trusted-item">Path AI</div>
+  <div class="trusted-item">Goodfire</div>
+  <div class="trusted-item">MasterClass</div>
+  <div class="trusted-item">Liftoff Mobile</div>
+  <div class="trusted-item">Inference.net</div>
+  <div class="trusted-item">+ more</div>
+</div>
+</section>
 
-                        <div class="education-section">
-                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                            <div class="education-cards">
-                                <div class="education-card">
-                                    <div class="education-details">
-                                        <h4>High School</h4>
-                                        <p class="school">Delhi Public School, Vasant Kunj</p>
-                                        <p class="period">2017</p>
-                                        <div class="gpa">92%</div>
-                                    </div>
-                                </div>
-                                <div class="education-card">
-                                    <div class="education-details">
-                                        <h4>Bachelor of Technology in Computer Science</h4>
-                                        <p class="school">Manipal University Jaipur</p>
-                                        <p class="period">2017 - 2021</p>
-                                        <div class="gpa">GPA: 3.70</div>
-                                    </div>
-                                </div>
-                                <div class="education-card">
-                                    <div class="education-details">
-                                        <h4>Master of Science in Data Science</h4>
-                                        <p class="school">Indiana University Bloomington</p>
-                                        <p class="period">2022 - 2024</p>
-                                        <div class="gpa">GPA: 3.60</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<!-- Outcomes -->
+<section class="section" id="outcomes">
+<div class="section-label">00.5 // SELECTED OUTCOMES</div>
+<h2 class="section-title">What changed because of my work</h2>
+<p class="section-subtitle">A few measurable outcomes across production ML, infrastructure, and research systems.</p>
+<div class="outcomes-grid">
+  <div class="outcome-card"><div class="outcome-kpi">45%</div><div class="outcome-title">Retention Lift</div><p class="outcome-copy">Shipped multilingual recommendation systems at Trell across 10M+ users in 5 languages.</p></div>
+  <div class="outcome-card"><div class="outcome-kpi">30%</div><div class="outcome-title">Lower GPU Idle Time</div><p class="outcome-copy">Optimized distributed training pipelines at W&B across AWS/GCP and improved training efficiency.</p></div>
+  <div class="outcome-card"><div class="outcome-kpi">847+</div><div class="outcome-title">Research Citations</div><p class="outcome-copy">Published COVID-19 medical imaging work adopted in academic and applied AI discussions.</p></div>
+  <div class="outcome-card"><div class="outcome-kpi">150+</div><div class="outcome-title">Engineers & Students Mentored</div><p class="outcome-copy">Mentored distributed computing and ML systems topics with hands-on production guidance.</p></div>
+</div>
+</section>
 
-                        <div class="quick-stats animated-counters">
-                            <div class="stat-item counter-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div class="counter-content">
-                                    <span class="counter-number" data-target="3" data-suffix="+">0</span>
-                                    <span class="counter-label">Years Experience</span>
-                                </div>
-                            </div>
-                            <div class="stat-item counter-item">
-                                <i class="fas fa-users"></i>
-                                <div class="counter-content">
-                                    <span class="counter-number" data-target="150" data-suffix="+">0</span>
-                                    <span class="counter-label">Students Mentored</span>
-                                </div>
-                            </div>
-                            <div class="stat-item counter-item">
-                                <i class="fas fa-quote-left"></i>
-                                <div class="counter-content">
-                                    <span class="counter-number" data-target="847" data-suffix="+">0</span>
-                                    <span class="counter-label">Research Citations</span>
-                                </div>
-                            </div>
-                            <div class="stat-item counter-item">
-                                <i class="fas fa-database"></i>
-                                <div class="counter-content">
-                                    <span class="counter-number" data-target="10" data-suffix="M+">0</span>
-                                    <span class="counter-label">Users Impacted</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Journey -->
+<section class="section" id="journey">
+<div class="section-label">01 // JOURNEY</div>
+<h2 class="section-title">Professional Journey</h2>
+<p class="section-subtitle">Where I worked and studied, in order.</p>
+<div class="journey-strip" aria-label="Career timeline">
+  <div class="journey-track">
+    <article class="journey-item primary">
+      <div class="journey-years">2024 — NOW</div>
+      <div class="journey-brand">
+        <img src="images/wandb.png" class="journey-logo-img" alt="Weights and Biases logo" loading="lazy">
+        <div class="journey-name">Weights &amp; Biases</div>
+      </div>
+      <div class="journey-role">AI Solutions Engineer, Post-Sales</div>
+    </article>
 
-        <section id="timeline" class="timeline-section">
-            <div class="container">
-                <h2>Professional Journey</h2>
-                <p class="section-subtitle">The path that got me here.</p>
-                <div class="timeline">
+    <article class="journey-item primary">
+      <div class="journey-years">2025 — NOW</div>
+      <div class="journey-brand">
+        <img src="images/coreweave.png" class="journey-logo-img" alt="CoreWeave logo" loading="lazy">
+        <div class="journey-name">CoreWeave</div>
+      </div>
+      <div class="journey-role">Post-acquisition org alignment</div>
+    </article>
 
-                    <!-- CoreWeave - Current -->
-                    <div class="timeline-item right">
-                        <div class="timeline-dot"><i class="fas fa-microchip"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Feb 2026 – Present</div>
-                            <h3>AI Solutions Engineer</h3>
-                            <h4>CoreWeave</h4>
-                            <p>Helping enterprise teams run the hardest ML workloads on the planet — distributed LLM training, fine-tuning pipelines, and GPU-optimized inference at scale. Front-row seat to where AI infrastructure is heading.</p>
-                            <div class="timeline-tags"><span>AI Infrastructure</span><span>GPU Cloud</span><span>LLMs</span><span>MLOps</span></div>
-                        </div>
-                    </div>
+    <article class="journey-item education">
+      <div class="journey-years">2022 — 2024</div>
+      <div class="journey-brand">
+        <img src="images/iu-logo.png" class="journey-logo-img" alt="Indiana University logo" loading="lazy">
+        <div class="journey-name">Indiana University</div>
+      </div>
+      <div class="journey-badge">Education</div>
+      <div class="journey-role">MS Data Science, research + TA work</div>
+    </article>
 
-                    <!-- Weights & Biases -->
-                    <div class="timeline-item left">
-                        <div class="timeline-dot"><i class="fas fa-chart-line"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Oct 2024 – Feb 2026</div>
-                            <h3>AI Support Engineer</h3>
-                            <h4>Weights &amp; Biases</h4>
-                            <p>Became the person ML engineers called when their training runs broke. Optimized distributed pipelines across AWS/GCP, cut GPU idle time by 30%, and helped dozens of teams go from prototype to production. Learned that the gap between a paper and a working system is everything.</p>
-                            <div class="timeline-tags"><span>MLOps</span><span>PyTorch</span><span>Distributed Training</span><span>LLMs</span></div>
-                        </div>
-                    </div>
+    <article class="journey-item">
+      <div class="journey-years">2021 — 2022</div>
+      <div class="journey-brand">
+        <img src="images/trell.png" class="journey-logo-img" alt="Trell logo" loading="lazy">
+        <div class="journey-name">Trell</div>
+      </div>
+      <div class="journey-role">Built multilingual recommendation systems</div>
+    </article>
 
-                    <!-- Indiana University -->
-                    <div class="timeline-item right">
-                        <div class="timeline-dot"><i class="fas fa-microscope"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Aug 2023 – Oct 2024</div>
-                            <h3>AI Researcher</h3>
-                            <h4>Indiana University Bloomington</h4>
-                            <p>Built 3D generative models for brain MRI synthesis in Prof. Garyfallidis's DIPY lab — SOTA SSIM/PSNR metrics at 60% of the baseline model's size. Mentored 150+ students in Distributed Computing and AWS. Wrote code that landed in the open-source DIPY library.</p>
-                            <div class="timeline-tags"><span>3D Diffusion Models</span><span>HPC</span><span>DIPY</span><span>Open Source</span></div>
-                        </div>
-                    </div>
+    <article class="journey-item">
+      <div class="journey-years">2020 — 2021</div>
+      <div class="journey-brand">
+        <img src="images/airtel.png" class="journey-logo-img" alt="Airtel logo" loading="lazy">
+        <div class="journey-name">Airtel X Labs</div>
+      </div>
+      <div class="journey-role">Computer vision and ML prototyping</div>
+    </article>
 
-                    <!-- Trell -->
-                    <div class="timeline-item left">
-                        <div class="timeline-dot"><i class="fas fa-code"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jan 2021 – Mar 2022</div>
-                            <h3>Machine Learning Engineer</h3>
-                            <h4>Trell <span style="font-weight:400;font-size:0.85em;opacity:0.7">(Sequoia-backed)</span></h4>
-                            <p>At a Sequoia-backed short-video platform, shipped a multilingual recommendation system that drove 45% retention gains across 10M+ users in 5 languages. Automated the entire model training and deployment pipeline using AWS, Prometheus, Grafana, and W&amp;B.</p>
-                            <div class="timeline-tags"><span>Recommendation Systems</span><span>AWS</span><span>MLOps</span><span>Data Pipelines</span></div>
-                        </div>
-                    </div>
+    <article class="journey-item">
+      <div class="journey-years">2019 — 2020</div>
+      <div class="journey-brand">
+        <div class="journey-logo-fallback">SP</div>
+        <div class="journey-name">Spotle.ai</div>
+      </div>
+      <div class="journey-role">Early applied AI experimentation</div>
+    </article>
 
-                    <!-- Spotle.ai -->
-                    <div class="timeline-item right">
-                        <div class="timeline-dot"><i class="fas fa-code-branch"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jul 2020 – Sep 2020</div>
-                            <h3>Deep Learning Engineer</h3>
-                            <h4>Spotle.ai</h4>
-                            <p>First taste of deploying CNNs in production for a real product. Built image classification pipelines and learned that 96% accuracy in a notebook and 96% accuracy in prod are very different problems.</p>
-                            <div class="timeline-tags"><span>Deep Learning</span><span>CNN</span><span>Computer Vision</span></div>
-                        </div>
-                    </div>
+    <article class="journey-item education">
+      <div class="journey-years">2017 — 2021</div>
+      <div class="journey-brand">
+        <img src="images/manipal.png" class="journey-logo-img" alt="Manipal University logo" loading="lazy">
+        <div class="journey-name">Manipal University Jaipur</div>
+      </div>
+      <div class="journey-badge">Education</div>
+      <div class="journey-role">B.Tech Computer Science</div>
+    </article>
+  </div>
+</div>
+</section>
 
-                    <!-- Manipal University Research -->
-                    <div class="timeline-item left">
-                        <div class="timeline-dot"><i class="fas fa-flask"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jan 2020 – Jul 2020</div>
-                            <h3>Research Assistant</h3>
-                            <h4>Manipal University Jaipur</h4>
-                            <p>Conducted CV research on COVID-19 detection from chest scans and X-rays — resulting in 2 published papers that accumulated 800+ combined citations. Built end-to-end AI diagnostic tools designed to slot directly into clinical workflows.</p>
-                            <div class="timeline-tags"><span>Computer Vision</span><span>Deep Learning</span><span>Medical AI</span></div>
-                        </div>
-                    </div>
+<!-- Projects -->
+<section class="section" id="projects">
+<div class="section-label">02 // PROJECTS</div>
+<h2 class="section-title">Selected Case Studies</h2>
+<p class="section-subtitle">A few builds broken down by problem, approach, and measurable outcome.</p>
+<div class="projects-grid">
 
-                    <!-- Airtel -->
-                    <div class="timeline-item right">
-                        <div class="timeline-dot"><i class="fas fa-database"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">May 2019 – Aug 2019</div>
-                            <h3>Data Scientist Intern</h3>
-                            <h4>Airtel</h4>
-                            <p>Segmented 10M+ subscribers using clustering algorithms to make marketing campaigns actually relevant. Learned what "scale" means before the word had a hype cycle attached to it.</p>
-                            <div class="timeline-tags"><span>Data Science</span><span>Spark</span><span>Hadoop</span></div>
-                        </div>
-                    </div>
+  <div class="project-card">
+    <h3>3D Conditional Diffusion Model</h3>
+    <p>Research system for controllable 3D brain MRI synthesis in the DIPY lab.</p>
+    <div class="case-study">
+      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Generate high-fidelity 3D MRIs while keeping model size practical for research iteration on shared HPC resources.</div></div>
+      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Designed a 2-channel VQ-VAE + diffusion pipeline with custom loss balancing, rigorous experiment tracking, and repeatable training recipes.</div></div>
+      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Achieved SOTA SSIM/PSNR at ~60% of baseline model size, improving both image quality and experimental throughput.</div></div>
+    </div>
+    <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">HPC</span><span class="tag">W&B</span></div>
+    <a class="project-link" href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer">W&B Report <i class="fas fa-arrow-right"></i></a>
+  </div>
 
-                    <!-- The Climber -->
-                    <div class="timeline-item left">
-                        <div class="timeline-dot"><i class="fas fa-bullhorn"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Aug 2017 – Jan 2018</div>
-                            <h3>Marketing Intern</h3>
-                            <h4>The Climber</h4>
-                            <p>Drove a 30% revenue increase through targeted marketing strategies. Every ML model is a better product when you understand how people actually make decisions.</p>
-                            <div class="timeline-tags"><span>Marketing</span><span>Strategy</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2>Skills</h2>
-                <p class="section-subtitle">My toolkit. I actually use all of these.</p>
-                <div class="skills-grid">
-                    <!-- Programming Languages -->
-                    <div class="skill-category">
-                        <h3><i class="fas fa-code"></i> Programming</h3>
-                        <div class="skill-badges">
-                            <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
-                            <span class="skill-badge"><i class="fab fa-js-square"></i> JavaScript</span>
-                            <span class="skill-badge"><i class="devicon-r-plain"></i> R</span>
-                            <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
-                            <span class="skill-badge"><i class="devicon-cplusplus-plain"></i> C/C++</span>
-                            <span class="skill-badge"><i class="devicon-dart-plain"></i> Dart</span>
-                            <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
-                            <span class="skill-badge"><i class="devicon-go-plain"></i> Go</span>
-                        </div>
-                    </div>
+  <div class="project-card">
+    <img src="images/tfrs.png" alt="Multi-Lingual Recommendation System" class="project-thumb" loading="lazy">
+    <h3>Multi-Lingual Video Recommendation System</h3>
+    <p>Recommendation platform work for a 10M+ user short-video product across 5 languages.</p>
+    <div class="case-study">
+      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Feed quality and retrieval speed were bottlenecking retention and personalization quality as traffic scaled.</div></div>
+      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Built a two-tower retrieval architecture with transfer learning, plus tighter MLOps loops for faster retraining and rollout.</div></div>
+      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Improved retention by 45% and reduced retrieval latency by 50%, materially lifting engagement at production scale.</div></div>
+    </div>
+    <div class="project-tags"><span class="tag">TensorFlow</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">GCP</span></div>
+    <a class="project-link" href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">Article <i class="fas fa-arrow-right"></i></a>
+  </div>
 
-                    <!-- AI/ML Frameworks -->
-                    <div class="skill-category">
-                        <h3><i class="fas fa-brain"></i> AI Frameworks</h3>
-                        <div class="skill-badges">
-                            <span class="skill-badge"><i class="devicon-tensorflow-original"></i> TensorFlow</span>
-                            <span class="skill-badge"><i class="devicon-pytorch-original"></i> PyTorch</span>
-                            <span class="skill-badge"><i class="devicon-keras-plain"></i> Keras</span>
-                            <span class="skill-badge"><i class="devicon-opencv-plain"></i> OpenCV</span>
-                            <span class="skill-badge"><i class="devicon-pandas-plain"></i> Pandas</span>
-                            <span class="skill-badge"><i class="devicon-numpy-plain"></i> NumPy</span>
-                            <span class="skill-badge"><i class="fas fa-atom"></i> JAX</span>
-                            <span class="skill-badge"><i class="fas fa-robot"></i> HuggingFace</span>
-                            <span class="skill-badge"><i class="fas fa-link"></i> LangChain</span>
-                        </div>
-                    </div>
+  <div class="project-card">
+    <img src="images/rag.png" alt="RAG Code Assistant" class="project-thumb" loading="lazy">
+    <h3>RAG Code Assistant (DIPY)</h3>
+    <p>Developer-facing assistant for a fast-moving open-source scientific codebase.</p>
+    <div class="case-study">
+      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Contributors were losing time searching docs/issues/code context before they could implement or debug changes.</div></div>
+      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Built a RAG pipeline with semantic chunking, vector search, and response caching behind a low-latency FastAPI service.</div></div>
+      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Handled 10K+ dev queries/day with ~95% answer accuracy while reducing median response latency by ~60%.</div></div>
+    </div>
+    <div class="project-tags"><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span><span class="tag">FastAPI</span></div>
+    <a class="project-link" href="https://github.com/aajais/dipy_code_assistant" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
+  </div>
 
-                    <!-- Cloud & DevOps -->
-                    <div class="skill-category">
-                        <h3><i class="fas fa-cloud"></i> Cloud & MLOps</h3>
-                        <div class="skill-badges">
-                            <span class="skill-badge"><i class="fab fa-aws"></i> AWS</span>
-                            <span class="skill-badge"><i class="fab fa-google"></i> Google Cloud</span>
-                            <span class="skill-badge"><i class="fab fa-microsoft"></i> Azure</span>
-                            <span class="skill-badge"><i class="fab fa-docker"></i> Docker</span>
-                            <span class="skill-badge"><i class="devicon-kubernetes-plain"></i> Kubernetes</span>
-                            <span class="skill-badge"><i class="devicon-ubuntu-plain"></i> Linux</span>
-                            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
-                            <span class="skill-badge"><i class="devicon-prometheus-plain"></i> Prometheus</span>
-                            <span class="skill-badge"><i class="devicon-grafana-plain"></i> Grafana</span>
-                            <span class="skill-badge"><i class="fas fa-chart-line"></i> W&amp;B</span>
-                            <span class="skill-badge"><i class="fas fa-flask"></i> MLflow</span>
-                        </div>
-                    </div>
+  <div class="project-card">
+    <h3>Meal Planner AI Agent</h3>
+    <p>An LLM-powered app that plans weekly meals around macros, dietary restrictions, and whatever's actually in your fridge. Built end-to-end with Flutter + FastAPI. The inference optimization was more fun than expected.</p>
+    <div class="project-tags"><span class="tag">Flutter</span><span class="tag">FastAPI</span><span class="tag">Firebase</span><span class="tag">OpenAI</span></div>
+  </div>
 
-                    <!-- Specialties -->
-                    <div class="skill-category">
-                        <h3><i class="fas fa-star"></i> Specialties</h3>
-                        <div class="specialty-cards">
-                            <div class="specialty-card">
-                                <div class="specialty-icon">🤖</div>
-                                <h4>Deep Learning</h4>
-                                <p>Expert in neural networks and model architecture design.</p>
-                            </div>
-                            <div class="specialty-card">
-                                <div class="specialty-icon">🗣️</div>
-                                <h4>NLP & LLMs</h4>
-                                <p>Fine-tuning, RAG pipelines, and prompt engineering at scale.</p>
-                            </div>
-                            <div class="specialty-card">
-                                <div class="specialty-icon">🎨</div>
-                                <h4>Generative AI</h4>
-                                <p>GANs, VAEs, and diffusion models for image synthesis.</p>
-                            </div>
-                            <div class="specialty-card">
-                                <div class="specialty-icon">🔧</div>
-                                <h4>MLOps</h4>
-                                <p>Deploying, monitoring, and scaling ML systems in production.</p>
-                            </div>
-                            <div class="specialty-card">
-                                <div class="specialty-icon">👁️</div>
-                                <h4>Computer Vision</h4>
-                                <p>Specialized in 3D medical imaging and real-time detection.</p>
-                            </div>
-                            <div class="specialty-card">
-                                <div class="specialty-icon">🛡️</div>
-                                <h4>AI Safety</h4>
-                                <p>Model interpretability, fairness, and robustness testing.</p>
-                            </div>
-                            <div class="specialty-card">
-                                <div class="specialty-icon">📊</div>
-                                <h4>Data Engineering</h4>
-                                <p>Real-time pipelines with Spark, DBT, Airflow, and BigQuery.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <div class="project-card">
+    <h3>Computer Vision Detection Model</h3>
+    <p>Real-time YOLOv8 detection pipeline processing 50K+ images/month at 98.25% accuracy — reducing manual review overhead by 85%.</p>
+    <div class="project-tags"><span class="tag">Python</span><span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span class="tag">AWS</span></div>
+  </div>
 
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <h2>Projects</h2>
-                <p class="section-subtitle">Things I built that I'm proud of.</p>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <h3>3D Conditional Diffusion Model</h3>
-                        <p>Designed a 2-channel VQ-VAE that generates high-fidelity 3D brain MRIs — SOTA SSIM/PSNR at 60% of the baseline model's size. The kind of research that unlocks diagnostic capabilities that didn't exist before.</p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>TensorFlow</span><span>PyTorch</span><span>HPC</span><span>W&amp;B</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fas fa-chart-line"></i> W&amp;B Report</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>Multi-Lingual Video Recommendation System</h3>
-                        <p>Built the recommendation system powering a Sequoia-backed platform's feed for 10M+ users across 5 languages. Two-tower architecture, 50% faster retrieval, 45% better retention. Transfer learning did the heavy lifting.</p>
-                        <div class="tech-stack">
-                            <span>TensorFlow</span><span>AWS</span><span>Docker</span><span>MLflow</span><span>GCP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-medium"></i> Article</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>RAG Code Assistant (DIPY)</h3>
-                        <p>Production RAG system answering 10K+ developer queries/day against the DIPY open-source codebase. 95% accuracy, 60% lower latency through vector caching and semantic chunking.</p>
-                        <div class="tech-stack">
-                            <span>LangChain</span><span>Pinecone</span><span>OpenAI</span><span>FastAPI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/aayush9400/dipy_code_assistant" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>Meal Planner AI Agent</h3>
-                        <p>An LLM-powered app that plans weekly meals around macros, dietary restrictions, and whatever's actually in your fridge. Built end-to-end with Flutter + FastAPI. The inference optimization was more fun than expected.</p>
-                        <div class="tech-stack">
-                            <span>Flutter</span><span>FastAPI</span><span>Firebase</span><span>OpenAI</span>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>Computer Vision Detection Model</h3>
-                        <p>Real-time YOLOv8 detection pipeline processing 50K+ images/month at 98.25% accuracy — reducing manual review overhead by 85%. The number that made the client stop asking for weekly status calls.</p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>YOLOv8</span><span>OpenCV</span><span>AWS</span>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>Rapid SARS-COV-2 Detection</h3>
-                        <p>96% accurate COVID-19 diagnosis from X-rays and CT scans using ensemble deep transfer learning. Published findings contributed to non-invasive diagnostic alternatives to RT-PCR during the pandemic.</p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>Flask</span><span>AWS EC2</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>3D Brain Tumor Segmentation</h3>
-                        <p>3D CNN + Vision Transformer hybrid achieving 95% accuracy on tumor localization in brain MRIs. The attention mechanism was the difference between "promising" and "clinically useful".</p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>PyTorch</span><span>Hugging Face</span><span>3D Conv</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/the-neural-networker/brain-tumor-segmentation" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>Cloud-Native Observability Stack</h3>
-                        <p>Full Prometheus + Grafana observability stack on Kubernetes that improved system uptime by 30% through custom PromQL alerting and automated dashboards. Wrote about it too.</p>
-                        <div class="tech-stack">
-                            <span>AWS</span><span>Prometheus</span><span>Grafana</span><span>Kubernetes</span><span>PromQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://medium.com/@jaayush12/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-medium"></i> Article</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <h3>Real-Time Data Pipeline with DBT</h3>
-                        <p>GCP-native data pipelines using DBT and BigQuery that cut analytics access times by 15% and reduced data quality incidents through automated schema validation and incremental testing.</p>
-                        <div class="tech-stack">
-                            <span>DBT</span><span>BigQuery</span><span>GCP</span><span>SQL</span><span>Airflow</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+  <div class="project-card">
+    <img src="images/covid.png" alt="COVID-19 Detection" class="project-thumb" loading="lazy">
+    <h3>Rapid SARS-CoV-2 Detection</h3>
+    <p>96% accurate COVID-19 diagnosis from X-rays and CT scans using ensemble deep transfer learning. Published findings contributed to non-invasive diagnostic alternatives to RT-PCR during the pandemic.</p>
+    <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Flask</span><span class="tag">AWS EC2</span></div>
+    <a class="project-link" href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
+  </div>
 
-        <!-- Beyond Code Section -->
+  <div class="project-card">
+    <h3>3D Brain Tumor Segmentation</h3>
+    <p>3D CNN + Vision Transformer hybrid achieving 95% accuracy on tumor localization in brain MRIs. The attention mechanism was the difference between "promising" and "clinically useful".</p>
+    <div class="project-tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">3D Conv</span></div>
+    <a class="project-link" href="https://github.com/the-neural-networker/brain-tumor-segmentation" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
+  </div>
 
-        <section id="papers" class="papers-section">
-            <div class="container">
-                <h2>Research Publications</h2>
-                <p class="section-subtitle">Peer-reviewed work with <strong>800+ combined citations</strong>.</p>
-                <div class="papers-grid">
-                    <!-- Paper 1 -->
-                    <article class="paper-card">
-                        <div class="paper-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <div class="paper-content">
-                            <h3>3D Conditional Diffusion Model for Medical Image Synthesis</h3>
-                            <p class="paper-meta">
-                                <span><i class="far fa-calendar-alt"></i> 2024</span>
-                                <span><i class="fas fa-clock"></i> Under Review</span>
-                            </p>
-                            <p class="paper-abstract">Novel 2-channel VQ-VAE architecture with conditional diffusion for high-fidelity 3D brain MRI generation. Achieves SOTA SSIM/PSNR at 60% of baseline model size.</p>
-                            <p class="paper-authors"><i class="fas fa-users"></i> Aayush Jaiswal, JongSung Park, Eleftherios Garyfallidis</p>
-                            <div class="paper-links">
-                                <a href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-external-link-alt"></i> W&amp;B Report</a>
-                                <a href="https://github.com/aayush9400" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fab fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </article>
+  <div class="project-card">
+    <img src="images/prometheus.png" alt="Observability Stack" class="project-thumb" loading="lazy">
+    <h3>Cloud-Native Observability Stack</h3>
+    <p>Full Prometheus + Grafana observability stack on Kubernetes that improved system uptime by 30% through custom PromQL alerting and automated dashboards.</p>
+    <div class="project-tags"><span class="tag">AWS</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Kubernetes</span><span class="tag">PromQL</span></div>
+    <a class="project-link" href="https://medium.com/@jaayush12/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer">Article <i class="fas fa-arrow-right"></i></a>
+  </div>
 
-                    <!-- Paper 2 -->
-                    <article class="paper-card">
-                        <div class="paper-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <div class="paper-content">
-                            <h3>Classification of COVID-19 Infected Patients Using DenseNet201 Deep Transfer Learning</h3>
-                            <p class="paper-meta">
-                                <span><i class="far fa-calendar-alt"></i> 2020</span>
-                                <span><i class="fas fa-quote-left"></i> Journal of Biomolecular Structure &amp; Dynamics</span>
-                            </p>
-                            <p class="paper-abstract">96.25% accuracy and AUC of 0.97 classifying COVID-19 from chest CT scans using DenseNet201 deep transfer learning — a non-invasive alternative to RT-PCR.</p>
-                            <p class="paper-authors"><i class="fas fa-users"></i> Aayush Jaiswal, Neha Gianchandani, Dilbag Singh, Vijay Kumar, Manjit Kaur</p>
-                            <div class="paper-links">
-                                <a href="https://www.tandfonline.com/doi/full/10.1080/07391102.2020.1788642" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
-                                <a href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fab fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </article>
+  <div class="project-card">
+    <h3>Real-Time Data Pipeline with DBT</h3>
+    <p>GCP-native data pipelines using DBT and BigQuery that cut analytics access times by 15% and reduced data quality incidents through automated schema validation and incremental testing.</p>
+    <div class="project-tags"><span class="tag">DBT</span><span class="tag">BigQuery</span><span class="tag">GCP</span><span class="tag">SQL</span><span class="tag">Airflow</span></div>
+  </div>
 
-                    <!-- Paper 3 -->
-                    <article class="paper-card">
-                        <div class="paper-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <div class="paper-content">
-                            <h3>Rapid COVID-19 Diagnosis Using Ensemble Deep Transfer Learning Models from Chest Radiographic Images</h3>
-                            <p class="paper-meta">
-                                <span><i class="far fa-calendar-alt"></i> 2020</span>
-                                <span><i class="fas fa-quote-left"></i> Journal of Ambient Intelligence &amp; Humanized Computing</span>
-                            </p>
-                            <p class="paper-abstract">98.25% accuracy differentiating COVID-19, viral, and bacterial pneumonia from chest X-rays using ensemble deep transfer learning. Validated on two independent datasets.</p>
-                            <p class="paper-authors"><i class="fas fa-users"></i> Aayush Jaiswal, Neha Gianchandani, Dilbag Singh, Vijay Kumar, Manjit Kaur</p>
-                            <div class="paper-links">
-                                <a href="https://link.springer.com/article/10.1007/s12652-020-02669-6" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
-                                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7667280/" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-unlock"></i> Open Access</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+</div>
+</section>
 
-        <section id="writing" class="writing-section">
-            <div class="container">
-                <h2>Writing</h2>
-                <p class="section-subtitle">Because sometimes 500 words beats 500 lines of code.</p>
-                <div class="writing-grid">
-                    <article class="writing-card">
-                        <div class="writing-meta">
-                            <span class="writing-platform"><i class="fab fa-medium"></i> Medium</span>
-                            <span class="writing-date">2023</span>
-                        </div>
-                        <h3>Streamlining Recommendation Systems with TensorFlow Recommenders (TFRS)</h3>
-                        <p>A deep dive into building scalable two-tower recommendation systems — covering the full retrieval and ranking pipeline with real production learnings.</p>
-                        <div class="writing-tags">
-                            <span>TensorFlow</span><span>Recommendation Systems</span><span>ML Engineering</span>
-                        </div>
-                        <a href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer" class="writing-link">
-                            Read Article <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-                    <article class="writing-card">
-                        <div class="writing-meta">
-                            <span class="writing-platform"><i class="fab fa-medium"></i> Medium</span>
-                            <span class="writing-date">2023</span>
-                        </div>
-                        <h3>Utilizing Prometheus for Efficient Monitoring in Cloud-Native Environments</h3>
-                        <p>A practical guide to Prometheus in cloud-native stacks — from custom PromQL queries to Grafana dashboards and multi-tier alerting pipelines on Kubernetes.</p>
-                        <div class="writing-tags">
-                            <span>Prometheus</span><span>Kubernetes</span><span>Observability</span>
-                        </div>
-                        <a href="https://medium.com/@jaayush12/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer" class="writing-link">
-                            Read Article <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section id="beyond-code" class="beyond-code-section">
-            <div class="container">
-                <h2>Beyond Code</h2>
-                <p class="section-subtitle">The things that keep me human (and sane).</p>
-                <div class="beyond-grid">
-                    <div class="beyond-card">
-                        <div class="beyond-icon">
-                            <i class="fas fa-guitar"></i>
-                        </div>
-                        <div class="beyond-content">
-                            <h3>Guitar</h3>
-                            <p>I've been playing guitar for years and recently pushed through Grade 5 with Trinity College London. Music and ML have more in common than you'd think — both reward obsessive iteration and punish impatience.</p>
-                            <span class="beyond-badge"><i class="fas fa-certificate"></i> Trinity College London — Grade 5</span>
-                        </div>
-                    </div>
-                    <div class="beyond-card">
-                        <div class="beyond-icon">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <div class="beyond-content">
-                            <h3>Travel Photography</h3>
-                            <p>Turns out the same instinct that makes you obsess over a model's loss curve also makes you chase the perfect frame. I document the world at @all_bout_aj — mostly mountains, cities, and the strange hours between.</p>
-                            <a href="https://www.instagram.com/all_bout_aj" target="_blank" rel="noopener noreferrer" class="beyond-link">
-                                <i class="fab fa-instagram"></i> @all_bout_aj
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Papers -->
+<section class="section" id="papers">
+<div class="section-label">03 // PAPERS</div>
+<h2 class="section-title">Research Publications</h2>
+<p class="section-subtitle">Peer-reviewed work with 847+ combined citations.</p>
 
-        <section id="resume" class="resume-section">
-            <div class="container">
-                <h2>Resume</h2>
-                <p class="section-subtitle">The condensed version of everything above.</p>
+<div class="paper-card">
+  <h3>3D Conditional Diffusion Model for Medical Image Synthesis</h3>
+  <div class="paper-venue">2024 · Under Review</div>
+  <p>Novel 2-channel VQ-VAE architecture with conditional diffusion for high-fidelity 3D brain MRI generation. Achieves SOTA SSIM/PSNR at 60% of baseline model size.</p>
+  <div class="paper-authors">Aayush Jaiswal, JongSung Park, Eleftherios Garyfallidis</div>
+  <div class="paper-links">
+    <a href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer">W&B Report ↗</a>
+    <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer">Code ↗</a>
+  </div>
+</div>
 
-                <!-- Browser window wrapper -->
-                <div class="resume-window">
-                    <!-- macOS-style window chrome -->
-                    <div class="window-chrome">
-                        <div class="window-dots">
-                            <span class="wdot wdot-red"></span>
-                            <span class="wdot wdot-yellow"></span>
-                            <span class="wdot wdot-green"></span>
-                        </div>
-                        <div class="window-title">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>AAYUSH_JAISWAL_RESUME.pdf</span>
-                        </div>
-                        <div class="window-actions">
-                            <a href="AAYUSH_JAISWAL_RESUME.pdf" target="_blank" class="waction-btn" title="Open in new tab">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="AAYUSH_JAISWAL_RESUME.pdf" download class="waction-btn" title="Download">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
-                    </div>
+<div class="paper-card">
+  <h3>Classification of COVID-19 using DenseNet201</h3>
+  <div class="paper-venue">2020 · Journal of Biomolecular Structure &amp; Dynamics</div>
+  <p>96.25% accuracy and AUC of 0.97 classifying COVID-19 from chest CT scans using DenseNet201 deep transfer learning.</p>
+  <div class="paper-authors">Aayush Jaiswal, Neha Gianchandani, Dilbag Singh, Vijay Kumar, Manjit Kaur</div>
+  <div class="paper-links">
+    <a href="https://www.tandfonline.com/doi/full/10.1080/07391102.2020.1788642" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+    <a href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer">Code ↗</a>
+  </div>
+</div>
 
-                    <!-- PDF viewport -->
-                    <div class="window-body">
-                        <iframe
-                            src="AAYUSH_JAISWAL_RESUME.pdf"
-                            title="Resume of Aayush Jaiswal"
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
+<div class="paper-card">
+  <h3>Rapid COVID-19 Diagnosis Using Ensemble Deep Transfer Learning</h3>
+  <div class="paper-venue">2020 · Journal of Ambient Intelligence &amp; Humanized Computing</div>
+  <p>98.25% accuracy differentiating COVID-19, viral, and bacterial pneumonia from chest X-rays using ensemble deep transfer learning.</p>
+  <div class="paper-authors">Aayush Jaiswal, Neha Gianchandani, Dilbag Singh, Vijay Kumar, Manjit Kaur</div>
+  <div class="paper-links">
+    <a href="https://link.springer.com/article/10.1007/s12652-020-02669-6" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7667280/" target="_blank" rel="noopener noreferrer">Open Access ↗</a>
+  </div>
+</div>
+</section>
 
-                <!-- CTA strip -->
-                <div class="resume-cta">
-                    <div class="resume-meta">
-                        <span><i class="fas fa-calendar-alt"></i> Updated April 2026</span>
-                        <span><i class="fas fa-file-alt"></i> 2 pages</span>
-                    </div>
-                    <div class="resume-btns">
-                        <a href="AAYUSH_JAISWAL_RESUME.pdf" download class="resume-btn-primary">
-                            <i class="fas fa-download"></i> Download PDF
-                        </a>
-                        <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" class="resume-btn-ghost">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="mailto:aajais@iu.edu" class="resume-btn-ghost">
-                            <i class="fas fa-envelope"></i> Request Updated
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Skills -->
+<section class="section" id="skills">
+<div class="section-label">04 // SKILLS</div>
+<h2 class="section-title">Toolkit</h2>
+<p class="section-subtitle">My toolkit. I actually use all of these.</p>
+<div class="marquee-wrap">
+<div class="marquee-track">
+  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
+  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
+</div>
+</div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Aayush Jaiswal</p>
-        </div>
-    </footer>
+<div class="skills-category">
+  <div class="skills-category-title">Programming</div>
+  <div class="skills-list">
+    <span class="skill-pill">Python</span><span class="skill-pill">JavaScript</span><span class="skill-pill">R</span><span class="skill-pill">SQL</span><span class="skill-pill">C/C++</span><span class="skill-pill">Dart</span><span class="skill-pill">Java</span><span class="skill-pill">Go</span>
+  </div>
+</div>
 
-    <!-- Grain texture overlay -->
-    <div id="grain-overlay" aria-hidden="true"></div>
+<div class="skills-category">
+  <div class="skills-category-title">AI Frameworks</div>
+  <div class="skills-list">
+    <span class="skill-pill">TensorFlow</span><span class="skill-pill">PyTorch</span><span class="skill-pill">Keras</span><span class="skill-pill">OpenCV</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">JAX</span><span class="skill-pill">HuggingFace</span><span class="skill-pill">LangChain</span>
+  </div>
+</div>
 
-    <!-- Three.js for WebGL neural network -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <!-- GSAP core + ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="theme.js"></script>
-    <script src="animations.js"></script>
+<div class="skills-category">
+  <div class="skills-category-title">Cloud &amp; MLOps</div>
+  <div class="skills-list">
+    <span class="skill-pill">AWS</span><span class="skill-pill">Google Cloud</span><span class="skill-pill">Azure</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">Linux</span><span class="skill-pill">Git</span><span class="skill-pill">Prometheus</span><span class="skill-pill">Grafana</span><span class="skill-pill">W&B</span><span class="skill-pill">MLflow</span>
+  </div>
+</div>
+
+<div class="specialties-grid">
+  <div class="specialty-card"><h4>Deep Learning</h4><p>Expert in neural networks and model architecture design</p></div>
+  <div class="specialty-card"><h4>NLP &amp; LLMs</h4><p>Fine-tuning, RAG pipelines, and prompt engineering at scale</p></div>
+  <div class="specialty-card"><h4>Generative AI</h4><p>GANs, VAEs, and diffusion models for image synthesis</p></div>
+  <div class="specialty-card"><h4>MLOps</h4><p>Deploying, monitoring, and scaling ML systems in production</p></div>
+  <div class="specialty-card"><h4>Computer Vision</h4><p>Specialized in 3D medical imaging and real-time detection</p></div>
+  <div class="specialty-card"><h4>Data Engineering</h4><p>Real-time pipelines with Spark, DBT, Airflow, and BigQuery</p></div>
+</div>
+</section>
+
+<!-- Education -->
+<section class="section" id="education">
+<div class="section-label">05 // EDUCATION</div>
+<h2 class="section-title">Education</h2>
+<div class="edu-grid">
+  <div class="edu-card edu-focus">
+    <img src="images/manipal.png" alt="Manipal University" class="edu-logo edu-logo-manipal" data-feature="educationLogos" loading="lazy">
+    <div class="edu-degree">Bachelor of Technology in Computer Science</div>
+    <div class="edu-school">Manipal University Jaipur</div>
+    <div class="edu-meta"><span>2017 — 2021</span><span class="edu-pill">Education</span></div>
+  </div>
+  <div class="edu-card edu-focus">
+    <img src="images/iu-logo.png" alt="Indiana University" class="edu-logo edu-logo-iu" data-feature="educationLogos" loading="lazy">
+    <div class="edu-degree">Master of Science in Data Science</div>
+    <div class="edu-school">Indiana University Bloomington</div>
+    <div class="edu-meta"><span>2022 — 2024</span><span class="edu-pill">Education</span></div>
+  </div>
+</div>
+</section>
+
+<!-- Writing -->
+<section class="section" id="writing">
+<div class="section-label">06 // WRITING</div>
+<h2 class="section-title">Writing</h2>
+<p class="section-subtitle">Because sometimes 500 words beats 500 lines of code.</p>
+
+<a class="writing-card" href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">
+  <h3>Streamlining Recommendation Systems with TensorFlow Recommenders (TFRS)</h3>
+  <div class="writing-meta">Medium · 2023</div>
+  <p>A deep dive into building scalable two-tower recommendation systems — covering the full retrieval and ranking pipeline with real production learnings.</p>
+  <div class="project-tags"><span class="tag">TensorFlow</span><span class="tag">Recommendation Systems</span><span class="tag">ML Engineering</span></div>
+</a>
+
+<a class="writing-card" href="https://medium.com/@jaayush12/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer">
+  <h3>Utilizing Prometheus for Efficient Monitoring in Cloud-Native Environments</h3>
+  <div class="writing-meta">Medium · 2023</div>
+  <p>A practical guide to Prometheus in cloud-native stacks — from custom PromQL queries to Grafana dashboards and multi-tier alerting pipelines on Kubernetes.</p>
+  <div class="project-tags"><span class="tag">Prometheus</span><span class="tag">Kubernetes</span><span class="tag">Observability</span></div>
+</a>
+</section>
+
+<!-- Beyond Code -->
+<section class="section" id="beyond">
+<div class="section-label">07 // BEYOND CODE</div>
+<h2 class="section-title">The Full Picture</h2>
+<p class="section-subtitle">The things that keep me human (and sane).</p>
+<div class="beyond-grid">
+  <div class="beyond-card">
+    <h3>🎸 Guitar</h3>
+    <div class="note">Trinity College London — Grade 5</div>
+    <p>I've been playing guitar for years and recently pushed through Grade 5 with Trinity College London. Music and ML have more in common than you'd think — both reward obsessive iteration and punish impatience.</p>
+  </div>
+  <div class="beyond-card">
+    <h3>📷 Travel Photography</h3>
+    <p>Turns out the same instinct that makes you obsess over a model's loss curve also makes you chase the perfect frame. I document the world at <a href="https://www.instagram.com/all_bout_aj" target="_blank" rel="noopener noreferrer">@all_bout_aj</a> — mostly mountains, cities, and the strange hours between.</p>
+  </div>
+</div>
+</section>
+
+<!-- Resume -->
+<section class="section" id="resume">
+<div class="section-label">08 // RESUME</div>
+<h2 class="section-title">Resume</h2>
+<p class="section-subtitle">The condensed version of everything above.</p>
+<div class="resume-section">
+  <div class="resume-file">$ ls -la <span class="fname">AAYUSH_JAISWAL_RESUME.pdf</span> <span class="fsize">117K Apr 2026</span></div>
+  <a class="resume-btn" href="AAYUSH_JAISWAL_RESUME.pdf" download><i class="fas fa-download"></i> DOWNLOAD RESUME</a>
+  <div class="resume-date">Updated April 2026 · 2 pages</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+<div class="section-label">09 // CONTACT</div>
+<h2 class="section-title">Let's Connect</h2>
+<p class="section-subtitle">Open to interesting conversations, collaborations, and new challenges.</p>
+<div class="contact-grid">
+  <div class="contact-item">
+    <i class="fas fa-envelope"></i>
+    <span>Email</span>
+    <a href="mailto:jaayush12@gmail.com">jaayush12@gmail.com</a>
+  </div>
+  <div class="contact-item">
+    <i class="fab fa-linkedin"></i>
+    <span>LinkedIn</span>
+    <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer">jaiswal-aayush</a>
+  </div>
+  <div class="contact-item">
+    <i class="fab fa-github"></i>
+    <span>GitHub</span>
+    <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer">aajais</a>
+  </div>
+  <div class="contact-item">
+    <i class="fas fa-graduation-cap"></i>
+    <span>Google Scholar</span>
+    <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar Profile</a>
+  </div>
+  <div class="contact-item">
+    <i class="fab fa-medium"></i>
+    <span>Medium</span>
+    <a href="https://medium.com/@jaayush12" target="_blank" rel="noopener noreferrer">@jaayush12</a>
+  </div>
+</div>
+</section>
+
+</main>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Aayush Jaiswal. All rights reserved.</p>
+  <p class="built">BUILT WITH PURPOSE</p>
+</footer>
+
+<!-- Chat Widget -->
+<button class="chat-toggle" onclick="toggleChat()" aria-label="Chat"><i class="fas fa-comment"></i></button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <h4><span class="online-dot"></span> Ask me anything</h4>
+  </div>
+  <div class="chat-messages" id="chatMessages" aria-live="polite">
+    <div class="chat-msg bot">Hey! I'm Aayush's portfolio bot. Ask me about his work, research, skills, or anything else.</div>
+  </div>
+  <div class="chat-chips">
+    <button class="chat-chip" onclick="sendChip('CoreWeave role')">CoreWeave role</button>
+    <button class="chat-chip" onclick="sendChip('Research')">Research</button>
+    <button class="chat-chip" onclick="sendChip('Skills')">Skills</button>
+    <button class="chat-chip" onclick="sendChip('Beyond code')">Beyond code</button>
+  </div>
+  <div class="chat-input-wrap">
+    <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<script>
+// Feature flags (toggle to true to show hidden sections)
+const FEATURE_FLAGS = {
+  trustedBy: false,
+  educationLogos: false,
+};
+
+document.querySelectorAll('[data-feature]').forEach((el) => {
+  const key = el.getAttribute('data-feature');
+  if (FEATURE_FLAGS[key] === false) el.style.display = 'none';
+});
+
+// Scroll progress + back-to-top
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  const p=(window.scrollY/h)*100;
+  document.getElementById('scroll-progress').style.width=p+'%';
+  const btn=document.getElementById('backToTop');
+  if(btn)btn.classList.toggle('visible',window.scrollY>600);
+});
+
+// Timeline toggle
+function toggleTimeline(el){
+  const item=el.parentElement;
+  const body=item.querySelector('.timeline-body');
+  if(item.classList.contains('active')){
+    item.classList.remove('active');
+    body.style.maxHeight='0';
+    el.setAttribute('aria-expanded','false');
+  }else{
+    item.classList.add('active');
+    body.style.maxHeight=body.scrollHeight+'px';
+    el.setAttribute('aria-expanded','true');
+  }
+}
+
+// Particle canvas (interactive)
+(function(){
+  const canvas=document.getElementById('particle-canvas');
+  const ctx=canvas.getContext('2d');
+  let w,h,particles=[];
+  const mouse={x:-9999,y:-9999,active:false};
+
+  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+
+  window.addEventListener('mousemove',(e)=>{mouse.x=e.clientX;mouse.y=e.clientY;mouse.active=true;});
+  window.addEventListener('mouseleave',()=>{mouse.active=false;mouse.x=-9999;mouse.y=-9999;});
+
+  const N=window.innerWidth<768?24:72;
+  for(let i=0;i<N;i++){
+    particles.push({
+      x:Math.random()*w,
+      y:Math.random()*h,
+      vx:(Math.random()-.5)*.55,
+      vy:(Math.random()-.5)*.55,
+      r:Math.random()*1.8+0.8
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+
+    for(let i=0;i<N;i++){
+      const p=particles[i];
+
+      if(mouse.active){
+        const mdx=mouse.x-p.x, mdy=mouse.y-p.y;
+        const md=Math.hypot(mdx,mdy);
+        if(md<160){
+          const force=(160-md)/160;
+          p.vx -= (mdx/(md||1))*force*0.03;
+          p.vy -= (mdy/(md||1))*force*0.03;
+        }
+      }
+
+      p.x+=p.vx; p.y+=p.vy;
+      p.vx*=0.992; p.vy*=0.992;
+      if(p.x<0||p.x>w)p.vx*=-1;
+      if(p.y<0||p.y>h)p.vy*=-1;
+
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,136,0,0.62)';ctx.fill();
+
+      for(let j=i+1;j<N;j++){
+        const q=particles[j];
+        const dx=p.x-q.x,dy=p.y-q.y,d=Math.hypot(dx,dy);
+        if(d<140){
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+          ctx.strokeStyle='rgba(255,136,0,'+(1-d/140)*0.2+')';ctx.stroke();
+        }
+      }
+
+      if(mouse.active){
+        const dmx=p.x-mouse.x, dmy=p.y-mouse.y, md=Math.hypot(dmx,dmy);
+        if(md<170){
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(mouse.x,mouse.y);
+          ctx.strokeStyle='rgba(61,255,145,'+(1-md/170)*0.16+')';ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// Chat
+function toggleChat(){
+  document.getElementById('chatPanel').classList.toggle('open');
+}
+function addMsg(text,type){
+  const d=document.createElement('div');
+  d.className='chat-msg '+type;
+  d.textContent=text;
+  const m=document.getElementById('chatMessages');
+  m.appendChild(d);m.scrollTop=m.scrollHeight;
+}
+function sendChip(t){addMsg(t,'user');respond(t)}
+function sendChat(){
+  const i=document.getElementById('chatInput');
+  if(!i.value.trim())return;
+  addMsg(i.value,'user');respond(i.value);i.value='';
+}
+function respond(q){
+  const l=q.toLowerCase();
+  let a;
+  if(l.includes('coreweave')||l.includes('current')||l.includes('role')||l.includes('work'))
+    a="Aayush is an AI Solutions Engineer, Post-Sales at Weights & Biases (CoreWeave) since Feb 2026. He owns enterprise accounts (~$3M ARR), drives adoption/expansion, and partners with Product + Engineering on ML/GenAI workflow improvements.";
+  else if(l.includes('research')||l.includes('paper')||l.includes('publication')||l.includes('citation'))
+    a="Aayush has 2 published papers with 847+ combined citations — COVID-19 detection from medical imaging. He also built 3D generative models for brain MRI synthesis at Indiana University.";
+  else if(l.includes('skill')||l.includes('tech')||l.includes('stack'))
+    a="Core stack: Python, PyTorch, TensorFlow, JAX, Kubernetes, AWS, Docker, CUDA, LangChain, HuggingFace. Specialties include deep learning, NLP/LLMs, generative AI, MLOps, and computer vision.";
+  else if(l.includes('beyond')||l.includes('hobby')||l.includes('guitar')||l.includes('photo'))
+    a="Beyond code: Grade 5 guitar (Trinity College London), travel photography at @all_bout_aj, and mentoring 150+ students in distributed computing.";
+  else if(l.includes('education')||l.includes('degree')||l.includes('university'))
+    a="B.Tech in CS from Manipal University Jaipur (2017-2021) and M.S. in Data Science from Indiana University Bloomington (2022-2024).";
+  else if(l.includes('project'))
+    a="Key projects include a 3D Conditional Diffusion Model for brain MRIs, a multi-lingual recommendation system for 10M+ users, a RAG code assistant, and published COVID-19 detection models.";
+  else if(l.includes('wandb')||l.includes('weights'))
+    a="At Weights & Biases (Oct 2024 - Feb 2026), Aayush resolved 1000+ enterprise tickets, led customer demos and best-practice reviews, and built an internal LLM agent that automated bug reproduction + Jira creation, saving 40+ hours/month. W&B was acquired by CoreWeave in May 2025.";
+  else if(l.includes('contact')||l.includes('email')||l.includes('reach'))
+    a="Email: jaayush12@gmail.com | LinkedIn: linkedin.com/in/jaiswal-aayush | GitHub: github.com/aajais";
+  else if(l.includes('trell')||l.includes('recommend'))
+    a="At Trell (Sequoia-backed), Aayush shipped a multilingual recommendation system driving 45% retention gains across 10M+ users in 5 languages.";
+  else
+    a="I can tell you about Aayush's current role at CoreWeave, his research papers, technical skills, projects, education, or hobbies. What interests you?";
+  setTimeout(()=>addMsg(a,'bot'),400);
+}
+</script>
 </body>
 </html>

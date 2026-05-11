@@ -139,7 +139,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .skills-list{display:flex;flex-wrap:wrap;gap:6px}
 .skill-pill{font-family:var(--mono);font-size:12px;padding:6px 14px;border:1px solid var(--border);color:var(--text);transition:all .2s}
 .skill-pill:hover{border-color:var(--orange);color:var(--orange)}
-.specialties-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
+.specialties-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
 .specialty-card{background:var(--black);padding:24px}
 .specialty-card h4{font-family:var(--mono);font-size:14px;color:var(--green);margin-bottom:6px}
 .specialty-card p{font-size:13px;color:var(--text-dim)}
@@ -223,6 +223,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   .stats-bar{grid-template-columns:repeat(2,1fr)}
   .edu-grid{grid-template-columns:1fr}
   .projects-grid{grid-template-columns:1fr}
+  .specialties-grid{grid-template-columns:1fr}
   .beyond-grid{grid-template-columns:1fr}
   .chat-panel{right:8px;left:8px;width:auto}
 }
@@ -641,7 +642,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <div class="specialty-card"><h4>Generative AI</h4><p>GANs, VAEs, and diffusion models for image synthesis</p></div>
   <div class="specialty-card"><h4>MLOps</h4><p>Deploying, monitoring, and scaling ML systems in production</p></div>
   <div class="specialty-card"><h4>Computer Vision</h4><p>Specialized in 3D medical imaging and real-time detection</p></div>
-  <div class="specialty-card"><h4>AI Safety</h4><p>Model interpretability, fairness, and robustness testing</p></div>
   <div class="specialty-card"><h4>Data Engineering</h4><p>Real-time pipelines with Spark, DBT, Airflow, and BigQuery</p></div>
 </div>
 </section>

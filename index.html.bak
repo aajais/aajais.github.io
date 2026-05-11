@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Applied Scientist & AI Solutions Engineer specializing in deep learning, computer vision, and scalable AI infrastructure.">
+    <title>Aayush Jaiswal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-logo">AJ</span>
+            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor (desktop only) -->
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1><a href="#home" aria-label="Home">AJ</a></h1>
+                <nav aria-label="Main navigation">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#timeline">Journey</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#papers">Papers</a></li>
+                        <li><a href="#writing">Writing</a></li>
+                        <li><a href="#beyond-code">Beyond</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li>
+                            <label class="theme-switch" for="themeToggle">
+                                <input type="checkbox" id="themeToggle" aria-label="Toggle theme">
+                                <span class="slider round"></span>
+                            </label>
+                        </li>
+                    </ul>
+                    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="home">
+        <section id="about" class="about-section">
+            <!-- WebGL Neural Network Canvas -->
+            <canvas id="neural-canvas" aria-hidden="true"></canvas>
+            <!-- Aurora Background Layers -->
+            <div class="aurora-layer aurora-1" aria-hidden="true"></div>
+            <div class="aurora-layer aurora-2" aria-hidden="true"></div>
+            <div class="aurora-layer aurora-3" aria-hidden="true"></div>
+            <!-- Spotlight -->
+            <div class="spotlight" aria-hidden="true"></div>
+
+            <div class="container">
+                <div class="about-grid">
+                    <!-- Left Column: Profile Picture and Social Links -->
+                    <div class="profile-section">
+                        <div class="profile-picture">
+                            <div class="profile-frame">
+                                <img src="images/profile.jpeg" alt="Portrait of Aayush Jaiswal" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/jaiswal-aayush" class="social-link" rel="noopener">
+                                <img src="images/linkedin-icon.png" alt="LinkedIn">
+                            </a>
+                            <a href="https://github.com/aayush9400" class="social-link" rel="noopener">
+                                <img src="images/github-icon.png" alt="GitHub">
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" class="social-link" title="Google Scholar">
+                                <img src="images/google-scholar-icon.png" alt="Google Scholar">
+                            </a>
+                            <a href="https://medium.com/@jaayush12" class="social-link" title="Medium">
+                                <img src="images/medium-icon.png" alt="Medium">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Bio, Education, and Tags -->
+                    <div class="about-content">
+                        <div class="about-header">
+                            <h2 class="gradient-name">Aayush Jaiswal</h2>
+                            <span class="title-badge" id="typing-badge">AI Solutions Engineer @ CoreWeave</span>
+                        </div>
+
+                        <div class="about-description">
+                            <p class="lead">From publishing COVID detection papers with 800+ citations as an undergrad, to scaling ML for 10M+ users at a Sequoia-backed startup, to now helping the most ambitious AI teams run on GPU clouds at CoreWeave — I build things that actually ship.</p>
+                            <p>Specializing in 3D medical imaging, LLM infrastructure, and production MLOps. Equal parts researcher and engineer — I like the work that lives at the edge of what's been proven.</p>
+                        </div>
+
+                        <div class="education-section">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <div class="education-cards">
+                                <div class="education-card">
+                                    <div class="education-details">
+                                        <h4>High School</h4>
+                                        <p class="school">Delhi Public School, Vasant Kunj</p>
+                                        <p class="period">2017</p>
+                                        <div class="gpa">92%</div>
+                                    </div>
+                                </div>
+                                <div class="education-card">
+                                    <div class="education-details">
+                                        <h4>Bachelor of Technology in Computer Science</h4>
+                                        <p class="school">Manipal University Jaipur</p>
+                                        <p class="period">2017 - 2021</p>
+                                        <div class="gpa">GPA: 3.70</div>
+                                    </div>
+                                </div>
+                                <div class="education-card">
+                                    <div class="education-details">
+                                        <h4>Master of Science in Data Science</h4>
+                                        <p class="school">Indiana University Bloomington</p>
+                                        <p class="period">2022 - 2024</p>
+                                        <div class="gpa">GPA: 3.60</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quick-stats animated-counters">
+                            <div class="stat-item counter-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div class="counter-content">
+                                    <span class="counter-number" data-target="3" data-suffix="+">0</span>
+                                    <span class="counter-label">Years Experience</span>
+                                </div>
+                            </div>
+                            <div class="stat-item counter-item">
+                                <i class="fas fa-users"></i>
+                                <div class="counter-content">
+                                    <span class="counter-number" data-target="150" data-suffix="+">0</span>
+                                    <span class="counter-label">Students Mentored</span>
+                                </div>
+                            </div>
+                            <div class="stat-item counter-item">
+                                <i class="fas fa-quote-left"></i>
+                                <div class="counter-content">
+                                    <span class="counter-number" data-target="847" data-suffix="+">0</span>
+                                    <span class="counter-label">Research Citations</span>
+                                </div>
+                            </div>
+                            <div class="stat-item counter-item">
+                                <i class="fas fa-database"></i>
+                                <div class="counter-content">
+                                    <span class="counter-number" data-target="10" data-suffix="M+">0</span>
+                                    <span class="counter-label">Users Impacted</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="timeline-section">
+            <div class="container">
+                <h2>Professional Journey</h2>
+                <p class="section-subtitle">The path that got me here.</p>
+                <div class="timeline">
+
+                    <!-- CoreWeave - Current -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"><i class="fas fa-microchip"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Feb 2026 – Present</div>
+                            <h3>AI Solutions Engineer</h3>
+                            <h4>CoreWeave</h4>
+                            <p>Helping enterprise teams run the hardest ML workloads on the planet — distributed LLM training, fine-tuning pipelines, and GPU-optimized inference at scale. Front-row seat to where AI infrastructure is heading.</p>
+                            <div class="timeline-tags"><span>AI Infrastructure</span><span>GPU Cloud</span><span>LLMs</span><span>MLOps</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Weights & Biases -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"><i class="fas fa-chart-line"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Oct 2024 – Feb 2026</div>
+                            <h3>AI Support Engineer</h3>
+                            <h4>Weights &amp; Biases</h4>
+                            <p>Became the person ML engineers called when their training runs broke. Optimized distributed pipelines across AWS/GCP, cut GPU idle time by 30%, and helped dozens of teams go from prototype to production. Learned that the gap between a paper and a working system is everything.</p>
+                            <div class="timeline-tags"><span>MLOps</span><span>PyTorch</span><span>Distributed Training</span><span>LLMs</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Indiana University -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"><i class="fas fa-microscope"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Aug 2023 – Oct 2024</div>
+                            <h3>AI Researcher</h3>
+                            <h4>Indiana University Bloomington</h4>
+                            <p>Built 3D generative models for brain MRI synthesis in Prof. Garyfallidis's DIPY lab — SOTA SSIM/PSNR metrics at 60% of the baseline model's size. Mentored 150+ students in Distributed Computing and AWS. Wrote code that landed in the open-source DIPY library.</p>
+                            <div class="timeline-tags"><span>3D Diffusion Models</span><span>HPC</span><span>DIPY</span><span>Open Source</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Trell -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"><i class="fas fa-code"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jan 2021 – Mar 2022</div>
+                            <h3>Machine Learning Engineer</h3>
+                            <h4>Trell <span style="font-weight:400;font-size:0.85em;opacity:0.7">(Sequoia-backed)</span></h4>
+                            <p>At a Sequoia-backed short-video platform, shipped a multilingual recommendation system that drove 45% retention gains across 10M+ users in 5 languages. Automated the entire model training and deployment pipeline using AWS, Prometheus, Grafana, and W&amp;B.</p>
+                            <div class="timeline-tags"><span>Recommendation Systems</span><span>AWS</span><span>MLOps</span><span>Data Pipelines</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Spotle.ai -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"><i class="fas fa-code-branch"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jul 2020 – Sep 2020</div>
+                            <h3>Deep Learning Engineer</h3>
+                            <h4>Spotle.ai</h4>
+                            <p>First taste of deploying CNNs in production for a real product. Built image classification pipelines and learned that 96% accuracy in a notebook and 96% accuracy in prod are very different problems.</p>
+                            <div class="timeline-tags"><span>Deep Learning</span><span>CNN</span><span>Computer Vision</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Manipal University Research -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"><i class="fas fa-flask"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jan 2020 – Jul 2020</div>
+                            <h3>Research Assistant</h3>
+                            <h4>Manipal University Jaipur</h4>
+                            <p>Conducted CV research on COVID-19 detection from chest scans and X-rays — resulting in 2 published papers that accumulated 800+ combined citations. Built end-to-end AI diagnostic tools designed to slot directly into clinical workflows.</p>
+                            <div class="timeline-tags"><span>Computer Vision</span><span>Deep Learning</span><span>Medical AI</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Airtel -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"><i class="fas fa-database"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">May 2019 – Aug 2019</div>
+                            <h3>Data Scientist Intern</h3>
+                            <h4>Airtel</h4>
+                            <p>Segmented 10M+ subscribers using clustering algorithms to make marketing campaigns actually relevant. Learned what "scale" means before the word had a hype cycle attached to it.</p>
+                            <div class="timeline-tags"><span>Data Science</span><span>Spark</span><span>Hadoop</span></div>
+                        </div>
+                    </div>
+
+                    <!-- The Climber -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"><i class="fas fa-bullhorn"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Aug 2017 – Jan 2018</div>
+                            <h3>Marketing Intern</h3>
+                            <h4>The Climber</h4>
+                            <p>Drove a 30% revenue increase through targeted marketing strategies. Every ML model is a better product when you understand how people actually make decisions.</p>
+                            <div class="timeline-tags"><span>Marketing</span><span>Strategy</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Skills</h2>
+                <p class="section-subtitle">My toolkit. I actually use all of these.</p>
+                <div class="skills-grid">
+                    <!-- Programming Languages -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-badge"><i class="fab fa-js-square"></i> JavaScript</span>
+                            <span class="skill-badge"><i class="devicon-r-plain"></i> R</span>
+                            <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
+                            <span class="skill-badge"><i class="devicon-cplusplus-plain"></i> C/C++</span>
+                            <span class="skill-badge"><i class="devicon-dart-plain"></i> Dart</span>
+                            <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
+                            <span class="skill-badge"><i class="devicon-go-plain"></i> Go</span>
+                        </div>
+                    </div>
+
+                    <!-- AI/ML Frameworks -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> AI Frameworks</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge"><i class="devicon-tensorflow-original"></i> TensorFlow</span>
+                            <span class="skill-badge"><i class="devicon-pytorch-original"></i> PyTorch</span>
+                            <span class="skill-badge"><i class="devicon-keras-plain"></i> Keras</span>
+                            <span class="skill-badge"><i class="devicon-opencv-plain"></i> OpenCV</span>
+                            <span class="skill-badge"><i class="devicon-pandas-plain"></i> Pandas</span>
+                            <span class="skill-badge"><i class="devicon-numpy-plain"></i> NumPy</span>
+                            <span class="skill-badge"><i class="fas fa-atom"></i> JAX</span>
+                            <span class="skill-badge"><i class="fas fa-robot"></i> HuggingFace</span>
+                            <span class="skill-badge"><i class="fas fa-link"></i> LangChain</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & DevOps -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cloud"></i> Cloud & MLOps</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge"><i class="fab fa-aws"></i> AWS</span>
+                            <span class="skill-badge"><i class="fab fa-google"></i> Google Cloud</span>
+                            <span class="skill-badge"><i class="fab fa-microsoft"></i> Azure</span>
+                            <span class="skill-badge"><i class="fab fa-docker"></i> Docker</span>
+                            <span class="skill-badge"><i class="devicon-kubernetes-plain"></i> Kubernetes</span>
+                            <span class="skill-badge"><i class="devicon-ubuntu-plain"></i> Linux</span>
+                            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-badge"><i class="devicon-prometheus-plain"></i> Prometheus</span>
+                            <span class="skill-badge"><i class="devicon-grafana-plain"></i> Grafana</span>
+                            <span class="skill-badge"><i class="fas fa-chart-line"></i> W&amp;B</span>
+                            <span class="skill-badge"><i class="fas fa-flask"></i> MLflow</span>
+                        </div>
+                    </div>
+
+                    <!-- Specialties -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-star"></i> Specialties</h3>
+                        <div class="specialty-cards">
+                            <div class="specialty-card">
+                                <div class="specialty-icon">🤖</div>
+                                <h4>Deep Learning</h4>
+                                <p>Expert in neural networks and model architecture design.</p>
+                            </div>
+                            <div class="specialty-card">
+                                <div class="specialty-icon">🗣️</div>
+                                <h4>NLP & LLMs</h4>
+                                <p>Fine-tuning, RAG pipelines, and prompt engineering at scale.</p>
+                            </div>
+                            <div class="specialty-card">
+                                <div class="specialty-icon">🎨</div>
+                                <h4>Generative AI</h4>
+                                <p>GANs, VAEs, and diffusion models for image synthesis.</p>
+                            </div>
+                            <div class="specialty-card">
+                                <div class="specialty-icon">🔧</div>
+                                <h4>MLOps</h4>
+                                <p>Deploying, monitoring, and scaling ML systems in production.</p>
+                            </div>
+                            <div class="specialty-card">
+                                <div class="specialty-icon">👁️</div>
+                                <h4>Computer Vision</h4>
+                                <p>Specialized in 3D medical imaging and real-time detection.</p>
+                            </div>
+                            <div class="specialty-card">
+                                <div class="specialty-icon">🛡️</div>
+                                <h4>AI Safety</h4>
+                                <p>Model interpretability, fairness, and robustness testing.</p>
+                            </div>
+                            <div class="specialty-card">
+                                <div class="specialty-icon">📊</div>
+                                <h4>Data Engineering</h4>
+                                <p>Real-time pipelines with Spark, DBT, Airflow, and BigQuery.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>Projects</h2>
+                <p class="section-subtitle">Things I built that I'm proud of.</p>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h3>3D Conditional Diffusion Model</h3>
+                        <p>Designed a 2-channel VQ-VAE that generates high-fidelity 3D brain MRIs — SOTA SSIM/PSNR at 60% of the baseline model's size. The kind of research that unlocks diagnostic capabilities that didn't exist before.</p>
+                        <div class="tech-stack">
+                            <span>Python</span><span>TensorFlow</span><span>PyTorch</span><span>HPC</span><span>W&amp;B</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fas fa-chart-line"></i> W&amp;B Report</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>Multi-Lingual Video Recommendation System</h3>
+                        <p>Built the recommendation system powering a Sequoia-backed platform's feed for 10M+ users across 5 languages. Two-tower architecture, 50% faster retrieval, 45% better retention. Transfer learning did the heavy lifting.</p>
+                        <div class="tech-stack">
+                            <span>TensorFlow</span><span>AWS</span><span>Docker</span><span>MLflow</span><span>GCP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-medium"></i> Article</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>RAG Code Assistant (DIPY)</h3>
+                        <p>Production RAG system answering 10K+ developer queries/day against the DIPY open-source codebase. 95% accuracy, 60% lower latency through vector caching and semantic chunking.</p>
+                        <div class="tech-stack">
+                            <span>LangChain</span><span>Pinecone</span><span>OpenAI</span><span>FastAPI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/aayush9400/dipy_code_assistant" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>Meal Planner AI Agent</h3>
+                        <p>An LLM-powered app that plans weekly meals around macros, dietary restrictions, and whatever's actually in your fridge. Built end-to-end with Flutter + FastAPI. The inference optimization was more fun than expected.</p>
+                        <div class="tech-stack">
+                            <span>Flutter</span><span>FastAPI</span><span>Firebase</span><span>OpenAI</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>Computer Vision Detection Model</h3>
+                        <p>Real-time YOLOv8 detection pipeline processing 50K+ images/month at 98.25% accuracy — reducing manual review overhead by 85%. The number that made the client stop asking for weekly status calls.</p>
+                        <div class="tech-stack">
+                            <span>Python</span><span>YOLOv8</span><span>OpenCV</span><span>AWS</span>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>Rapid SARS-COV-2 Detection</h3>
+                        <p>96% accurate COVID-19 diagnosis from X-rays and CT scans using ensemble deep transfer learning. Published findings contributed to non-invasive diagnostic alternatives to RT-PCR during the pandemic.</p>
+                        <div class="tech-stack">
+                            <span>Python</span><span>TensorFlow</span><span>OpenCV</span><span>Flask</span><span>AWS EC2</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>3D Brain Tumor Segmentation</h3>
+                        <p>3D CNN + Vision Transformer hybrid achieving 95% accuracy on tumor localization in brain MRIs. The attention mechanism was the difference between "promising" and "clinically useful".</p>
+                        <div class="tech-stack">
+                            <span>Python</span><span>PyTorch</span><span>Hugging Face</span><span>3D Conv</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/the-neural-networker/brain-tumor-segmentation" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>Cloud-Native Observability Stack</h3>
+                        <p>Full Prometheus + Grafana observability stack on Kubernetes that improved system uptime by 30% through custom PromQL alerting and automated dashboards. Wrote about it too.</p>
+                        <div class="tech-stack">
+                            <span>AWS</span><span>Prometheus</span><span>Grafana</span><span>Kubernetes</span><span>PromQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://medium.com/@jaayush12/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer" class="project-link-btn"><i class="fab fa-medium"></i> Article</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>Real-Time Data Pipeline with DBT</h3>
+                        <p>GCP-native data pipelines using DBT and BigQuery that cut analytics access times by 15% and reduced data quality incidents through automated schema validation and incremental testing.</p>
+                        <div class="tech-stack">
+                            <span>DBT</span><span>BigQuery</span><span>GCP</span><span>SQL</span><span>Airflow</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beyond Code Section -->
+
+        <section id="papers" class="papers-section">
+            <div class="container">
+                <h2>Research Publications</h2>
+                <p class="section-subtitle">Peer-reviewed work with <strong>800+ combined citations</strong>.</p>
+                <div class="papers-grid">
+                    <!-- Paper 1 -->
+                    <article class="paper-card">
+                        <div class="paper-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="paper-content">
+                            <h3>3D Conditional Diffusion Model for Medical Image Synthesis</h3>
+                            <p class="paper-meta">
+                                <span><i class="far fa-calendar-alt"></i> 2024</span>
+                                <span><i class="fas fa-clock"></i> Under Review</span>
+                            </p>
+                            <p class="paper-abstract">Novel 2-channel VQ-VAE architecture with conditional diffusion for high-fidelity 3D brain MRI generation. Achieves SOTA SSIM/PSNR at 60% of baseline model size.</p>
+                            <p class="paper-authors"><i class="fas fa-users"></i> Aayush Jaiswal, JongSung Park, Eleftherios Garyfallidis</p>
+                            <div class="paper-links">
+                                <a href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-external-link-alt"></i> W&amp;B Report</a>
+                                <a href="https://github.com/aayush9400" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Paper 2 -->
+                    <article class="paper-card">
+                        <div class="paper-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="paper-content">
+                            <h3>Classification of COVID-19 Infected Patients Using DenseNet201 Deep Transfer Learning</h3>
+                            <p class="paper-meta">
+                                <span><i class="far fa-calendar-alt"></i> 2020</span>
+                                <span><i class="fas fa-quote-left"></i> Journal of Biomolecular Structure &amp; Dynamics</span>
+                            </p>
+                            <p class="paper-abstract">96.25% accuracy and AUC of 0.97 classifying COVID-19 from chest CT scans using DenseNet201 deep transfer learning — a non-invasive alternative to RT-PCR.</p>
+                            <p class="paper-authors"><i class="fas fa-users"></i> Aayush Jaiswal, Neha Gianchandani, Dilbag Singh, Vijay Kumar, Manjit Kaur</p>
+                            <div class="paper-links">
+                                <a href="https://www.tandfonline.com/doi/full/10.1080/07391102.2020.1788642" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                                <a href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Paper 3 -->
+                    <article class="paper-card">
+                        <div class="paper-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="paper-content">
+                            <h3>Rapid COVID-19 Diagnosis Using Ensemble Deep Transfer Learning Models from Chest Radiographic Images</h3>
+                            <p class="paper-meta">
+                                <span><i class="far fa-calendar-alt"></i> 2020</span>
+                                <span><i class="fas fa-quote-left"></i> Journal of Ambient Intelligence &amp; Humanized Computing</span>
+                            </p>
+                            <p class="paper-abstract">98.25% accuracy differentiating COVID-19, viral, and bacterial pneumonia from chest X-rays using ensemble deep transfer learning. Validated on two independent datasets.</p>
+                            <p class="paper-authors"><i class="fas fa-users"></i> Aayush Jaiswal, Neha Gianchandani, Dilbag Singh, Vijay Kumar, Manjit Kaur</p>
+                            <div class="paper-links">
+                                <a href="https://link.springer.com/article/10.1007/s12652-020-02669-6" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7667280/" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-unlock"></i> Open Access</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="writing" class="writing-section">
+            <div class="container">
+                <h2>Writing</h2>
+                <p class="section-subtitle">Because sometimes 500 words beats 500 lines of code.</p>
+                <div class="writing-grid">
+                    <article class="writing-card">
+                        <div class="writing-meta">
+                            <span class="writing-platform"><i class="fab fa-medium"></i> Medium</span>
+                            <span class="writing-date">2023</span>
+                        </div>
+                        <h3>Streamlining Recommendation Systems with TensorFlow Recommenders (TFRS)</h3>
+                        <p>A deep dive into building scalable two-tower recommendation systems — covering the full retrieval and ranking pipeline with real production learnings.</p>
+                        <div class="writing-tags">
+                            <span>TensorFlow</span><span>Recommendation Systems</span><span>ML Engineering</span>
+                        </div>
+                        <a href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer" class="writing-link">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    <article class="writing-card">
+                        <div class="writing-meta">
+                            <span class="writing-platform"><i class="fab fa-medium"></i> Medium</span>
+                            <span class="writing-date">2023</span>
+                        </div>
+                        <h3>Utilizing Prometheus for Efficient Monitoring in Cloud-Native Environments</h3>
+                        <p>A practical guide to Prometheus in cloud-native stacks — from custom PromQL queries to Grafana dashboards and multi-tier alerting pipelines on Kubernetes.</p>
+                        <div class="writing-tags">
+                            <span>Prometheus</span><span>Kubernetes</span><span>Observability</span>
+                        </div>
+                        <a href="https://medium.com/@jaayush12/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer" class="writing-link">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="beyond-code" class="beyond-code-section">
+            <div class="container">
+                <h2>Beyond Code</h2>
+                <p class="section-subtitle">The things that keep me human (and sane).</p>
+                <div class="beyond-grid">
+                    <div class="beyond-card">
+                        <div class="beyond-icon">
+                            <i class="fas fa-guitar"></i>
+                        </div>
+                        <div class="beyond-content">
+                            <h3>Guitar</h3>
+                            <p>I've been playing guitar for years and recently pushed through Grade 5 with Trinity College London. Music and ML have more in common than you'd think — both reward obsessive iteration and punish impatience.</p>
+                            <span class="beyond-badge"><i class="fas fa-certificate"></i> Trinity College London — Grade 5</span>
+                        </div>
+                    </div>
+                    <div class="beyond-card">
+                        <div class="beyond-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="beyond-content">
+                            <h3>Travel Photography</h3>
+                            <p>Turns out the same instinct that makes you obsess over a model's loss curve also makes you chase the perfect frame. I document the world at @all_bout_aj — mostly mountains, cities, and the strange hours between.</p>
+                            <a href="https://www.instagram.com/all_bout_aj" target="_blank" rel="noopener noreferrer" class="beyond-link">
+                                <i class="fab fa-instagram"></i> @all_bout_aj
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="resume-section">
+            <div class="container">
+                <h2>Resume</h2>
+                <p class="section-subtitle">The condensed version of everything above.</p>
+
+                <!-- Browser window wrapper -->
+                <div class="resume-window">
+                    <!-- macOS-style window chrome -->
+                    <div class="window-chrome">
+                        <div class="window-dots">
+                            <span class="wdot wdot-red"></span>
+                            <span class="wdot wdot-yellow"></span>
+                            <span class="wdot wdot-green"></span>
+                        </div>
+                        <div class="window-title">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>AAYUSH_JAISWAL_RESUME.pdf</span>
+                        </div>
+                        <div class="window-actions">
+                            <a href="AAYUSH_JAISWAL_RESUME.pdf" target="_blank" class="waction-btn" title="Open in new tab">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="AAYUSH_JAISWAL_RESUME.pdf" download class="waction-btn" title="Download">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PDF viewport -->
+                    <div class="window-body">
+                        <iframe
+                            src="AAYUSH_JAISWAL_RESUME.pdf"
+                            title="Resume of Aayush Jaiswal"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- CTA strip -->
+                <div class="resume-cta">
+                    <div class="resume-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Updated April 2026</span>
+                        <span><i class="fas fa-file-alt"></i> 2 pages</span>
+                    </div>
+                    <div class="resume-btns">
+                        <a href="AAYUSH_JAISWAL_RESUME.pdf" download class="resume-btn-primary">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                        <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" class="resume-btn-ghost">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:aajais@iu.edu" class="resume-btn-ghost">
+                            <i class="fas fa-envelope"></i> Request Updated
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Aayush Jaiswal</p>
+        </div>
+    </footer>
+
+    <!-- Grain texture overlay -->
+    <div id="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Three.js for WebGL neural network -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- GSAP core + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="theme.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>

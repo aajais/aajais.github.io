@@ -93,7 +93,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .hero-panel-list{display:flex;flex-direction:column;gap:8px}
 .hero-panel-item{font-size:13px;color:#b8b8b8;line-height:1.55}
 .worked-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
-.worked-chip{font-family:var(--mono);font-size:11px;color:#a8a8a8;border:1px solid var(--border);padding:7px 8px;text-align:center;background:#0b0b0b}
+.worked-logo{font-family:var(--mono);font-size:10px;letter-spacing:.4px;text-transform:uppercase;color:#c2c2c2;border:1px solid var(--border);padding:8px 7px;text-align:center;background:#0b0b0b}
+.worked-logo.primary{color:var(--orange);border-color:#3a2a16;background:#0d0803}
+.worked-caption{font-size:11px;color:#7e7e7e;margin-top:8px;line-height:1.45}
 
 /* Stats bar */
 .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:48px}
@@ -347,15 +349,27 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
         </div>
       </div>
       <div class="hero-panel">
-        <div class="hero-panel-title">Worked with teams at</div>
+        <div class="hero-panel-title">Worked at</div>
         <div class="worked-grid">
-          <div class="worked-chip">Google</div>
-          <div class="worked-chip">Snap</div>
-          <div class="worked-chip">Riot Games</div>
-          <div class="worked-chip">Tower Research</div>
-          <div class="worked-chip">Recursion</div>
-          <div class="worked-chip">MasterClass</div>
+          <div class="worked-logo primary">Weights &amp; Biases</div>
+          <div class="worked-logo primary">CoreWeave</div>
+          <div class="worked-logo">Indiana University</div>
+          <div class="worked-logo">Trell</div>
+          <div class="worked-logo">Airtel</div>
+          <div class="worked-logo">Spotle.ai</div>
         </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-title">Supported teams at</div>
+        <div class="worked-grid">
+          <div class="worked-logo">Google</div>
+          <div class="worked-logo">Snap</div>
+          <div class="worked-logo">Riot Games</div>
+          <div class="worked-logo">Tower Research</div>
+          <div class="worked-logo">Recursion</div>
+          <div class="worked-logo">MasterClass</div>
+        </div>
+        <div class="worked-caption">Through platform support, advisory, and enablement engagements.</div>
       </div>
     </aside>
   </div>

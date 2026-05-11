@@ -449,21 +449,21 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <div class="journey-strip" aria-label="Career timeline">
   <div class="journey-track">
     <article class="journey-item primary">
-      <div class="journey-years">2024 — NOW</div>
-      <div class="journey-brand">
-        <img src="images/wandb.png" class="journey-logo-img" alt="Weights and Biases logo" loading="lazy">
-        <div class="journey-name">Weights &amp; Biases</div>
-      </div>
-      <div class="journey-role">AI Solutions Engineer, Post-Sales</div>
-    </article>
-
-    <article class="journey-item primary">
       <div class="journey-years">2025 — NOW</div>
       <div class="journey-brand">
         <img src="images/coreweave.png" class="journey-logo-img" alt="CoreWeave logo" loading="lazy">
         <div class="journey-name">CoreWeave</div>
       </div>
-      <div class="journey-role">Post-acquisition org alignment</div>
+      <div class="journey-role">AI Solutions Engineer, Post-Sales</div>
+    </article>
+
+    <article class="journey-item primary">
+      <div class="journey-years">2024 — 2025</div>
+      <div class="journey-brand">
+        <img src="images/wandb.png" class="journey-logo-img" alt="Weights and Biases logo" loading="lazy">
+        <div class="journey-name">Weights &amp; Biases</div>
+      </div>
+      <div class="journey-role">Pre-acquisition org (acquired by CoreWeave in 2025)</div>
     </article>
 
     <article class="journey-item education">
@@ -953,7 +953,7 @@ function respond(q){
   const l=q.toLowerCase();
   let a;
   if(l.includes('coreweave')||l.includes('current')||l.includes('role')||l.includes('work'))
-    a="Aayush is an AI Solutions Engineer, Post-Sales at Weights & Biases (CoreWeave) since Feb 2026. He owns enterprise accounts (~$3M ARR), drives adoption/expansion, and partners with Product + Engineering on ML/GenAI workflow improvements.";
+    a="Aayush is an AI Solutions Engineer, Post-Sales at CoreWeave (since 2025, following the W&B acquisition). He owns enterprise accounts (~$3M ARR), drives adoption/expansion, and partners with Product + Engineering on ML/GenAI workflow improvements.";
   else if(l.includes('research')||l.includes('paper')||l.includes('publication')||l.includes('citation'))
     a="Aayush has 2 published papers with 847+ combined citations — COVID-19 detection from medical imaging. He also built 3D generative models for brain MRI synthesis at Indiana University.";
   else if(l.includes('skill')||l.includes('tech')||l.includes('stack'))
@@ -965,7 +965,7 @@ function respond(q){
   else if(l.includes('project'))
     a="Key projects include a 3D Conditional Diffusion Model for brain MRIs, a multi-lingual recommendation system for 10M+ users, a RAG code assistant, and published COVID-19 detection models.";
   else if(l.includes('wandb')||l.includes('weights'))
-    a="At Weights & Biases (Oct 2024 - Feb 2026), Aayush resolved 1000+ enterprise tickets, led customer demos and best-practice reviews, and built an internal LLM agent that automated bug reproduction + Jira creation, saving 40+ hours/month. W&B was acquired by CoreWeave in May 2025.";
+    a="At Weights & Biases (2024 - 2025), Aayush resolved 1000+ enterprise tickets, led customer demos and best-practice reviews, and built an internal LLM agent that automated bug reproduction + Jira creation, saving 40+ hours/month. W&B was acquired by CoreWeave in May 2025.";
   else if(l.includes('contact')||l.includes('email')||l.includes('reach'))
     a="Email: jaayush12@gmail.com | LinkedIn: linkedin.com/in/jaiswal-aayush | GitHub: github.com/aajais";
   else if(l.includes('trell')||l.includes('recommend'))

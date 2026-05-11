@@ -13,6 +13,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Aayush Jaiswal — AI Solutions Engineer">
 <meta name="twitter:description" content="From 800+ citation papers to 10M+ user systems.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -216,9 +218,44 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   .beyond-grid{grid-template-columns:1fr}
   .chat-panel{right:8px;left:8px;width:auto}
 }
+/* Section heading */
+.section-title{font-family:var(--mono);font-size:clamp(24px,4vw,40px);font-weight:700;color:var(--white);margin-bottom:8px}
+.section-subtitle{font-size:14px;color:var(--text-dim);margin-bottom:48px;max-width:600px}
+
+/* Skip link */
+.skip-link{position:absolute;top:-40px;left:0;background:var(--orange);color:#000;padding:8px 16px;z-index:10000;font-family:var(--mono);font-size:13px;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* Project thumbnails */
+.project-thumb{width:100%;height:140px;object-fit:cover;border:1px solid var(--border);margin-bottom:16px;filter:grayscale(40%) brightness(0.7);transition:filter .3s}
+.project-card:hover .project-thumb{filter:grayscale(0%) brightness(0.85)}
+
+/* Education logos */
+.edu-logo{width:40px;height:40px;object-fit:contain;filter:brightness(0.6) invert(0.8);margin-bottom:12px}
+
+/* Back to top */
+.back-to-top{position:fixed;bottom:90px;right:24px;width:40px;height:40px;background:#111;border:1px solid var(--border);color:var(--orange);font-family:var(--mono);font-size:18px;cursor:pointer;z-index:1999;display:none;align-items:center;justify-content:center;transition:all .2s}
+.back-to-top.visible{display:flex}
+.back-to-top:hover{background:var(--orange);color:#000;border-color:var(--orange)}
+
+/* Resume enhanced */
+.resume-file{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-bottom:16px;background:#0a0a0a;display:inline-block;padding:8px 16px;border:1px solid var(--border)}
+.resume-file .fname{color:var(--green)}
+.resume-file .fsize{color:var(--text-dim)}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  #particle-canvas{display:none}
+  .marquee-track{animation:none}
+  .pulse-dot{animation:none}
+  *{transition-duration:0.01ms!important}
+}
 </style>
 </head>
 <body>
+
+<!-- Skip to content -->
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <!-- Scroll Progress -->
 <div id="scroll-progress"></div>
@@ -240,6 +277,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </nav>
 
 <!-- Hero -->
+<main id="main-content">
 <section id="hero">
 <canvas id="particle-canvas"></canvas>
 <div class="hero-content">
@@ -250,7 +288,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <div class="hero-grid">
     <div>
       <div class="hero-portrait">
-        <img src="images/profile.jpeg" alt="Aayush Jaiswal" width="140" height="140">
+        <img src="images/profile.jpeg" alt="Aayush Jaiswal" width="140" height="140" loading="eager">
       </div>
       <div class="code-window">
         <div class="code-titlebar">
@@ -292,6 +330,8 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <!-- Trusted By -->
 <section class="section" id="trusted">
 <div class="section-label">00 // TRUSTED BY</div>
+<h2 class="section-title">Enterprise Partners</h2>
+<p class="section-subtitle">Supporting AI infrastructure for teams at leading companies.</p>
 <div class="trusted-grid">
   <div class="trusted-item">Google</div>
   <div class="trusted-item">Snap Inc</div>
@@ -316,30 +356,23 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 </div>
 
-<!-- Education -->
-<section class="section" id="education">
-<div class="section-label">01 // EDUCATION</div>
-<div class="edu-grid">
-  <div class="edu-card">
-    <div class="edu-degree">Bachelor of Technology in Computer Science</div>
-    <div class="edu-school">Manipal University Jaipur</div>
-    <div class="edu-meta"><span>2017 — 2021</span><span>GPA 3.70</span></div>
-  </div>
-  <div class="edu-card">
-    <div class="edu-degree">Master of Science in Data Science</div>
-    <div class="edu-school">Indiana University Bloomington</div>
-    <div class="edu-meta"><span>2022 — 2024</span><span>GPA 3.60</span></div>
-  </div>
+<!-- Tech Marquee -->
+<div class="marquee-wrap">
+<div class="marquee-track">
+  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
+  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
 </div>
-</section>
+</div>
 
 <!-- Journey -->
 <section class="section" id="journey">
-<div class="section-label">02 // JOURNEY</div>
+<div class="section-label">01 // JOURNEY</div>
+<h2 class="section-title">Professional Journey</h2>
+<p class="section-subtitle">The path that got me here. Click to expand.</p>
 <div class="timeline">
 
   <div class="timeline-item active">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="true" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">AI Solutions Engineer <span>@ CoreWeave</span></div>
       <div><span class="timeline-date">Feb 2026 — Present</span><span class="timeline-expand">+</span></div>
     </div>
@@ -352,7 +385,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">AI Support Engineer <span>@ Weights &amp; Biases</span></div>
       <div><span class="timeline-date">Oct 2024 — Feb 2026</span><span class="timeline-expand">+</span></div>
     </div>
@@ -365,7 +398,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">AI Researcher <span>@ Indiana University Bloomington</span></div>
       <div><span class="timeline-date">Aug 2023 — Oct 2024</span><span class="timeline-expand">+</span></div>
     </div>
@@ -378,7 +411,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">Machine Learning Engineer <span>@ Trell (Sequoia-backed)</span></div>
       <div><span class="timeline-date">Jan 2021 — Mar 2022</span><span class="timeline-expand">+</span></div>
     </div>
@@ -391,7 +424,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">Deep Learning Engineer <span>@ Spotle.ai</span></div>
       <div><span class="timeline-date">Jul 2020 — Sep 2020</span><span class="timeline-expand">+</span></div>
     </div>
@@ -404,7 +437,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">Research Assistant <span>@ Manipal University Jaipur</span></div>
       <div><span class="timeline-date">Jan 2020 — Jul 2020</span><span class="timeline-expand">+</span></div>
     </div>
@@ -417,7 +450,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">Data Scientist Intern <span>@ Airtel</span></div>
       <div><span class="timeline-date">May 2019 — Aug 2019</span><span class="timeline-expand">+</span></div>
     </div>
@@ -430,7 +463,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)">
+    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
       <div class="timeline-role">Marketing Intern <span>@ The Climber</span></div>
       <div><span class="timeline-date">Aug 2017 — Jan 2018</span><span class="timeline-expand">+</span></div>
     </div>
@@ -445,45 +478,11 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 </section>
 
-<!-- Skills -->
-<section class="section" id="skills">
-<div class="section-label">03 // SKILLS</div>
-
-<div class="skills-category">
-  <div class="skills-category-title">Programming</div>
-  <div class="skills-list">
-    <span class="skill-pill">Python</span><span class="skill-pill">JavaScript</span><span class="skill-pill">R</span><span class="skill-pill">SQL</span><span class="skill-pill">C/C++</span><span class="skill-pill">Dart</span><span class="skill-pill">Java</span><span class="skill-pill">Go</span>
-  </div>
-</div>
-
-<div class="skills-category">
-  <div class="skills-category-title">AI Frameworks</div>
-  <div class="skills-list">
-    <span class="skill-pill">TensorFlow</span><span class="skill-pill">PyTorch</span><span class="skill-pill">Keras</span><span class="skill-pill">OpenCV</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">JAX</span><span class="skill-pill">HuggingFace</span><span class="skill-pill">LangChain</span>
-  </div>
-</div>
-
-<div class="skills-category">
-  <div class="skills-category-title">Cloud &amp; MLOps</div>
-  <div class="skills-list">
-    <span class="skill-pill">AWS</span><span class="skill-pill">Google Cloud</span><span class="skill-pill">Azure</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">Linux</span><span class="skill-pill">Git</span><span class="skill-pill">Prometheus</span><span class="skill-pill">Grafana</span><span class="skill-pill">W&B</span><span class="skill-pill">MLflow</span>
-  </div>
-</div>
-
-<div class="specialties-grid">
-  <div class="specialty-card"><h4>Deep Learning</h4><p>Expert in neural networks and model architecture design</p></div>
-  <div class="specialty-card"><h4>NLP &amp; LLMs</h4><p>Fine-tuning, RAG pipelines, and prompt engineering at scale</p></div>
-  <div class="specialty-card"><h4>Generative AI</h4><p>GANs, VAEs, and diffusion models for image synthesis</p></div>
-  <div class="specialty-card"><h4>MLOps</h4><p>Deploying, monitoring, and scaling ML systems in production</p></div>
-  <div class="specialty-card"><h4>Computer Vision</h4><p>Specialized in 3D medical imaging and real-time detection</p></div>
-  <div class="specialty-card"><h4>AI Safety</h4><p>Model interpretability, fairness, and robustness testing</p></div>
-  <div class="specialty-card"><h4>Data Engineering</h4><p>Real-time pipelines with Spark, DBT, Airflow, and BigQuery</p></div>
-</div>
-</section>
-
 <!-- Projects -->
 <section class="section" id="projects">
-<div class="section-label">04 // PROJECTS</div>
+<div class="section-label">02 // PROJECTS</div>
+<h2 class="section-title">Things I Built</h2>
+<p class="section-subtitle">Things I built that I'm proud of.</p>
 <div class="projects-grid">
 
   <div class="project-card">
@@ -494,6 +493,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="project-card">
+    <img src="images/tfrs.png" alt="Multi-Lingual Recommendation System" class="project-thumb" loading="lazy">
     <h3>Multi-Lingual Video Recommendation System</h3>
     <p>Built the recommendation system powering a Sequoia-backed platform's feed for 10M+ users across 5 languages. Two-tower architecture, 50% faster retrieval, 45% better retention. Transfer learning did the heavy lifting.</p>
     <div class="project-tags"><span class="tag">TensorFlow</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">GCP</span></div>
@@ -501,6 +501,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="project-card">
+    <img src="images/rag.png" alt="RAG Code Assistant" class="project-thumb" loading="lazy">
     <h3>RAG Code Assistant (DIPY)</h3>
     <p>Production RAG system answering 10K+ developer queries/day against the DIPY open-source codebase. 95% accuracy, 60% lower latency through vector caching and semantic chunking.</p>
     <div class="project-tags"><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span><span class="tag">FastAPI</span></div>
@@ -520,6 +521,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="project-card">
+    <img src="images/covid.png" alt="COVID-19 Detection" class="project-thumb" loading="lazy">
     <h3>Rapid SARS-COV-2 Detection</h3>
     <p>96% accurate COVID-19 diagnosis from X-rays and CT scans using ensemble deep transfer learning. Published findings contributed to non-invasive diagnostic alternatives to RT-PCR during the pandemic.</p>
     <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Flask</span><span class="tag">AWS EC2</span></div>
@@ -534,6 +536,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   </div>
 
   <div class="project-card">
+    <img src="images/prometheus.png" alt="Observability Stack" class="project-thumb" loading="lazy">
     <h3>Cloud-Native Observability Stack</h3>
     <p>Full Prometheus + Grafana observability stack on Kubernetes that improved system uptime by 30% through custom PromQL alerting and automated dashboards.</p>
     <div class="project-tags"><span class="tag">AWS</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Kubernetes</span><span class="tag">PromQL</span></div>
@@ -551,7 +554,9 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 <!-- Papers -->
 <section class="section" id="papers">
-<div class="section-label">05 // PAPERS</div>
+<div class="section-label">03 // PAPERS</div>
+<h2 class="section-title">Research Publications</h2>
+<p class="section-subtitle">Peer-reviewed work with 847+ combined citations.</p>
 
 <div class="paper-card">
   <h3>3D Conditional Diffusion Model for Medical Image Synthesis</h3>
@@ -587,9 +592,69 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 </section>
 
+<!-- Skills -->
+<section class="section" id="skills">
+<div class="section-label">04 // SKILLS</div>
+<h2 class="section-title">Toolkit</h2>
+<p class="section-subtitle">My toolkit. I actually use all of these.</p>
+
+<div class="skills-category">
+  <div class="skills-category-title">Programming</div>
+  <div class="skills-list">
+    <span class="skill-pill">Python</span><span class="skill-pill">JavaScript</span><span class="skill-pill">R</span><span class="skill-pill">SQL</span><span class="skill-pill">C/C++</span><span class="skill-pill">Dart</span><span class="skill-pill">Java</span><span class="skill-pill">Go</span>
+  </div>
+</div>
+
+<div class="skills-category">
+  <div class="skills-category-title">AI Frameworks</div>
+  <div class="skills-list">
+    <span class="skill-pill">TensorFlow</span><span class="skill-pill">PyTorch</span><span class="skill-pill">Keras</span><span class="skill-pill">OpenCV</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span><span class="skill-pill">JAX</span><span class="skill-pill">HuggingFace</span><span class="skill-pill">LangChain</span>
+  </div>
+</div>
+
+<div class="skills-category">
+  <div class="skills-category-title">Cloud &amp; MLOps</div>
+  <div class="skills-list">
+    <span class="skill-pill">AWS</span><span class="skill-pill">Google Cloud</span><span class="skill-pill">Azure</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">Linux</span><span class="skill-pill">Git</span><span class="skill-pill">Prometheus</span><span class="skill-pill">Grafana</span><span class="skill-pill">W&B</span><span class="skill-pill">MLflow</span>
+  </div>
+</div>
+
+<div class="specialties-grid">
+  <div class="specialty-card"><h4>Deep Learning</h4><p>Expert in neural networks and model architecture design</p></div>
+  <div class="specialty-card"><h4>NLP &amp; LLMs</h4><p>Fine-tuning, RAG pipelines, and prompt engineering at scale</p></div>
+  <div class="specialty-card"><h4>Generative AI</h4><p>GANs, VAEs, and diffusion models for image synthesis</p></div>
+  <div class="specialty-card"><h4>MLOps</h4><p>Deploying, monitoring, and scaling ML systems in production</p></div>
+  <div class="specialty-card"><h4>Computer Vision</h4><p>Specialized in 3D medical imaging and real-time detection</p></div>
+  <div class="specialty-card"><h4>AI Safety</h4><p>Model interpretability, fairness, and robustness testing</p></div>
+  <div class="specialty-card"><h4>Data Engineering</h4><p>Real-time pipelines with Spark, DBT, Airflow, and BigQuery</p></div>
+</div>
+</section>
+
+<!-- Education -->
+<section class="section" id="education">
+<div class="section-label">05 // EDUCATION</div>
+<h2 class="section-title">Education</h2>
+<div class="edu-grid">
+  <div class="edu-card">
+    <img src="images/manipal.png" alt="Manipal University" class="edu-logo" loading="lazy">
+    <div class="edu-degree">Bachelor of Technology in Computer Science</div>
+    <div class="edu-school">Manipal University Jaipur</div>
+    <div class="edu-meta"><span>2017 — 2021</span><span>GPA 3.70</span></div>
+  </div>
+  <div class="edu-card">
+    <img src="images/indiana-university-logo.png" alt="Indiana University" class="edu-logo" loading="lazy">
+    <div class="edu-degree">Master of Science in Data Science</div>
+    <div class="edu-school">Indiana University Bloomington</div>
+    <div class="edu-meta"><span>2022 — 2024</span><span>GPA 3.60</span></div>
+  </div>
+</div>
+</section>
+
 <!-- Writing -->
 <section class="section" id="writing">
 <div class="section-label">06 // WRITING</div>
+<h2 class="section-title">Writing</h2>
+<p class="section-subtitle">Because sometimes 500 words beats 500 lines of code.</p>
 
 <a class="writing-card" href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">
   <h3>Streamlining Recommendation Systems with TensorFlow Recommenders (TFRS)</h3>
@@ -609,6 +674,8 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <!-- Beyond Code -->
 <section class="section" id="beyond">
 <div class="section-label">07 // BEYOND CODE</div>
+<h2 class="section-title">The Full Picture</h2>
+<p class="section-subtitle">The things that keep me human (and sane).</p>
 <div class="beyond-grid">
   <div class="beyond-card">
     <h3>🎸 Guitar</h3>
@@ -625,15 +692,20 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <!-- Resume -->
 <section class="section" id="resume">
 <div class="section-label">08 // RESUME</div>
+<h2 class="section-title">Resume</h2>
+<p class="section-subtitle">The condensed version of everything above.</p>
 <div class="resume-section">
-  <a class="resume-btn" href="AAYUSH_JAISWAL_RESUME.pdf" download><i class="fas fa-download"></i> Download Resume</a>
-  <div class="resume-date">Updated April 2026</div>
+  <div class="resume-file">$ ls -la <span class="fname">AAYUSH_JAISWAL_RESUME.pdf</span> <span class="fsize">117K Apr 2026</span></div>
+  <a class="resume-btn" href="AAYUSH_JAISWAL_RESUME.pdf" download><i class="fas fa-download"></i> DOWNLOAD RESUME</a>
+  <div class="resume-date">Updated April 2026 · 2 pages</div>
 </div>
 </section>
 
 <!-- Contact -->
 <section class="section" id="contact">
 <div class="section-label">09 // CONTACT</div>
+<h2 class="section-title">Let's Connect</h2>
+<p class="section-subtitle">Open to interesting conversations, collaborations, and new challenges.</p>
 <div class="contact-grid">
   <div class="contact-item">
     <i class="fas fa-envelope"></i>
@@ -663,6 +735,11 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 </section>
 
+</main>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
 <!-- Footer -->
 <footer>
   <p>&copy; 2026 Aayush Jaiswal. All rights reserved.</p>
@@ -675,7 +752,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <div class="chat-header">
     <h4><span class="online-dot"></span> Ask me anything</h4>
   </div>
-  <div class="chat-messages" id="chatMessages">
+  <div class="chat-messages" id="chatMessages" aria-live="polite">
     <div class="chat-msg bot">Hey! I'm Aayush's portfolio bot. Ask me about his work, research, skills, or anything else.</div>
   </div>
   <div class="chat-chips">
@@ -691,11 +768,13 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 
 <script>
-// Scroll progress
+// Scroll progress + back-to-top
 window.addEventListener('scroll',()=>{
   const h=document.documentElement.scrollHeight-window.innerHeight;
   const p=(window.scrollY/h)*100;
   document.getElementById('scroll-progress').style.width=p+'%';
+  const btn=document.getElementById('backToTop');
+  if(btn)btn.classList.toggle('visible',window.scrollY>600);
 });
 
 // Timeline toggle
@@ -705,9 +784,11 @@ function toggleTimeline(el){
   if(item.classList.contains('active')){
     item.classList.remove('active');
     body.style.maxHeight='0';
+    el.setAttribute('aria-expanded','false');
   }else{
     item.classList.add('active');
     body.style.maxHeight=body.scrollHeight+'px';
+    el.setAttribute('aria-expanded','true');
   }
 }
 
@@ -718,7 +799,7 @@ function toggleTimeline(el){
   let w,h,particles=[];
   function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight}
   resize();window.addEventListener('resize',resize);
-  const N=60;
+  const N=window.innerWidth<768?20:60;
   for(let i=0;i<N;i++){
     particles.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:Math.random()*2+1});
   }

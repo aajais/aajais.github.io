@@ -63,7 +63,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .hero-eyebrow{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:16px;letter-spacing:1px}
 .hero-name{font-family:var(--mono);font-size:clamp(40px,8vw,80px);font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-2px}
 .hero-tagline{font-family:var(--mono);font-size:clamp(14px,2vw,18px);color:var(--text-dim);margin-bottom:40px}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:stretch}
+.hero-left{display:flex;flex-direction:column}
+.hero-right{display:flex;flex-direction:column;gap:12px}
+
 /* Code bio */
 .code-window{border:1px solid var(--border);background:#0a0a0a;overflow:hidden}
 .code-titlebar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);background:#0d0d0d}
@@ -83,6 +86,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .hero-socials{display:flex;gap:16px;margin-top:24px}
 .hero-socials a{color:var(--text-dim);font-size:18px;transition:color .2s}
 .hero-socials a:hover{color:var(--orange)}
+
+/* Hero right rail */
+.hero-panel{border:1px solid var(--border);background:#060606;padding:18px}
+.hero-panel-title{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange);margin-bottom:10px}
+.hero-panel-list{display:flex;flex-direction:column;gap:8px}
+.hero-panel-item{font-size:13px;color:#b8b8b8;line-height:1.55}
+.worked-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.worked-chip{font-family:var(--mono);font-size:11px;color:#a8a8a8;border:1px solid var(--border);padding:7px 8px;text-align:center;background:#0b0b0b}
 
 /* Stats bar */
 .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:48px}
@@ -220,6 +231,9 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
   .hero-grid{grid-template-columns:1fr}
+  .hero-right{order:2}
+  .hero-left{order:1}
+  .worked-grid{grid-template-columns:1fr 1fr}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
   .edu-grid{grid-template-columns:1fr}
   .projects-grid{grid-template-columns:1fr}
@@ -296,7 +310,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <p class="hero-tagline">AI Solutions Engineer · Researcher · Builder</p>
 
   <div class="hero-grid">
-    <div>
+    <div class="hero-left">
       <div class="hero-portrait">
         <img src="images/profile.jpeg" alt="Aayush Jaiswal" width="140" height="140" loading="eager">
       </div>
@@ -307,16 +321,15 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
           <span class="code-dot green"></span>
           <span class="code-filename">aayush.py</span>
         </div>
-        <div class="code-body"><pre><span class="kw">class</span> <span class="fn">Aayush</span>(Engineer, Researcher, Creator):
-    <span class="str">"""From 800+ citation papers to 10M+ user systems."""</span>
-    
-    role     = <span class="str">"AI Solutions Engineer @ CoreWeave"</span>
-    accounts = [<span class="str">"Google"</span>, <span class="str">"Snap"</span>, <span class="str">"Riot Games"</span>, <span class="str">"Tower Research"</span>, ...]
-    papers   = <span class="num">2</span>   <span class="cm"># 847+ citations combined</span>
-    impact   = <span class="str">"10M+ users"</span>
-    
+        <div class="code-body"><pre><span class="kw">class</span> <span class="fn">Aayush</span>(Builder):
+    <span class="str">"""AI systems from research to production."""</span>
+
+    role = <span class="str">"AI Solutions Engineer @ CoreWeave"</span>
+    focus = [<span class="str">"distributed training"</span>, <span class="str">"inference optimization"</span>, <span class="str">"MLOps"</span>]
+    outcomes = {<span class="str">"users"</span>: <span class="str">"10M+"</span>, <span class="str">"citations"</span>: <span class="str">"847+"</span>, <span class="str">"mentored"</span>: <span class="str">"150+"</span>}
+
     <span class="kw">def</span> <span class="fn">beyond_code</span>(self):
-        <span class="kw">return</span> [<span class="str">"photography"</span>, <span class="str">"guitar"</span>, <span class="str">"mentoring 150+ students"</span>]</pre></div>
+        <span class="kw">return</span> [<span class="str">"photography"</span>, <span class="str">"guitar"</span>, <span class="str">"mentorship"</span>]</pre></div>
       </div>
       <div class="hero-socials">
         <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -325,7 +338,26 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
         <a href="https://medium.com/@jaayush12" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
       </div>
     </div>
-    <div></div>
+    <aside class="hero-right" data-feature="workedWithLogos">
+      <div class="hero-panel">
+        <div class="hero-panel-title">Now</div>
+        <div class="hero-panel-list">
+          <div class="hero-panel-item">Helping enterprise AI teams run distributed LLM training and GPU-optimized inference.</div>
+          <div class="hero-panel-item">Bridging research-quality modeling with production-grade infrastructure.</div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-title">Worked with teams at</div>
+        <div class="worked-grid">
+          <div class="worked-chip">Google</div>
+          <div class="worked-chip">Snap</div>
+          <div class="worked-chip">Riot Games</div>
+          <div class="worked-chip">Tower Research</div>
+          <div class="worked-chip">Recursion</div>
+          <div class="worked-chip">MasterClass</div>
+        </div>
+      </div>
+    </aside>
   </div>
 
   <div class="stats-bar">
@@ -787,6 +819,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 const FEATURE_FLAGS = {
   trustedBy: false,
   educationLogos: false,
+  workedWithLogos: true,
 };
 
 document.querySelectorAll('[data-feature]').forEach((el) => {

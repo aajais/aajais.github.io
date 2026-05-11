@@ -63,9 +63,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .hero-eyebrow{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:16px;letter-spacing:1px}
 .hero-name{font-family:var(--mono);font-size:clamp(40px,8vw,80px);font-weight:700;color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-2px}
 .hero-tagline{font-family:var(--mono);font-size:clamp(14px,2vw,18px);color:var(--text-dim);margin-bottom:40px}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:stretch}
-.hero-left{display:flex;flex-direction:column}
-.hero-right{display:flex;flex-direction:column;gap:12px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px;align-items:start}
+.hero-left{display:flex;flex-direction:column;gap:14px}
+.hero-right{display:flex;flex-direction:column}
+.hero-intro{font-size:14px;color:#b8b8b8;max-width:46ch;line-height:1.65}
 
 /* Code bio */
 .code-window{border:1px solid var(--border);background:#0a0a0a;overflow:hidden}
@@ -146,6 +147,52 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .timeline-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .tag{font-family:var(--mono);font-size:11px;padding:4px 10px;border:1px solid var(--border);color:var(--text-dim)}
 
+/* Journey connected snake timeline */
+.journey-strip{position:relative}
+.journey-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 22px;align-items:stretch}
+.journey-item{border:1px solid var(--border);background:#0a0a0a;padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;min-height:110px}
+.journey-item.primary{border-color:#3a2a16;background:#0d0803}
+.journey-item.education{border-color:#24352a;background:#070b08}
+.journey-years{font-family:var(--mono);font-size:11px;color:var(--orange);letter-spacing:.6px}
+.journey-brand{display:flex;align-items:center;gap:10px}
+.journey-logo-img{height:24px;max-width:130px;object-fit:contain;object-position:left center;filter:grayscale(100%) contrast(120%) brightness(1.04)}
+.journey-logo-fallback{height:22px;min-width:34px;padding:0 8px;border:1px solid var(--border);display:grid;place-items:center;font:700 9px var(--mono);color:#cfcfcf;background:#0f0f0f}
+.journey-name{font:600 12px var(--mono);letter-spacing:.3px;color:#e6e6e6;text-transform:uppercase;line-height:1.3}
+.journey-role{font-size:12px;color:var(--text-dim);line-height:1.4}
+.journey-badge{font-family:var(--mono);font-size:10px;color:#79d89a;border:1px solid #2a4a33;padding:2px 7px;display:inline-block;width:max-content;letter-spacing:.7px;text-transform:uppercase}
+
+/* place cards in snake order */
+.journey-item:nth-child(1){grid-column:1;grid-row:1}
+.journey-item:nth-child(2){grid-column:2;grid-row:1}
+.journey-item:nth-child(3){grid-column:3;grid-row:1}
+.journey-item:nth-child(4){grid-column:3;grid-row:2}
+.journey-item:nth-child(5){grid-column:2;grid-row:2}
+.journey-item:nth-child(6){grid-column:1;grid-row:2}
+.journey-item:nth-child(7){grid-column:1;grid-row:3}
+
+/* connectors */
+.journey-item::after{content:'';position:absolute;background:#ff9f1a}
+.journey-item::before{content:'';position:absolute;width:6px;height:6px;border-radius:50%;background:#ff9f1a;box-shadow:0 0 0 2px rgba(255,136,0,.12)}
+.journey-item:nth-child(1)::after,.journey-item:nth-child(2)::after{height:1px;width:22px;right:-22px;top:50%;transform:translateY(-50%)}
+.journey-item:nth-child(3)::after,.journey-item:nth-child(6)::after{width:1px;height:14px;left:50%;bottom:-14px;transform:translateX(-50%)}
+.journey-item:nth-child(4)::after,.journey-item:nth-child(5)::after{height:1px;width:22px;left:-22px;top:50%;transform:translateY(-50%)}
+.journey-item:nth-child(7)::after{display:none}
+
+/* connector endpoint dots (placed at destination side to indicate chronology) */
+.journey-item:nth-child(2)::before,.journey-item:nth-child(3)::before{left:-25px;top:calc(50% - 3px)}
+.journey-item:nth-child(4)::before,.journey-item:nth-child(7)::before{left:calc(50% - 3px);top:-17px}
+.journey-item:nth-child(5)::before,.journey-item:nth-child(6)::before{right:-25px;top:calc(50% - 3px)}
+.journey-item:nth-child(1)::before{display:none}
+
+@media(max-width:980px){
+  .journey-track{grid-template-columns:1fr 1fr}
+  .journey-item:nth-child(n){grid-column:auto;grid-row:auto}
+  .journey-item::after,.journey-item::before{display:none}
+}
+@media(max-width:700px){.journey-track{grid-template-columns:1fr}}
+.edu-card.edu-focus{border:1px solid #2a4a33;box-shadow:inset 0 0 0 1px #152119}
+.edu-meta .edu-pill{font-family:var(--mono);font-size:10px;color:#79d89a;border:1px solid #2a4a33;padding:2px 7px;letter-spacing:.7px;text-transform:uppercase}
+
 /* Skills */
 .skills-category{margin-bottom:32px}
 .skills-category-title{font-family:var(--mono);font-size:13px;color:var(--orange);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
@@ -162,6 +209,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 .project-card{background:var(--black);padding:28px;display:flex;flex-direction:column}
 .project-card h3{font-family:var(--mono);font-size:15px;color:var(--white);margin-bottom:10px}
 .project-card p{font-size:13px;color:var(--text-dim);line-height:1.6;flex:1}
+.case-study{border:1px solid var(--border);padding:12px;margin-top:12px;background:#060606}
+.case-row{display:grid;grid-template-columns:78px 1fr;gap:10px;padding:6px 0;border-bottom:1px solid #171717}
+.case-row:last-child{border-bottom:none}
+.case-label{font-family:var(--mono);font-size:10px;letter-spacing:.9px;text-transform:uppercase;color:var(--orange)}
+.case-text{font-size:12px;color:#b5b5b5;line-height:1.5}
 .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .project-link{font-family:var(--mono);font-size:12px;color:var(--orange);margin-top:12px;display:inline-flex;align-items:center;gap:6px}
 .project-link:hover{color:var(--green)}
@@ -256,7 +308,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 .project-card:hover .project-thumb{filter:grayscale(0%) brightness(0.85)}
 
 /* Education logos */
-.edu-logo{width:28px;height:28px;object-fit:contain;margin-bottom:10px;filter:none;opacity:.9}
+.edu-logo{width:28px;height:28px;object-fit:contain;margin-bottom:10px;filter:grayscale(100%) contrast(120%) brightness(1.04);opacity:.9}
 .edu-logo-iu,.edu-logo-manipal{background:transparent;padding:0;border:none}
 
 /* Back to top */
@@ -316,6 +368,15 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       <div class="hero-portrait">
         <img src="images/profile.jpeg" alt="Aayush Jaiswal" width="140" height="140" loading="eager">
       </div>
+      <p class="hero-intro">I build AI systems that ship: from 3D research prototypes to enterprise training and inference workflows in production.</p>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://medium.com/@jaayush12" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
+      </div>
+    </div>
+    <aside class="hero-right">
       <div class="code-window">
         <div class="code-titlebar">
           <span class="code-dot red"></span>
@@ -332,44 +393,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
     <span class="kw">def</span> <span class="fn">beyond_code</span>(self):
         <span class="kw">return</span> [<span class="str">"photography"</span>, <span class="str">"guitar"</span>, <span class="str">"mentorship"</span>]</pre></div>
-      </div>
-      <div class="hero-socials">
-        <a href="https://www.linkedin.com/in/jaiswal-aayush" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/aajais" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://scholar.google.com/citations?user=ZvTNhlcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://medium.com/@jaayush12" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
-      </div>
-    </div>
-    <aside class="hero-right" data-feature="workedWithLogos">
-      <div class="hero-panel">
-        <div class="hero-panel-title">Now</div>
-        <div class="hero-panel-list">
-          <div class="hero-panel-item">Helping enterprise AI teams run distributed LLM training and GPU-optimized inference.</div>
-          <div class="hero-panel-item">Bridging research-quality modeling with production-grade infrastructure.</div>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="hero-panel-title">Worked at</div>
-        <div class="worked-grid">
-          <div class="worked-logo primary">Weights &amp; Biases</div>
-          <div class="worked-logo primary">CoreWeave</div>
-          <div class="worked-logo">Indiana University</div>
-          <div class="worked-logo">Trell</div>
-          <div class="worked-logo">Airtel</div>
-          <div class="worked-logo">Spotle.ai</div>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="hero-panel-title">Supported teams at</div>
-        <div class="worked-grid">
-          <div class="worked-logo">Google</div>
-          <div class="worked-logo">Snap</div>
-          <div class="worked-logo">Riot Games</div>
-          <div class="worked-logo">Tower Research</div>
-          <div class="worked-logo">Recursion</div>
-          <div class="worked-logo">MasterClass</div>
-        </div>
-        <div class="worked-caption">Through platform support, advisory, and enablement engagements.</div>
       </div>
     </aside>
   </div>
@@ -418,138 +441,96 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 </section>
 
-<!-- Tech Marquee -->
-<div class="marquee-wrap">
-<div class="marquee-track">
-  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
-  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
-</div>
-</div>
-
 <!-- Journey -->
 <section class="section" id="journey">
 <div class="section-label">01 // JOURNEY</div>
 <h2 class="section-title">Professional Journey</h2>
-<p class="section-subtitle">The path that got me here. Click to expand.</p>
-<div class="timeline">
-
-  <div class="timeline-item active">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="true" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">AI Solutions Engineer, Post-Sales <span>@ Weights &amp; Biases (CoreWeave)</span></div>
-      <div><span class="timeline-date">Feb 2026 — Present</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body" style="max-height:300px">
-      <div class="timeline-body-inner">
-        <p>Own a portfolio of enterprise accounts (~$3M ARR), driving adoption, retention, and expansion across ML + GenAI workloads. Partner closely with Product and Engineering to turn customer pain points into roadmap priorities, and lead strategic initiatives that accelerate model training and inference workflows.</p>
-        <div class="timeline-tags"><span class="tag">Post-Sales</span><span class="tag">Enterprise AI</span><span class="tag">MLOps</span><span class="tag">GenAI</span></div>
+<p class="section-subtitle">Where I worked and studied, in order.</p>
+<div class="journey-strip" aria-label="Career timeline">
+  <div class="journey-track">
+    <article class="journey-item primary">
+      <div class="journey-years">2024 — NOW</div>
+      <div class="journey-brand">
+        <img src="images/wandb.png" class="journey-logo-img" alt="Weights and Biases logo" loading="lazy">
+        <div class="journey-name">Weights &amp; Biases</div>
       </div>
-    </div>
-  </div>
+      <div class="journey-role">AI Solutions Engineer, Post-Sales</div>
+    </article>
 
-  <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">AI Support Engineer <span>@ Weights &amp; Biases</span></div>
-      <div><span class="timeline-date">Oct 2024 — Feb 2026</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body">
-      <div class="timeline-body-inner">
-        <p>Resolved 1000+ enterprise support tickets across training, evaluation, and production workflows for LLM, vision, and recommendation teams. Led demos and best-practice reviews, and built an internal AI agent (LLM + GCP) for bug reproduction, log collection, and Jira creation that saved 40+ hours/month. W&amp;B was acquired by CoreWeave in May 2025.</p>
-        <div class="timeline-tags"><span class="tag">Support Engineering</span><span class="tag">MLOps</span><span class="tag">LLMs</span><span class="tag">Customer Enablement</span></div>
+    <article class="journey-item primary">
+      <div class="journey-years">2025 — NOW</div>
+      <div class="journey-brand">
+        <img src="images/coreweave.png" class="journey-logo-img" alt="CoreWeave logo" loading="lazy">
+        <div class="journey-name">CoreWeave</div>
       </div>
-    </div>
-  </div>
+      <div class="journey-role">Post-acquisition org alignment</div>
+    </article>
 
-  <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">AI Researcher <span>@ Indiana University Bloomington</span></div>
-      <div><span class="timeline-date">Aug 2023 — Oct 2024</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body">
-      <div class="timeline-body-inner">
-        <p>Built 3D generative models for brain MRI synthesis in Prof. Garyfallidis's DIPY lab — SOTA SSIM/PSNR metrics at 60% of the baseline model's size. Mentored 150+ students in Distributed Computing and AWS. Wrote code that landed in the open-source DIPY library. <a href="https://grg.luddy.indiana.edu/team/aayush_jaiswal.html" target="_blank" rel="noopener noreferrer">IU Lab Profile ↗</a></p>
-        <div class="timeline-tags"><span class="tag">3D Diffusion Models</span><span class="tag">HPC</span><span class="tag">DIPY</span><span class="tag">Open Source</span></div>
+    <article class="journey-item education">
+      <div class="journey-years">2022 — 2024</div>
+      <div class="journey-brand">
+        <img src="images/iu-logo.png" class="journey-logo-img" alt="Indiana University logo" loading="lazy">
+        <div class="journey-name">Indiana University</div>
       </div>
-    </div>
-  </div>
+      <div class="journey-badge">Education</div>
+      <div class="journey-role">MS Data Science, research + TA work</div>
+    </article>
 
-  <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">Machine Learning Engineer <span>@ Trell (Sequoia-backed)</span></div>
-      <div><span class="timeline-date">Jan 2021 — Mar 2022</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body">
-      <div class="timeline-body-inner">
-        <p>At a Sequoia-backed short-video platform, shipped a multilingual recommendation system that drove 45% retention gains across 10M+ users in 5 languages. Automated the entire model training and deployment pipeline using AWS, Prometheus, Grafana, and W&B.</p>
-        <div class="timeline-tags"><span class="tag">Recommendation Systems</span><span class="tag">AWS</span><span class="tag">MLOps</span><span class="tag">Data Pipelines</span></div>
+    <article class="journey-item">
+      <div class="journey-years">2021 — 2022</div>
+      <div class="journey-brand">
+        <img src="images/trell.png" class="journey-logo-img" alt="Trell logo" loading="lazy">
+        <div class="journey-name">Trell</div>
       </div>
-    </div>
-  </div>
+      <div class="journey-role">Built multilingual recommendation systems</div>
+    </article>
 
-  <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">Deep Learning Engineer <span>@ Spotle.ai</span></div>
-      <div><span class="timeline-date">Jul 2020 — Sep 2020</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body">
-      <div class="timeline-body-inner">
-        <p>First taste of deploying CNNs in production for a real product. Built image classification pipelines and learned that 96% accuracy in a notebook and 96% accuracy in prod are very different problems.</p>
-        <div class="timeline-tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span><span class="tag">Computer Vision</span></div>
+    <article class="journey-item">
+      <div class="journey-years">2020 — 2021</div>
+      <div class="journey-brand">
+        <img src="images/airtel.png" class="journey-logo-img" alt="Airtel logo" loading="lazy">
+        <div class="journey-name">Airtel X Labs</div>
       </div>
-    </div>
-  </div>
+      <div class="journey-role">Computer vision and ML prototyping</div>
+    </article>
 
-  <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">Research Assistant <span>@ Manipal University Jaipur</span></div>
-      <div><span class="timeline-date">Jan 2020 — Jul 2020</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body">
-      <div class="timeline-body-inner">
-        <p>Conducted CV research on COVID-19 detection from chest scans and X-rays — resulting in 2 published papers that accumulated 800+ combined citations. Built end-to-end AI diagnostic tools designed to slot directly into clinical workflows.</p>
-        <div class="timeline-tags"><span class="tag">Computer Vision</span><span class="tag">Deep Learning</span><span class="tag">Medical AI</span></div>
+    <article class="journey-item">
+      <div class="journey-years">2019 — 2020</div>
+      <div class="journey-brand">
+        <div class="journey-logo-fallback">SP</div>
+        <div class="journey-name">Spotle.ai</div>
       </div>
-    </div>
-  </div>
+      <div class="journey-role">Early applied AI experimentation</div>
+    </article>
 
-  <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">Data Scientist Intern <span>@ Airtel</span></div>
-      <div><span class="timeline-date">May 2019 — Aug 2019</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body">
-      <div class="timeline-body-inner">
-        <p>Segmented 10M+ subscribers using clustering algorithms to make marketing campaigns actually relevant. Learned what "scale" means before the word had a hype cycle attached to it.</p>
-        <div class="timeline-tags"><span class="tag">Data Science</span><span class="tag">Spark</span><span class="tag">Hadoop</span></div>
+    <article class="journey-item education">
+      <div class="journey-years">2017 — 2021</div>
+      <div class="journey-brand">
+        <img src="images/manipal.png" class="journey-logo-img" alt="Manipal University logo" loading="lazy">
+        <div class="journey-name">Manipal University Jaipur</div>
       </div>
-    </div>
+      <div class="journey-badge">Education</div>
+      <div class="journey-role">B.Tech Computer Science</div>
+    </article>
   </div>
-
-  <div class="timeline-item">
-    <div class="timeline-header" onclick="toggleTimeline(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTimeline(this)}">
-      <div class="timeline-role">Marketing Intern <span>@ The Climber</span></div>
-      <div><span class="timeline-date">Aug 2017 — Jan 2018</span><span class="timeline-expand">+</span></div>
-    </div>
-    <div class="timeline-body">
-      <div class="timeline-body-inner">
-        <p>Drove a 30% revenue increase through targeted marketing strategies. Every ML model is a better product when you understand how people actually make decisions.</p>
-        <div class="timeline-tags"><span class="tag">Marketing</span><span class="tag">Strategy</span></div>
-      </div>
-    </div>
-  </div>
-
 </div>
 </section>
 
 <!-- Projects -->
 <section class="section" id="projects">
 <div class="section-label">02 // PROJECTS</div>
-<h2 class="section-title">Things I Built</h2>
-<p class="section-subtitle">Things I built that I'm proud of.</p>
+<h2 class="section-title">Selected Case Studies</h2>
+<p class="section-subtitle">A few builds broken down by problem, approach, and measurable outcome.</p>
 <div class="projects-grid">
 
   <div class="project-card">
     <h3>3D Conditional Diffusion Model</h3>
-    <p>Designed a 2-channel VQ-VAE that generates high-fidelity 3D brain MRIs — SOTA SSIM/PSNR at 60% of the baseline model's size. The kind of research that unlocks diagnostic capabilities that didn't exist before.</p>
+    <p>Research system for controllable 3D brain MRI synthesis in the DIPY lab.</p>
+    <div class="case-study">
+      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Generate high-fidelity 3D MRIs while keeping model size practical for research iteration on shared HPC resources.</div></div>
+      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Designed a 2-channel VQ-VAE + diffusion pipeline with custom loss balancing, rigorous experiment tracking, and repeatable training recipes.</div></div>
+      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Achieved SOTA SSIM/PSNR at ~60% of baseline model size, improving both image quality and experimental throughput.</div></div>
+    </div>
     <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">HPC</span><span class="tag">W&B</span></div>
     <a class="project-link" href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer">W&B Report <i class="fas fa-arrow-right"></i></a>
   </div>
@@ -557,7 +538,12 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <div class="project-card">
     <img src="images/tfrs.png" alt="Multi-Lingual Recommendation System" class="project-thumb" loading="lazy">
     <h3>Multi-Lingual Video Recommendation System</h3>
-    <p>Built the recommendation system powering a Sequoia-backed platform's feed for 10M+ users across 5 languages. Two-tower architecture, 50% faster retrieval, 45% better retention. Transfer learning did the heavy lifting.</p>
+    <p>Recommendation platform work for a 10M+ user short-video product across 5 languages.</p>
+    <div class="case-study">
+      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Feed quality and retrieval speed were bottlenecking retention and personalization quality as traffic scaled.</div></div>
+      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Built a two-tower retrieval architecture with transfer learning, plus tighter MLOps loops for faster retraining and rollout.</div></div>
+      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Improved retention by 45% and reduced retrieval latency by 50%, materially lifting engagement at production scale.</div></div>
+    </div>
     <div class="project-tags"><span class="tag">TensorFlow</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">GCP</span></div>
     <a class="project-link" href="https://medium.com/@jaayush12/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">Article <i class="fas fa-arrow-right"></i></a>
   </div>
@@ -565,9 +551,14 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
   <div class="project-card">
     <img src="images/rag.png" alt="RAG Code Assistant" class="project-thumb" loading="lazy">
     <h3>RAG Code Assistant (DIPY)</h3>
-    <p>Production RAG system answering 10K+ developer queries/day against the DIPY open-source codebase. 95% accuracy, 60% lower latency through vector caching and semantic chunking.</p>
+    <p>Developer-facing assistant for a fast-moving open-source scientific codebase.</p>
+    <div class="case-study">
+      <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Contributors were losing time searching docs/issues/code context before they could implement or debug changes.</div></div>
+      <div class="case-row"><div class="case-label">Approach</div><div class="case-text">Built a RAG pipeline with semantic chunking, vector search, and response caching behind a low-latency FastAPI service.</div></div>
+      <div class="case-row"><div class="case-label">Result</div><div class="case-text">Handled 10K+ dev queries/day with ~95% answer accuracy while reducing median response latency by ~60%.</div></div>
+    </div>
     <div class="project-tags"><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span><span class="tag">FastAPI</span></div>
-    <a class="project-link" href="https://github.com/aayush9400/dipy_code_assistant" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
+    <a class="project-link" href="https://github.com/aajais/dipy_code_assistant" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
   </div>
 
   <div class="project-card">
@@ -659,6 +650,12 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <div class="section-label">04 // SKILLS</div>
 <h2 class="section-title">Toolkit</h2>
 <p class="section-subtitle">My toolkit. I actually use all of these.</p>
+<div class="marquee-wrap">
+<div class="marquee-track">
+  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
+  <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Kubernetes</span><span>AWS</span><span>Docker</span><span>JAX</span><span>CUDA</span><span>HuggingFace</span><span>W&B</span><span>GCP</span><span>LangChain</span><span>OpenCV</span><span>Keras</span><span>NumPy</span><span>Pandas</span>
+</div>
+</div>
 
 <div class="skills-category">
   <div class="skills-category-title">Programming</div>
@@ -696,17 +693,17 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <div class="section-label">05 // EDUCATION</div>
 <h2 class="section-title">Education</h2>
 <div class="edu-grid">
-  <div class="edu-card">
+  <div class="edu-card edu-focus">
     <img src="images/manipal.png" alt="Manipal University" class="edu-logo edu-logo-manipal" data-feature="educationLogos" loading="lazy">
     <div class="edu-degree">Bachelor of Technology in Computer Science</div>
     <div class="edu-school">Manipal University Jaipur</div>
-    <div class="edu-meta"><span>2017 — 2021</span></div>
+    <div class="edu-meta"><span>2017 — 2021</span><span class="edu-pill">Education</span></div>
   </div>
-  <div class="edu-card">
-    <img src="images/indiana-university-logo.png" alt="Indiana University" class="edu-logo edu-logo-iu" data-feature="educationLogos" loading="lazy">
+  <div class="edu-card edu-focus">
+    <img src="images/iu-logo.png" alt="Indiana University" class="edu-logo edu-logo-iu" data-feature="educationLogos" loading="lazy">
     <div class="edu-degree">Master of Science in Data Science</div>
     <div class="edu-school">Indiana University Bloomington</div>
-    <div class="edu-meta"><span>2022 — 2024</span></div>
+    <div class="edu-meta"><span>2022 — 2024</span><span class="edu-pill">Education</span></div>
   </div>
 </div>
 </section>
@@ -833,7 +830,6 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 const FEATURE_FLAGS = {
   trustedBy: false,
   educationLogos: false,
-  workedWithLogos: true,
 };
 
 document.querySelectorAll('[data-feature]').forEach((el) => {
@@ -865,35 +861,72 @@ function toggleTimeline(el){
   }
 }
 
-// Particle canvas
+// Particle canvas (interactive)
 (function(){
   const canvas=document.getElementById('particle-canvas');
   const ctx=canvas.getContext('2d');
   let w,h,particles=[];
+  const mouse={x:-9999,y:-9999,active:false};
+
   function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight}
   resize();window.addEventListener('resize',resize);
-  const N=window.innerWidth<768?20:60;
+
+  window.addEventListener('mousemove',(e)=>{mouse.x=e.clientX;mouse.y=e.clientY;mouse.active=true;});
+  window.addEventListener('mouseleave',()=>{mouse.active=false;mouse.x=-9999;mouse.y=-9999;});
+
+  const N=window.innerWidth<768?24:72;
   for(let i=0;i<N;i++){
-    particles.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,r:Math.random()*2+1});
+    particles.push({
+      x:Math.random()*w,
+      y:Math.random()*h,
+      vx:(Math.random()-.5)*.55,
+      vy:(Math.random()-.5)*.55,
+      r:Math.random()*1.8+0.8
+    });
   }
+
   function draw(){
     ctx.clearRect(0,0,w,h);
+
     for(let i=0;i<N;i++){
       const p=particles[i];
-      p.x+=p.vx;p.y+=p.vy;
+
+      if(mouse.active){
+        const mdx=mouse.x-p.x, mdy=mouse.y-p.y;
+        const md=Math.hypot(mdx,mdy);
+        if(md<160){
+          const force=(160-md)/160;
+          p.vx -= (mdx/(md||1))*force*0.03;
+          p.vy -= (mdy/(md||1))*force*0.03;
+        }
+      }
+
+      p.x+=p.vx; p.y+=p.vy;
+      p.vx*=0.992; p.vy*=0.992;
       if(p.x<0||p.x>w)p.vx*=-1;
       if(p.y<0||p.y>h)p.vy*=-1;
+
       ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(255,136,0,0.6)';ctx.fill();
+      ctx.fillStyle='rgba(255,136,0,0.62)';ctx.fill();
+
       for(let j=i+1;j<N;j++){
         const q=particles[j];
-        const dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<150){
+        const dx=p.x-q.x,dy=p.y-q.y,d=Math.hypot(dx,dy);
+        if(d<140){
           ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
-          ctx.strokeStyle='rgba(255,136,0,'+(1-d/150)*0.2+')';ctx.stroke();
+          ctx.strokeStyle='rgba(255,136,0,'+(1-d/140)*0.2+')';ctx.stroke();
+        }
+      }
+
+      if(mouse.active){
+        const dmx=p.x-mouse.x, dmy=p.y-mouse.y, md=Math.hypot(dmx,dmy);
+        if(md<170){
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(mouse.x,mouse.y);
+          ctx.strokeStyle='rgba(61,255,145,'+(1-md/170)*0.16+')';ctx.stroke();
         }
       }
     }
+
     requestAnimationFrame(draw);
   }
   draw();

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#050505"/>
+  <g opacity="0.12" stroke="#2a4a33" stroke-width="2">
+    <line x1="120" y1="120" x2="1080" y2="120"/>
+    <line x1="120" y1="680" x2="1080" y2="680"/>
+    <line x1="120" y1="120" x2="120" y2="680"/>
+    <line x1="1080" y1="120" x2="1080" y2="680"/>
+  </g>
+  <text x="600" y="360" text-anchor="middle" fill="#f5f5f5" font-size="170" font-family="'JetBrains Mono', monospace" font-weight="700">DIPY</text>
+  <text x="600" y="450" text-anchor="middle" fill="#79d89a" font-size="38" font-family="'JetBrains Mono', monospace" letter-spacing="6">RAG ASSISTANT</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#050505"/>
+  <g stroke="#79d89a" stroke-width="4" fill="none" opacity="0.85">
+    <rect x="120" y="180" width="220" height="120"/>
+    <rect x="470" y="180" width="220" height="120"/>
+    <rect x="820" y="180" width="220" height="120"/>
+    <rect x="295" y="430" width="220" height="120"/>
+    <rect x="645" y="430" width="220" height="120"/>
+    <path d="M340 240h130M690 240h130M930 300v130M820 490H515M405 430V300" stroke="#ffad42" stroke-dasharray="8 8"/>
+  </g>
+  <text x="600" y="680" text-anchor="middle" fill="#f5f5f5" font-size="78" font-family="'JetBrains Mono', monospace" font-weight="700">DBT PIPELINE</text>
+</svg>

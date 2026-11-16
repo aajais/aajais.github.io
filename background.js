@@ -1,6 +1,7 @@
 // Particle canvas (interactive)
 (function(){
   const canvas=document.getElementById('particle-canvas');
+  if(!canvas) return;
   const ctx=canvas.getContext('2d');
   if(!ctx) return;
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
@@ -65,6 +66,12 @@
 
       p.x+=p.vx; p.y+=p.vy;
       p.vx*=0.993; p.vy*=0.993;
+      // Maintain a gentle ambient drift after mouse forces dissipate.
+      const speed=Math.hypot(p.vx,p.vy);
+      if(speed<0.12){
+        const angle=speed>0?Math.atan2(p.vy,p.vx):Math.random()*Math.PI*2;
+        p.vx=Math.cos(angle)*0.12; p.vy=Math.sin(angle)*0.12;
+      }
       if(p.x<0||p.x>w)p.vx*=-1;
       if(p.y<0||p.y>h)p.vy*=-1;
 

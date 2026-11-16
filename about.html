@@ -3,47 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About Me — Aayush Jaiswal</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>About Aayush Jaiswal — Applied AI & ML Engineering</title>
+<meta name="description" content="Aayush Jaiswal builds applied AI and ML systems, combining enterprise engineering at CoreWeave with recommendations and medical-imaging research.">
+<link rel="canonical" href="https://aajais.github.io/about.html">
+<meta property="og:title" content="About Aayush Jaiswal">
+<meta property="og:description" content="Applied AI engineering, model research, and production ML systems.">
+<meta property="og:url" content="https://aajais.github.io/about.html">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://aajais.github.io/images/profile.jpeg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-:root{--black:#000;--orange:#ff8800;--border:#262626;--text:#d8d8d8;--text-dim:#8f8f8f;--white:#fff;--mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--black);color:var(--text);font-family:var(--sans)}
-.wrap{max-width:980px;margin:80px auto;padding:0 24px;text-align:center}
-h1{font-family:var(--mono);font-size:clamp(34px,6vw,62px);color:var(--white);margin-bottom:20px}
-.about-grid{display:grid;grid-template-columns:140px minmax(0,1fr);gap:24px;align-items:start}
-.hero-portrait img{width:140px;height:140px;object-fit:cover;border:2px solid var(--border)}
-.code-window{border:1px solid var(--border);background:#0a0a0a;overflow:hidden;text-align:left}
-.code-titlebar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);background:#0d0d0d}
-.code-dot{width:10px;height:10px;display:inline-block}.red{background:#ff5f57}.yellow{background:#febc2e}.green{background:#28c840}
-.code-filename{font-family:var(--mono);font-size:12px;color:var(--text-dim);margin-left:8px}
-.code-body{padding:20px;font-family:var(--mono);font-size:13px;line-height:1.7;overflow-x:auto}
-.kw{color:var(--orange)} .str{color:#3dff91} .fn{color:#82aaff}
-.back{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:10px 14px;border:1px solid var(--border);color:#fff;text-decoration:none;font-family:var(--mono);font-size:12px}
-.back:hover{border-color:var(--orange);color:var(--orange)}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr;justify-items:center}}
+.about-wrap{max-width:980px;margin:70px auto;padding:0 24px}
+.about-wrap h1{font:700 clamp(30px,6vw,48px) var(--mono);color:var(--white);margin-bottom:24px}
+.about-layout{display:grid;grid-template-columns:180px minmax(0,1fr);gap:36px;align-items:start}
+.about-photo{width:100%;height:auto;border:1px solid var(--border)}
+.about-copy{min-width:0}.about-copy p{margin-bottom:20px;line-height:1.8}.about-copy h2{font:600 20px var(--mono);color:var(--orange);margin:24px 0 12px}
+.about-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px}.about-actions a{border:1px solid var(--border);padding:12px 16px}
+@media(max-width:600px){.about-layout{grid-template-columns:1fr}.about-photo{max-width:160px}.about-wrap{margin:36px auto}}
 </style>
 </head>
 <body>
-  <main class="wrap">
-    <h1>About Me</h1>
-    <div class="about-grid">
-      <div class="hero-portrait"><img src="images/profile.jpeg" alt="Aayush Jaiswal"></div>
-      <div class="code-window">
-        <div class="code-titlebar"><span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span><span class="code-filename">aayush.py</span></div>
-        <div class="code-body"><pre><span class="kw">class</span> <span class="fn">Aayush</span>(Builder):
-    <span class="str">"""AI systems from research to production."""</span>
-
-    role = <span class="str">"AI Solutions Engineer, Post-Sales @ W&B (CoreWeave)"</span>
-    focus = [<span class="str">"distributed training"</span>, <span class="str">"inference optimization"</span>, <span class="str">"MLOps"</span>]
-    outcomes = {<span class="str">"users"</span>: <span class="str">"10M+"</span>, <span class="str">"citations"</span>: <span class="str">"847+"</span>, <span class="str">"mentored"</span>: <span class="str">"150+"</span>}
-
-    <span class="kw">def</span> <span class="fn">beyond_code</span>(self):
-        <span class="kw">return</span> [<span class="str">"photography"</span>, <span class="str">"guitar"</span>, <span class="str">"mentorship"</span>]</pre></div>
-      </div>
-    </div>
-    <a class="back" href="index.html#hero"><i class="fas fa-arrow-left"></i> Back to Home</a>
-  </main>
+<a class="skip-link" href="#about-content">Skip to content</a>
+<main class="about-wrap" id="about-content">
+<div class="section-label">ABOUT</div><h1>ML depth. Practical delivery.</h1>
+<div class="about-layout"><img class="about-photo" src="images/profile.jpeg" width="180" height="180" alt="Aayush Jaiswal"><div class="about-copy">
+<p>I’m Aayush, an AI Solutions Engineer at CoreWeave. I help enterprise teams put model training, evaluation, inference, and AI agents into practice, drawing on hands-on ML engineering and generative-model research.</p>
+<h2>From models to systems</h2>
+<p>At Trell, I built multilingual video recommendations with TensorFlow Recommenders and ScaNN, alongside data pipelines and production monitoring. At Indiana University, I researched 3D diffusion models for brain imaging and implemented spherical CNNs in TensorFlow.</p>
+<p>At Weights &amp; Biases and CoreWeave, my work spans enterprise ML troubleshooting, automated bug reproduction, and agent observability. I collaborated with CrowdStrike on integrating Weave tracing with Falcon AIDR security controls and co-led an inference workshop at Fully Connected 2026.</p>
+<h2>Sharing the work</h2>
+<p>I write about diffusion models, recommendation systems, and ML operations. I also teach through technical talks and workshops, including speech-model fine-tuning sessions in Boston and Chicago.</p>
+<h2>Beyond code</h2>
+<p>I play guitar, take travel photographs, and enjoy helping other engineers and students work through challenging technical ideas.</p>
+<div class="about-actions"><a href="index.html#projects">Explore the work</a><a href="AAYUSH_JAISWAL_RESUME.pdf">View resume</a><a href="index.html#contact">Get in touch</a></div>
+</div></div>
+</main>
 </body>
 </html>

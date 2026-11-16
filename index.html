@@ -239,13 +239,39 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.92);
 /* gentle edge fade for auto-scrolling sections (stable, no overlay artifacts) */
 .journey-strip,.projects-shell{box-shadow:inset 44px 0 34px -32px rgba(0,0,0,.95),inset -44px 0 34px -32px rgba(0,0,0,.95)}
 .projects-track::-webkit-scrollbar{display:none}
-.project-card{flex:0 0 352px;scroll-snap-align:start;background:#070707;border:1px solid var(--border);padding:24px;display:flex;flex-direction:column;gap:16px;height:392px;min-height:392px}
-.project-card h3{font-family:var(--mono);font-size:18px;color:var(--white);margin:0;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}
-.project-impact{font-size:12.5px;color:#9f9f9f;line-height:1.4;display:block;overflow:visible;margin:0;min-height:0}
+.media-card{min-width:0;background:#070707;border:1px solid var(--border);padding:24px;display:flex;flex-direction:column;gap:16px;height:auto}
+.project-card{flex:0 0 352px;scroll-snap-align:start;min-height:440px}
+.media-card h3{font-family:var(--mono);font-size:18px;color:var(--white);margin:0;line-height:1.4}
+.project-impact,.talk-description{font-size:13px;color:#9f9f9f;line-height:1.6;margin:0}
 .project-tags{display:flex;flex-wrap:nowrap;gap:8px;margin:0;overflow:hidden;white-space:nowrap;min-height:34px;align-items:center}
 .project-tags .tag{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 11px;box-sizing:border-box;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.35px;line-height:1;border:1px solid #2a4a33;color:#79d89a;background:#070d09;white-space:nowrap;flex:0 0 auto}
 .project-link{font-family:var(--mono);font-size:14px;color:var(--orange);margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:8px}
 .project-link:hover{color:var(--green)}
+
+/* Talks */
+.talks-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.talk-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;color:var(--text-dim)}
+.talk-meta time{color:var(--orange)}
+.talk-role{display:inline-block;color:#79d89a;border:1px solid #2a4a33;background:#070d09;padding:4px 8px}
+.talk-event{font-family:var(--mono);font-size:12px;color:var(--orange);margin:0}
+@media(max-width:1000px){.talks-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.talks-list{grid-template-columns:1fr}}
+#talks{scroll-margin-top:56px}
+/* Shared image treatment for project and event tiles. */
+.project-thumb,.talk-gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#0a0a0a;border:1px solid var(--border)}
+.talk-gallery{position:relative;width:100%;flex-shrink:0}
+.talk-gallery>a{display:block}
+.talk-gallery.is-ready{display:grid;grid-template-columns:minmax(0,1fr)}
+.talk-gallery.is-ready>a{grid-area:1/1;opacity:0;pointer-events:none;transition:opacity 700ms ease-in-out}
+.talk-gallery.is-ready>a.is-active{opacity:1;pointer-events:auto;z-index:1}
+.talk-gallery.is-ready>.slideshow-controls{grid-area:2/1}
+@media(prefers-reduced-motion:reduce){.talk-gallery.is-ready>a{transition:none}}
+.talk-gallery img{height:auto}
+.talk-gallery a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.slideshow-controls{display:flex;align-items:center;gap:10px;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--text-dim)}
+.slideshow-count{margin-right:auto}
+@media(max-width:900px) and (min-width:769px){.nav-links{gap:14px}.nav-links a{font-size:12px;letter-spacing:1px}.nav-socials{gap:10px}}
+
 
 /* Papers */
 .paper-card{border:1px solid var(--border);padding:28px;margin-bottom:2px;background:#050505}
@@ -338,10 +364,10 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 .skip-link:focus{top:0}
 
 /* Project thumbnails */
-.project-thumb{width:100%;height:140px;object-fit:cover;border:1px solid var(--border);margin-bottom:16px;filter:grayscale(40%) brightness(0.7);transition:filter .3s;background:#0a0a0a;display:block}
-.project-thumb.trell-fix{object-position:center;transform:scale(1.03);transform-origin:center;clip-path:inset(1px 0 1px 0)}
+.project-thumb{height:auto;margin:0;flex-shrink:0}
+.project-thumb.trell-fix{object-position:center}
 .project-thumb.remy-logo{object-fit:contain;padding:12px 24px;background:#0a0a0a}
-.project-card:hover .project-thumb{filter:grayscale(0%) brightness(0.85)}
+
 .project-thumb.placeholder{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8f8f8f;background:linear-gradient(135deg,#0a0a0a 0%,#0f0f0f 100%)}
 
 /* Education logos */
@@ -390,6 +416,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
     <a href="#journey">Journey</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#talks">Talks</a>
     <a href="#papers">Papers</a>
     <a href="#contact">Contact</a>
   </div>
@@ -548,7 +575,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 <div class="projects-shell">
   <div class="projects-track" id="projectsTrack">
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <div class="project-thumb placeholder" aria-hidden="true">Project Snapshot</div>
       <h3>3D Conditional<br>Diffusion Model</h3>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">HPC</span><span class="tag">W&B</span></div>
@@ -556,7 +583,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       <a class="project-link" href="https://api.wandb.ai/links/dipy_genai/dzrwwnai" target="_blank" rel="noopener noreferrer">W&B Report <i class="fas fa-arrow-right"></i></a>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <img src="images/tfrs.png" alt="Multi-Lingual Recommendation System" class="project-thumb trell-fix" loading="lazy">
       <h3>Multi-Lingual Video<br>Recommendation System</h3>
       <div class="project-tags"><span class="tag">TensorFlow</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">MLflow</span><span class="tag">GCP</span></div>
@@ -564,7 +591,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       <a class="project-link" href="https://medium.com/@aajais/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">Article <i class="fas fa-arrow-right"></i></a>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <img src="images/dipy-logo.svg" alt="DIPY logo" class="project-thumb" loading="lazy">
       <h3>RAG Code<br>Assistant (DIPY)</h3>
       <div class="project-tags"><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span><span class="tag">FastAPI</span></div>
@@ -572,21 +599,21 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       <a class="project-link" href="https://github.com/aajais/dipy_code_assistant" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <img src="images/remy-logo.jpg" alt="Remy AI logo" class="project-thumb remy-logo" loading="lazy">
       <h3>Meal Planner<br>AI Agent</h3>
       <div class="project-tags"><span class="tag">Flutter</span><span class="tag">FastAPI</span><span class="tag">Firebase</span><span class="tag">OpenAI</span></div>
       <p class="project-impact">Built an end-to-end meal planning agent generating practical weekly plans from goals, constraints, and inventory.</p>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <div class="project-thumb placeholder" aria-hidden="true">Project Snapshot</div>
       <h3>COVID-19<br>Detection Model</h3>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span class="tag">AWS</span></div>
       <p class="project-impact">Delivered real-time detection workflows that reduced manual review overhead while sustaining strong accuracy.</p>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <img src="images/covid.png" alt="COVID-19 Detection" class="project-thumb" loading="lazy">
       <h3>Rapid SARS-CoV-2<br>Detection</h3>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Flask</span><span class="tag">AWS EC2</span></div>
@@ -594,7 +621,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       <a class="project-link" href="https://github.com/aayush9400/Covid-19-CT-SCAN-Classifier" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <img src="images/brain-mri-minimal.svg" alt="Brain MRI visualization" class="project-thumb" loading="lazy">
       <h3>3D Brain Tumor<br>Segmentation</h3>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">3D Conv</span></div>
@@ -602,7 +629,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       <a class="project-link" href="https://github.com/the-neural-networker/brain-tumor-segmentation" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-arrow-right"></i></a>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <img src="images/prometheus.png" alt="Observability Stack" class="project-thumb" loading="lazy">
       <h3>Cloud-Native<br>Observability Stack</h3>
       <div class="project-tags"><span class="tag">AWS</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Kubernetes</span><span class="tag">PromQL</span></div>
@@ -610,7 +637,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
       <a class="project-link" href="https://medium.com/@aajais/utilizing-prometheus-for-efficient-monitoring-in-cloud-native-environments-2ef370c41971" target="_blank" rel="noopener noreferrer">Article <i class="fas fa-arrow-right"></i></a>
     </article>
 
-    <article class="project-card">
+    <article class="project-card media-card">
       <img src="images/dbt-pipeline-minimal.svg" alt="DBT data pipeline" class="project-thumb" loading="lazy">
       <h3>Real-Time Data<br>Pipeline with DBT</h3>
       <div class="project-tags"><span class="tag">DBT</span><span class="tag">BigQuery</span><span class="tag">GCP</span><span class="tag">SQL</span><span class="tag">Airflow</span></div>
@@ -621,9 +648,59 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 </div>
 </section>
 
+<!-- Talks & Workshops -->
+<section class="section" id="talks" aria-labelledby="talks-title">
+<div class="section-label">03 // TALKS</div>
+<h2 class="section-title" id="talks-title">Talks &amp; Workshops</h2>
+<div class="talks-list">
+  <article class="talk-card media-card">
+    <a class="webinar-image" href="images/talks/training-tuesdays-webinar.png" target="_blank" rel="noopener noreferrer" aria-label="Open Training Tuesdays webinar poster at full size"><img class="project-thumb" src="images/talks/training-tuesdays-webinar.png" alt="Training Tuesdays Episode Six: Beyond Experiment Tracking, November 24, 2026, featuring Phil Gurbacki and Aayush Jaiswal" loading="lazy"></a>
+    <h3>Beyond Experiment Tracking: Analyze, Debug, and Automate Model Improvement</h3>
+    <div class="talk-meta"><time datetime="2026-11-24T11:00:00-05:00">NOV 24, 2026 · 11 AM ET</time><span class="talk-role">Upcoming · Speaker</span></div>
+    <p class="talk-event">Training Tuesdays · Episode 6 · Live webinar · 30 minutes</p>
+    <p class="talk-description">Presenting how to use CoreWeave Forge to compare training runs, debug model behavior, and guide research with Notebooks, MCP-connected coding agents, and ARIA.</p>
+    <a class="project-link" href="https://coreweave.com/events/beyond-experiment-tracking-analyze-debug-and-automate-model-improvement" target="_blank" rel="noopener noreferrer">Register for the webinar ↗</a>
+  </article>
+  <article class="talk-card media-card">
+      <div class="talk-gallery" role="group" aria-label="Boston event photos">
+        <a href="images/talks/boston-audience.jpg" target="_blank" rel="noopener noreferrer" aria-label="Audience watching the presentation under red lights at F1 Arcade Boston — open full-size photo"><img src="images/talks/boston-audience.jpg" alt="Audience watching the presentation under red lights at F1 Arcade Boston" width="1024" height="768" loading="lazy" decoding="async"></a>
+        <a href="images/talks/boston-presentation.jpg" target="_blank" rel="noopener noreferrer" aria-label="Presenting model iteration workflows at F1 Arcade Boston — open full-size photo"><img src="images/talks/boston-presentation.jpg" alt="Presenting model iteration workflows at F1 Arcade Boston" width="1024" height="768" loading="lazy" decoding="async"></a>
+      </div>
+      <h3>Signal in the Static — Fine-Tuning Speech Models Like an F1 Team</h3>
+    <div class="talk-meta"><time datetime="2026-10-14">OCT 14, 2026</time><span class="talk-role">Speaker</span></div>
+      <p class="talk-event">Boston AI Visionaries Meetup · F1 Arcade Boston Seaport</p>
+      <p class="talk-description">Presented how to adapt speech models to noisy F1 race radio, covering training data, hyperparameter choices, and evaluation for production use.</p>
+      <a class="project-link" href="https://site.wandb.ai/resources/events/boston-meetup-oct/" target="_blank" rel="noopener noreferrer" aria-label="Boston talk event details">Event details ↗</a>
+  </article>
+  <article class="talk-card media-card">
+      <div class="talk-gallery" role="group" aria-label="Chicago event photos">
+        <a href="images/talks/chicago-presentation.jpg" target="_blank" rel="noopener noreferrer" aria-label="Presenting beside a model iteration slide at F1 Arcade Chicago — open full-size photo"><img src="images/talks/chicago-presentation.jpg" alt="Presenting beside a model iteration slide at F1 Arcade Chicago" width="768" height="1024" loading="lazy" decoding="async"></a>
+        <a href="images/talks/chicago-audience.jpg" target="_blank" rel="noopener noreferrer" aria-label="Audience watching the talk under blue lights at F1 Arcade Chicago — open full-size photo"><img src="images/talks/chicago-audience.jpg" alt="Audience watching the talk under blue lights at F1 Arcade Chicago" width="1024" height="768" loading="lazy" decoding="async"></a>
+      </div>
+      <h3>Signal in the Static — Fine-Tuning Speech Models Like an F1 Team</h3>
+    <div class="talk-meta"><time datetime="2026-10-13">OCT 13, 2026</time><span class="talk-role">Speaker</span></div>
+      <p class="talk-event">Chicago AI Innovators Meetup · F1 Arcade Chicago</p>
+      <p class="talk-description">Shared the decisions behind fine-tuning a speech model for race conditions, using a workflow modeled on CoreWeave’s partnership with Aston Martin Aramco F1.</p>
+      <a class="project-link" href="https://site.wandb.ai/resources/events/chicago-meetup-oct/" target="_blank" rel="noopener noreferrer" aria-label="Chicago talk event details">Event details ↗</a>
+  </article>
+  <article class="talk-card media-card">
+      <div class="talk-gallery" role="group" aria-label="Fully Connected event photos">
+        <a href="images/talks/fully-connected-workshop.jpg" target="_blank" rel="noopener noreferrer" aria-label="Presenting from the lectern at Fully Connected 2026 — open full-size photo"><img src="images/talks/fully-connected-workshop.jpg" alt="Presenting from the lectern at Fully Connected 2026" width="1024" height="768" loading="lazy" decoding="async"></a>
+        <a href="images/talks/fully-connected-group.jpg" target="_blank" rel="noopener noreferrer" aria-label="Group photo at Fully Connected 2026 — open full-size photo"><img src="images/talks/fully-connected-group.jpg" alt="Group photo at Fully Connected 2026" width="1024" height="768" loading="lazy" decoding="async"></a>
+        <a href="images/talks/fully-connected-attendees.jpg" target="_blank" rel="noopener noreferrer" aria-label="Connecting with a fellow attendee at Fully Connected 2026 — open full-size photo"><img src="images/talks/fully-connected-attendees.jpg" alt="Connecting with a fellow attendee at Fully Connected 2026" width="1024" height="768" loading="lazy" decoding="async"></a>
+      </div>
+      <h3>How I Met Your Inference | Serverless, Dedicated, and Self-Hosted Inference</h3>
+    <div class="talk-meta"><time datetime="2026-09-30">SEP 30, 2026</time><span class="talk-role">Workshop co-lead</span></div>
+      <p class="talk-event">CoreWeave Fully Connected 2026 · Moscone South, San Francisco</p>
+      <p class="talk-description">Co-led a hands-on lab exploring serverless APIs, dedicated inference, and self-hosted serving on CoreWeave Kubernetes Service. Compared latency, cost, and control across deployment options, with experiments tracked in Weights &amp; Biases.</p>
+      <a class="project-link" href="https://coreweave.com/fully-connected-2026/agenda" target="_blank" rel="noopener noreferrer">Workshop agenda ↗</a>
+  </article>
+</div>
+</section>
+
 <!-- Papers -->
 <section class="section" id="papers">
-<div class="section-label">03 // PAPERS</div>
+<div class="section-label">04 // PAPERS</div>
 <h2 class="section-title">Research Publications</h2>
 
 <div class="paper-card">
@@ -662,7 +739,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 <!-- Skills -->
 <section class="section" id="skills">
-<div class="section-label">04 // SKILLS</div>
+<div class="section-label">05 // SKILLS</div>
 <h2 class="section-title">Toolkit</h2>
 <div class="marquee-wrap">
 <div class="marquee-track">
@@ -704,7 +781,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 <!-- Education -->
 <section class="section" id="education">
-<div class="section-label">05 // EDUCATION</div>
+<div class="section-label">06 // EDUCATION</div>
 <h2 class="section-title">Education</h2>
 <div class="edu-grid">
   <div class="edu-card edu-focus">
@@ -724,7 +801,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 <!-- Writing -->
 <section class="section" id="writing">
-<div class="section-label">06 // WRITING</div>
+<div class="section-label">07 // WRITING</div>
 <h2 class="section-title">Writing</h2>
 
 <a class="writing-card" href="https://medium.com/@aajais/streamlining-recommendation-systems-with-tensorflow-recommenders-tfrs-f77801d3f059" target="_blank" rel="noopener noreferrer">
@@ -744,7 +821,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 <!-- Beyond Code -->
 <section class="section" id="beyond">
-<div class="section-label">07 // BEYOND CODE</div>
+<div class="section-label">08 // BEYOND CODE</div>
 <h2 class="section-title">The Full Picture</h2>
 <div class="beyond-grid">
   <div class="beyond-card">
@@ -761,7 +838,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 <!-- Resume -->
 <section class="section" id="resume">
-<div class="section-label">08 // RESUME</div>
+<div class="section-label">09 // RESUME</div>
 <h2 class="section-title">Resume</h2>
 <div class="resume-section">
   <div class="resume-file">$ ls -la <span class="fname">AAYUSH_JAISWAL_RESUME.pdf</span> <span class="fsize">117K Apr 2026</span></div>
@@ -772,7 +849,7 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 <!-- Contact -->
 <section class="section" id="contact">
-<div class="section-label">09 // CONTACT</div>
+<div class="section-label">10 // CONTACT</div>
 <h2 class="section-title">Let's Connect</h2>
 <div class="contact-grid">
   <div class="contact-item">
@@ -856,6 +933,53 @@ document.querySelectorAll('[data-feature]').forEach((el) => {
   if (journey.compareDocumentPosition(projects) & Node.DOCUMENT_POSITION_FOLLOWING) {
     main.insertBefore(projects, journey);
   }
+})();
+
+// Event slideshows: autoplay with a smooth crossfade.
+(function initTalkSlideshows(){
+  document.querySelectorAll('.talk-gallery').forEach(gallery=>{
+    const slides=Array.from(gallery.querySelectorAll(':scope > a'));
+    if(slides.length<2) return;
+    gallery.setAttribute('aria-roledescription','carousel');
+    const controls=document.createElement('div');
+    controls.className='slideshow-controls';
+    controls.innerHTML='<span class="slideshow-count" aria-live="off" aria-atomic="true"></span>';
+    gallery.appendChild(controls);
+    const count=controls.querySelector('.slideshow-count');
+    let index=0,timer=null;
+    gallery.classList.add('is-ready');
+    slides.forEach(slide=>{slide.querySelector('img').loading='eager';});
+    function show(n){
+      index=(n+slides.length)%slides.length;
+      slides.forEach((slide,i)=>{
+        const active=i===index;
+        slide.classList.toggle('is-active',active);
+        slide.setAttribute('aria-hidden',String(!active));
+        slide.tabIndex=active?0:-1;
+      });
+      count.textContent=`${index+1} / ${slides.length}`;
+    }
+    function stop(){
+      clearInterval(timer);timer=null;
+      count.setAttribute('aria-live','polite');
+    }
+    function step(n){stop();show(index+n);start();}
+    function start(){
+      if(timer) return;
+      count.setAttribute('aria-live','off');
+      timer=setInterval(()=>show(index+1),4500);
+    }
+    gallery.addEventListener('keydown',event=>{
+      if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+        event.preventDefault();step(event.key==='ArrowLeft'?-1:1);
+      }
+    });
+    gallery.addEventListener('focusin',stop);
+    gallery.addEventListener('focusout',event=>{if(!gallery.contains(event.relatedTarget)) start();});
+    document.addEventListener('visibilitychange',()=>{if(document.hidden) stop();else start();});
+    show(0);
+    start();
+  });
 })();
 
 // Hero typing (natural cadence, no cutoff)

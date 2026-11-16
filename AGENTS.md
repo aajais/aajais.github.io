@@ -7,7 +7,8 @@ Static personal portfolio for Aayush Jaiswal, published with GitHub Pages from `
 - `index.html`: homepage content, navigation, case studies, career history, talks, research, skills, writing, resume, and contact; Person JSON-LD is in the head.
 - `about.html`: readable biography with a small page-specific style block.
 - `styles.css`: shared styling, responsive grids, image framing, and reduced-motion rules. The active site uses a dark theme; there is no light/dark toggle.
-- `site.js`: hero particles, navigation, photo crossfades, scroll progress, and a deterministic profile FAQ. FAQ answers read visible page content rather than maintaining separate career facts.
+- `background.js`: shared full-viewport interactive particle background on homepage and About; pauses in hidden tabs and respects reduced motion.
+- `site.js`: terminal typing, navigation, photo crossfades, scroll progress, and a deterministic profile FAQ. FAQ answers read visible page content rather than maintaining separate career facts.
 - `images/`: original event photos, official event artwork, and project diagrams. SVG diagrams are illustrations, not product screenshots.
 - `AAYUSH_JAISWAL_RESUME.pdf`: deployed resume download.
 - `docs/CONTENT.md`: source references and publishing checklist.

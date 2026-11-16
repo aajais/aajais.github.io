@@ -45,3 +45,10 @@ Reviewed November 16, 2026. These are editorial source notes, not independent ve
 4. Use original event artwork and preserve faces/text. Do not regenerate official graphics to correct facts.
 5. Update sitemap dates; keep canonical URLs aligned with the configured GitHub Pages hostname.
 6. Verify local links, mobile layout, keyboard navigation, reduced motion, and crossfades. FAQ derives answers from visible homepage content.
+
+## Link check — November 16, 2026
+- All homepage/About local links and section anchors resolve. External link audit found no confirmed missing destinations.
+- Event, GitHub, Scholar, and W&B report URLs returned HTTP 200. Social profiles returned HTTP 200, which does not guarantee anonymous access to all profile content.
+- All three Medium articles were confirmed by title and author through web retrieval after direct automated requests returned 403.
+- DenseNet201 DOI is registered to the correct paper and Aayush Jaiswal in Crossref; the publisher blocks automated retrieval with 403. Springer redirects through its cookie check. Retain these legitimate publication links rather than treating access restrictions as missing pages.
+- Restored the original full-page particle treatment, terminal typing, centered headings, and hover motion; keep these visual elements when making future content/SEO changes. Reduced-motion support remains required.

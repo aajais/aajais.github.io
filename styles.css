@@ -369,21 +369,20 @@ footer .built{color:var(--orange);letter-spacing:3px;text-transform:uppercase;ma
 
 /* Shared layout and accessible interactions */
 html{scroll-padding-top:76px}
-#hero{isolation:isolate;overflow:hidden}
-#particle-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.55}
+body{isolation:isolate}
+main,footer{position:relative;z-index:1}
+#particle-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.9}
 .hero-eyebrow{white-space:normal;min-height:0}
 .projects-track,.talks-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;overflow:visible;padding:0;margin-top:16px}
 .project-card{min-height:0;flex:auto}
 .project-tags{flex-wrap:wrap;overflow:visible;white-space:normal;min-height:0}
 .project-tags .tag{white-space:normal;height:auto;min-height:28px}
 .journey-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;min-width:0;width:100%;padding:0}
-.journey-item,.journey-item:hover{transform:none;min-height:0;--offsetY:0px}
+.journey-item{transform:none;min-height:0;--offsetY:0px}
+.journey-item:hover{transform:translateY(-4px)}
 .journey-detail{font-size:14px;color:var(--text-dim);line-height:1.65}
 .outcome-card{cursor:default}
 .outcome-copy{opacity:1;max-height:none;transform:none;margin-top:10px}
-#outcomes .section-label,#journey .section-label,#projects .section-label{text-align:left;justify-content:flex-start;margin-bottom:40px}
-#outcomes .section-label::after,#journey .section-label::after,#projects .section-label::after{display:block}
-#outcomes .section-title,#journey .section-title,#projects .section-title{text-align:left;font-size:clamp(24px,4vw,40px);font-weight:700;color:var(--white);margin-bottom:16px}
 .marquee-track{animation:none;flex-wrap:wrap;width:auto;gap:16px 28px}
 .marquee-track span:nth-child(n+17){display:none}
 .nav-links{gap:18px}.nav-links a{font-size:12px;letter-spacing:1px}
@@ -397,3 +396,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 @media(max-width:1000px){.projects-track,.talks-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.projects-track,.talks-list,.journey-track{grid-template-columns:1fr}.section{padding:64px 20px}.media-card{padding:20px}.hero-content{transform:none}.resume-file{max-width:100%;overflow-wrap:anywhere}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.talk-gallery.is-ready>a{display:none}.talk-gallery.is-ready>a.is-active{display:block}}
+
+/* Terminal detail, with stable layout and a complete accessible text alternative. */
+.hero-eyebrow{position:relative}
+.typing-overlay{display:none}
+.hero-eyebrow.is-typing>span:first-child{opacity:0}
+.hero-eyebrow.is-typing .typing-overlay{display:block;position:absolute;inset:0}
+.typing-overlay::after{content:'';display:inline-block;width:2px;height:1em;margin-left:6px;vertical-align:-2px;background:var(--green);animation:caret .9s step-end infinite}
+.media-card{transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.media-card:hover{border-color:#7a4b1d;box-shadow:0 8px 26px rgba(0,0,0,.3);transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){.journey-item:hover{transform:none}}
